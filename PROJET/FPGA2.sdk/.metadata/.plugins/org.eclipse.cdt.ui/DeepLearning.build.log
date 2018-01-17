@@ -1,0 +1,10 @@
+21:52:46 **** Auto Build of configuration Debug for project DeepLearning ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+make: Interrupt/Exception caught (code = 0xc00000fd, addr = 0x4227d3)
+
+21:52:46 Build Finished (took 222ms)
+

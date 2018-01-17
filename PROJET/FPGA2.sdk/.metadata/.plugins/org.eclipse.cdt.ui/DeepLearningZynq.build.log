@@ -1,0 +1,139 @@
+00:25:31 **** Auto Build of configuration Debug for project DeepLearningZynq ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"main.o" -mcpu=cortex-a9 -mfpu=neon -mfloat-abi=hard -I../../DeepLearningZynq_bsp/ps7_cortexa9_0/include -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../simd.h:5:0,
+                 from ../main.c:19:
+../main.c: In function 'calculateLayer4_SIMD':
+../simd_neon.h:11:38: warning: passing argument 1 of 'vld1q_f32' from incompatible pointer type [-Wincompatible-pointer-types]
+ #define v4x3_load(tab, i)  vld1q_f32((v4x3*) &tab[i])
+                                      ^
+../main.c:432:15: note: in expansion of macro 'v4x3_load'
+    v4x3 l4w = v4x3_load(Layer3_Weights_CPU, i*(1+50*25)+1 + j);
+               ^
+In file included from ../simd_neon.h:6:0,
+                 from ../simd.h:5,
+                 from ../main.c:19:
+d:\sdk\2016.4\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\5.2.1\include\arm_neon.h:8740:1: note: expected 'const float32_t * {aka const float *}' but argument is of type '__vector(4) float *'
+ vld1q_f32 (const float32_t * __a)
+ ^
+In file included from ../simd.h:5:0,
+                 from ../main.c:19:
+../simd_neon.h:11:38: warning: passing argument 1 of 'vld1q_f32' from incompatible pointer type [-Wincompatible-pointer-types]
+ #define v4x3_load(tab, i)  vld1q_f32((v4x3*) &tab[i])
+                                      ^
+../main.c:433:15: note: in expansion of macro 'v4x3_load'
+    v4x3 l4n = v4x3_load(Layer3_Neurons_CPU, j );
+               ^
+In file included from ../simd_neon.h:6:0,
+                 from ../simd.h:5,
+                 from ../main.c:19:
+d:\sdk\2016.4\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\5.2.1\include\arm_neon.h:8740:1: note: expected 'const float32_t * {aka const float *}' but argument is of type '__vector(4) float *'
+ vld1q_f32 (const float32_t * __a)
+ ^
+In file included from ../simd.h:5:0,
+                 from ../main.c:19:
+../main.c: In function 'calculateLayer5_SIMD':
+../simd_neon.h:11:38: warning: passing argument 1 of 'vld1q_f32' from incompatible pointer type [-Wincompatible-pointer-types]
+ #define v4x3_load(tab, i)  vld1q_f32((v4x3*) &tab[i])
+                                      ^
+../main.c:462:15: note: in expansion of macro 'v4x3_load'
+    v4x3 l4w = v4x3_load(Layer4_Weights_CPU, 1+101*i+j);
+               ^
+In file included from ../simd_neon.h:6:0,
+                 from ../simd.h:5,
+                 from ../main.c:19:
+d:\sdk\2016.4\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\5.2.1\include\arm_neon.h:8740:1: note: expected 'const float32_t * {aka const float *}' but argument is of type '__vector(4) float *'
+ vld1q_f32 (const float32_t * __a)
+ ^
+In file included from ../simd.h:5:0,
+                 from ../main.c:19:
+../simd_neon.h:11:38: warning: passing argument 1 of 'vld1q_f32' from incompatible pointer type [-Wincompatible-pointer-types]
+ #define v4x3_load(tab, i)  vld1q_f32((v4x3*) &tab[i])
+                                      ^
+../main.c:463:15: note: in expansion of macro 'v4x3_load'
+    v4x3 l4n = v4x3_load(Layer4_Neurons_CPU, j );
+               ^
+In file included from ../simd_neon.h:6:0,
+                 from ../simd.h:5,
+                 from ../main.c:19:
+d:\sdk\2016.4\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\5.2.1\include\arm_neon.h:8740:1: note: expected 'const float32_t * {aka const float *}' but argument is of type '__vector(4) float *'
+ vld1q_f32 (const float32_t * __a)
+ ^
+In file included from ../simd.h:5:0,
+                 from ../main.c:19:
+../main.c: In function 'calculateLayer4_SIMD_int':
+../simd_neon.h:11:38: warning: passing argument 1 of 'vld1q_f32' from incompatible pointer type [-Wincompatible-pointer-types]
+ #define v4x3_load(tab, i)  vld1q_f32((v4x3*) &tab[i])
+                                      ^
+../main.c:558:15: note: in expansion of macro 'v4x3_load'
+    v4x3 l4w = v4x3_load(Layer3_Weights_CPU, i*(1+50*25)+1 + j);
+               ^
+In file included from ../simd_neon.h:6:0,
+                 from ../simd.h:5,
+                 from ../main.c:19:
+d:\sdk\2016.4\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\5.2.1\include\arm_neon.h:8740:1: note: expected 'const float32_t * {aka const float *}' but argument is of type '__vector(4) float *'
+ vld1q_f32 (const float32_t * __a)
+ ^
+In file included from ../simd.h:5:0,
+                 from ../main.c:19:
+../simd_neon.h:11:38: warning: passing argument 1 of 'vld1q_f32' from incompatible pointer type [-Wincompatible-pointer-types]
+ #define v4x3_load(tab, i)  vld1q_f32((v4x3*) &tab[i])
+                                      ^
+../main.c:559:15: note: in expansion of macro 'v4x3_load'
+    v4x3 l4n = v4x3_load(Layer3_Neurons_CPU, j );
+               ^
+In file included from ../simd_neon.h:6:0,
+                 from ../simd.h:5,
+                 from ../main.c:19:
+d:\sdk\2016.4\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\5.2.1\include\arm_neon.h:8740:1: note: expected 'const float32_t * {aka const float *}' but argument is of type '__vector(4) float *'
+ vld1q_f32 (const float32_t * __a)
+ ^
+In file included from ../simd.h:5:0,
+                 from ../main.c:19:
+../main.c: In function 'calculateLayer5_SIMD_int':
+../simd_neon.h:11:38: warning: passing argument 1 of 'vld1q_f32' from incompatible pointer type [-Wincompatible-pointer-types]
+ #define v4x3_load(tab, i)  vld1q_f32((v4x3*) &tab[i])
+                                      ^
+../main.c:588:15: note: in expansion of macro 'v4x3_load'
+    v4x3 l4w = v4x3_load(Layer4_Weights_CPU, 1+101*i+j);
+               ^
+In file included from ../simd_neon.h:6:0,
+                 from ../simd.h:5,
+                 from ../main.c:19:
+d:\sdk\2016.4\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\5.2.1\include\arm_neon.h:8740:1: note: expected 'const float32_t * {aka const float *}' but argument is of type '__vector(4) float *'
+ vld1q_f32 (const float32_t * __a)
+ ^
+In file included from ../simd.h:5:0,
+                 from ../main.c:19:
+../simd_neon.h:11:38: warning: passing argument 1 of 'vld1q_f32' from incompatible pointer type [-Wincompatible-pointer-types]
+ #define v4x3_load(tab, i)  vld1q_f32((v4x3*) &tab[i])
+                                      ^
+../main.c:589:15: note: in expansion of macro 'v4x3_load'
+    v4x3 l4n = v4x3_load(Layer4_Neurons_CPU, j );
+               ^
+In file included from ../simd_neon.h:6:0,
+                 from ../simd.h:5,
+                 from ../main.c:19:
+d:\sdk\2016.4\gnu\aarch32\nt\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\5.2.1\include\arm_neon.h:8740:1: note: expected 'const float32_t * {aka const float *}' but argument is of type '__vector(4) float *'
+ vld1q_f32 (const float32_t * __a)
+ ^
+'Finished building: ../main.c'
+' '
+'Building target: DeepLearningZynq.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=neon -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../DeepLearningZynq_bsp/ps7_cortexa9_0/lib -o "DeepLearningZynq.elf"  ./src/platform.o  ./fonctions_ES.o ./main.o ./timers_b.o   -lm -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: DeepLearningZynq.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size DeepLearningZynq.elf  |tee "DeepLearningZynq.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 102792	 806980	  23328	 933100	  e3cec	DeepLearningZynq.elf
+'Finished building: DeepLearningZynq.elf.size'
+' '
+
+00:25:34 Build Finished (took 2s.960ms)
+

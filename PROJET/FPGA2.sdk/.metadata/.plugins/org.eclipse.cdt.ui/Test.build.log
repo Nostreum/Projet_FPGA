@@ -1,0 +1,8 @@
+22:41:26 **** Incremental Build of configuration Release for project Test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+
+22:41:26 Build Finished (took 153ms)
+

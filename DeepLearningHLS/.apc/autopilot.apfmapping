@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="layer4_hls.c" path="C:\Users\Nostreum\Desktop\FPGA2\DeepLearningHLS\layer4_hls.c"/>
+    <originFiles name="layer4_hls.h" path="C:\Users\Nostreum\Desktop\FPGA2\DeepLearningHLS\layer4_hls.h"/>
+    <originFiles name="weights.h" path="C:\Users\Nostreum\Desktop\FPGA2\DeepLearningHLS\weights.h"/>
+  </source>
+  <testbench>
+    <originFiles name="layer4_hls_test.c" path="C:\Users\Nostreum\Desktop\FPGA2\DeepLearningHLS\layer4_hls_test.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

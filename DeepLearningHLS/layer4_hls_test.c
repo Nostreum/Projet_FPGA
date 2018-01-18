@@ -21,6 +21,8 @@
 
 #define Q 8
 
+#define HW_COSIM
+
 #define SIGMOID(x) (1.7159*tanh(0.66666667*x))
 #define DSIGMOID(S) (0.66666667/1.7159*(1.7159+(S))*(1.7159-(S)))
 
@@ -30,7 +32,7 @@ void calculateLayer1_int(	uint16_t* input, uint16_t* Layer1_Neurons_CPU);
 
 void calculateLayer2_int(	uint16_t* Layer1_Neurons_CPU, uint16_t* Layer1_Weights_CPU, uint16_t* Layer2_Neurons_CPU);
 
-void calculateLayer3_int(	uint16_t* Layer2_Neurons_CPU, uint16_t* Layer2_Weights_CPU, uint16_t* Layer3_Neurons_CPU);
+void calculateLayer3_int_ref(	uint16_t* Layer2_Neurons_CPU, uint16_t* Layer2_Weights_CPU, uint16_t* Layer3_Neurons_CPU);
 
 void calculateLayer4_int_ref(uint16_t* Layer3_Neurons_CPU, uint16_t* Layer3_Weights_CPU, uint16_t* Layer4_Neurons_CPU);
 
@@ -55,6 +57,7 @@ int _main()
 			Layer4_Neurons_CPU_int[100];
 
 	uint16_t Layer4_Neurons_CPU_int_ref[100];
+	uint16_t Layer3_Neurons_CPU_int_ref[100];
 
 	double
 		Layer5_Neurons_CPU[10];
@@ -182,14 +185,14 @@ int _main()
 
 	calculateLayer1_int(Input, Layer1_Neurons_CPU_int);
 	calculateLayer2_int(Layer1_Neurons_CPU_int, Layer1_Weights_CPU_int, Layer2_Neurons_CPU_int);
-	calculateLayer3_int(Layer2_Neurons_CPU_int, Layer2_Weights_CPU_int, Layer3_Neurons_CPU_int);
+	calculateLayer3_int_ref(Layer2_Neurons_CPU_int, Layer2_Weights_CPU_int, Layer3_Neurons_CPU_int);
 	calculateLayer4_int_ref(Layer3_Neurons_CPU_int, Layer3_Weights_CPU_int, Layer4_Neurons_CPU_int_ref);
 
-#ifndef HW_COSIM
+#ifdef HW_COSIM
 	calculateLayer4(Layer3_Neurons_CPU_int, Layer3_Weights_CPU_int, Layer4_Neurons_CPU_int);
 #endif
 
-#ifndef HW_COSIM
+#ifdef HW_COSIM
 
 	int error = 0;
 
@@ -241,7 +244,7 @@ void calculateLayer2_int(	uint16_t Layer1_Neurons_CPU[IMGWIDTH*IMGHEIGHT],
 							uint16_t Layer2_Neurons_CPU[6*13*13])
 // -----------------------------------------------------------------------------------------------------------------
 {
-		float somme;
+	uint16_t somme;
 	int i,j,k,m,n;
 
 	for(i=0;i<6;i++)
@@ -256,12 +259,12 @@ void calculateLayer2_int(	uint16_t Layer1_Neurons_CPU[IMGWIDTH*IMGHEIGHT],
 }
 
 // ----------------------------------------------------------------------------------------------------------------
-void calculateLayer3_int(	uint16_t Layer2_Neurons_CPU[6*13*13],
+void calculateLayer3_int_ref(	uint16_t Layer2_Neurons_CPU[6*13*13],
 							uint16_t Layer2_Weights_CPU[6*13*13],
 							uint16_t Layer3_Neurons_CPU[50*5*5])
 // ----------------------------------------------------------------------------------------------------------------
 {
-	float somme;
+	uint16_t somme;
 	int i,j,k,m,n;
 	for( i=0;i<50;i++)
 		for(j=0;j<5;j++)
@@ -278,7 +281,7 @@ void calculateLayer3_int(	uint16_t Layer2_Neurons_CPU[6*13*13],
 						somme += (Layer2_Weights_CPU[26*6*i+1+6*(n+5*m)+5] * Layer2_Neurons_CPU[13*13*5+13*(2*j+m)+(2*k+n)])>>Q;
 
 					}
-				Layer3_Neurons_CPU[5*5*i+5*j+k] = (uint16_t) SIGMOID(somme);
+				Layer3_Neurons_CPU[5*5*i+5*j+k] = (uint16_t) (1.7159) * (sinhf(0.66666667*somme)/coshf(0.66666667*somme));
 			}
 }
 
@@ -288,7 +291,6 @@ void calculateLayer4_int_ref(uint16_t Layer3_Neurons_CPU[50*5*5],
 							uint16_t Layer4_Neurons_CPU[100])
 // -----------------------------------------------------------------------------------------------------------------
 {
-	printf("LAYER 4 REF \n");
 	uint16_t somme;
 	int i, j, k, m;
 	for( i=0;i<100;i++){
@@ -296,7 +298,7 @@ void calculateLayer4_int_ref(uint16_t Layer3_Neurons_CPU[50*5*5],
 		for( j=0;j<50;j++)
 			for( k=0;k<5;k++)
 				for ( m=0;m<5;m++)
-					somme += (Layer3_Weights_CPU_int[i*(1+50*25)+1 + m + k*5 + j*25] * Layer3_Neurons_CPU[m+5*k+25*j]) / (1<<Q);
+					somme += (Layer3_Weights_CPU_int[i*(1+50*25)+1 + m + k*5 + j*25] * Layer3_Neurons_CPU[m+5*k+25*j])>>Q;
 
 		Layer4_Neurons_CPU[i] = (uint16_t) (1.7159) * (sinhf(0.66666667*somme)/coshf(0.66666667*somme));
 	}
@@ -308,7 +310,7 @@ void calculateLayer5_int(	uint16_t Layer4_Neurons_CPU[100],
 							double Layer5_Neurons_CPU[10])
 // -------------------------------------------------------------------------------------------------------------
 {
-	float somme;
+	uint16_t somme;
 	int i, j;
 	for( i=0;i<10;i++){
 		somme = Layer4_Weights_CPU_int[101*i];

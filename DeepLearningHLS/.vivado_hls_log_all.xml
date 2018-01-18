@@ -2,14 +2,33 @@
 <vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
   <errorLogs>
     <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
       <csimLog/>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
-      <csimLog>
-        <logs message="WARNING: [SIM 211-51] HLS only supports CLANG compiler in Linux." projectName="DeepLearningHLS" solutionName="solution1" date="2018-01-18T18:56:53.525+0100" type="Warning"/>
-      </csimLog>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] RTL name 'calculateLayer4_sibs' is changed to 'calculateLayer4_sibs_x' due to conflict." projectName="DeepLearningHLS" solutionName="solution1" date="2018-01-18T19:33:27.823+0100" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-67] Unable to satisfy pipeline directive: subfunction 'sinh_cosh_range_redu' is not pipelined." projectName="DeepLearningHLS" solutionName="solution1" date="2018-01-18T19:33:25.675+0100" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-65] Unable to satisfy pipeline directive: Function contains subloop(s) not being unrolled." projectName="DeepLearningHLS" solutionName="solution1" date="2018-01-18T19:33:24.922+0100" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-65] Unable to satisfy pipeline directive: Function contains subloop(s) not being unrolled." projectName="DeepLearningHLS" solutionName="solution1" date="2018-01-18T19:33:24.469+0100" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-65] Unable to satisfy pipeline directive: Function contains subloop(s) not being unrolled." projectName="DeepLearningHLS" solutionName="solution1" date="2018-01-18T19:33:24.017+0100" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'big_mult_v3small.1' to 'big_mult_v3small_1'." projectName="DeepLearningHLS" solutionName="solution1" date="2018-01-18T19:33:23.945+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::big_mult_v3small&lt;35, 35, 17>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:260:26) into big_mult_v3small.1." projectName="DeepLearningHLS" solutionName="solution1" date="2018-01-18T19:33:23.926+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::big_mult_v3small&lt;42, 35, 17>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:260:26) into big_mult_v3small." projectName="DeepLearningHLS" solutionName="solution1" date="2018-01-18T19:33:22.664+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::cordic::sinh_cosh_range_redux_cordic' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:107:20) into sinh_cosh_range_redu." projectName="DeepLearningHLS" solutionName="solution1" date="2018-01-18T19:33:22.656+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] the outer loop is not a perfect loop." projectName="DeepLearningHLS" solutionName="solution1" date="2018-01-18T19:33:22.649+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'I' (DeepLearningHLS/layer4_hls.c:17:26) in function 'calculateLayer4' : " projectName="DeepLearningHLS" solutionName="solution1" date="2018-01-18T19:33:22.593+0100" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:262: variable-indexed range selection may cause suboptimal QoR." projectName="DeepLearningHLS" solutionName="solution1" date="2018-01-18T19:33:18.901+0100" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

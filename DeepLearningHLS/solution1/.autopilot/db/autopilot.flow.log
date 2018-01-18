@@ -1,100 +1,100 @@
-@I [HLS-0] Workspace C:/Users/Nostreum/DeepLearningHLS/solution1 opened at Thu Jan 18 18:56:52 +0100 2018
+@I [HLS-0] Workspace C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1 opened at Thu Jan 18 19:33:00 +0100 2018
 @I [HLS-100] Execute     config_clock -quiet -name default -period 10 -default=false 
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
-@I [HLS-100] Command     config_clock returned 0; 0.013 sec.
+@I [HLS-100] Command     config_clock returned 0; 0 sec.
 @I [HLS-100] Execute     open_platform DefaultPlatform 
-@I [HLS-100] Command     open_platform returned 0; 0.026 sec.
+@I [HLS-100] Command     open_platform returned 0; 0 sec.
 @I [HLS-100] Execute     import_lib D:/Vivado_HLS/2016.4/common/technology/xilinx/zynq/zynq 
 @I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/xilinx.lib 
 @I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/xilinx_interface.lib 
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/plb46.lib 
-@I [HLS-100] Command           ap_source returned 0; 0.013 sec.
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/fsl.lib 
-@I [HLS-100] Command           ap_source returned 0; 0.007 sec.
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/axi4.lib 
-@I [HLS-100] Command           ap_source returned 0; 0.013 sec.
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/maxi.lib 
-@I [HLS-100] Command           ap_source returned 0; 0.003 sec.
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/saxilite.lib 
-@I [HLS-100] Command           ap_source returned 0; 0.003 sec.
-@I [HLS-100] Command         ap_source returned 0; 0.059 sec.
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Command         ap_source returned 0; 0.001 sec.
 @I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/dsp48.lib 
-@I [HLS-100] Command         ap_source returned 0; 0.003 sec.
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
 @I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/ip/dds_compiler.lib 
-@I [HLS-100] Command         ap_source returned 0; 0.002 sec.
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
 @I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/ip/xfft.lib 
-@I [HLS-100] Command         ap_source returned 0; 0.002 sec.
+@I [HLS-100] Command         ap_source returned 0; 0.001 sec.
 @I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/ip/xfir.lib 
-@I [HLS-100] Command         ap_source returned 0; 0.002 sec.
-@I [HLS-100] Command       ap_source returned 0; 0.124 sec.
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
+@I [HLS-100] Command       ap_source returned 0; 0.005 sec.
 @I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/xilinx_old.lib 
-@I [HLS-100] Command       ap_source returned 0; 0.003 sec.
+@I [HLS-100] Command       ap_source returned 0; 0.001 sec.
 @I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/xilinx_vivado.lib 
-@I [HLS-100] Command       ap_source returned 0; 0.003 sec.
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
 @I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/xilinx.hlp 
 @I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/target_info.tcl 
-@I [HLS-100] Command         ap_source returned 0; 0.008 sec.
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
 @I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/xilinx_interface.hlp 
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/maxi.hlp 
-@I [HLS-100] Command           ap_source returned 0; 0.005 sec.
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/saxilite.hlp 
-@I [HLS-100] Command           ap_source returned 0; 0.003 sec.
-@I [HLS-100] Command         ap_source returned 0; 0.01 sec.
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Command         ap_source returned 0; 0.001 sec.
 @I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/dsp48.hlp 
-@I [HLS-100] Command         ap_source returned 0; 0.026 sec.
-@I [HLS-100] Command       ap_source returned 0; 0.054 sec.
-@I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/xilinx/zynq/dsp48e1.hlp 
+@I [HLS-100] Command         ap_source returned 0; 0.001 sec.
 @I [HLS-100] Command       ap_source returned 0; 0.003 sec.
+@I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/xilinx/zynq/dsp48e1.hlp 
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
 @I [HLS-100] Execute       get_default_platform 
 @I [HLS-100] Command       get_default_platform returned 0; 0 sec.
 @I [HLS-100] Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
 @I [HLS-100] Command       config_chip_info returned 0; 0 sec.
 @I [HLS-100] Execute       config_chip_info -quiet -speed medium 
 @I [HLS-100] Command       config_chip_info returned 0; 0 sec.
-@I [HLS-100] Command     import_lib returned 0; 0.241 sec.
+@I [HLS-100] Command     import_lib returned 0; 0.014 sec.
 @I [HLS-100] Execute     source D:/Vivado_HLS/2016.4/common/technology/xilinx/zynq/zynq.gen 
 @I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/virtex.gen 
 @I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/xilinx.gen 
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/plb46.gen 
-@I [HLS-100] Command           ap_source returned 0; 0.011 sec.
+@I [HLS-100] Command           ap_source returned 0; 0.001 sec.
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/fsl.gen 
-@I [HLS-100] Command           ap_source returned 0; 0.01 sec.
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/axi4.gen 
-@I [HLS-100] Command           ap_source returned 0; 0.005 sec.
+@I [HLS-100] Command           ap_source returned 0; 0.002 sec.
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/nativeAXI4.gen 
 @I [HLS-100] Execute             source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/saxilite.gen 
-@I [HLS-100] Command             ap_source returned 0; 0.005 sec.
+@I [HLS-100] Command             ap_source returned 0; 0.003 sec.
 @I [HLS-100] Execute             source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/maxi.gen 
-@I [HLS-100] Command             ap_source returned 0; 0.01 sec.
-@I [HLS-100] Command           ap_source returned 0; 0.017 sec.
-@I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
-@I [HLS-100] Command           ap_source returned 0; 0.045 sec.
-@I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+@I [HLS-100] Command             ap_source returned 0; 0.006 sec.
 @I [HLS-100] Command           ap_source returned 0; 0.009 sec.
+@I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+@I [HLS-100] Command           ap_source returned 0; 0.007 sec.
+@I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+@I [HLS-100] Command           ap_source returned 0; 0.007 sec.
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/ip/dds_compiler.gen 
-@I [HLS-100] Command           ap_source returned 0; 0.006 sec.
-@I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/ip/util.gen 
 @I [HLS-100] Command           ap_source returned 0; 0.003 sec.
+@I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/ip/util.gen 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/ip/xfft.gen 
 @I [HLS-100] Command           ap_source returned 0; 0.076 sec.
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/ip/xfir.gen 
-@I [HLS-100] Command           ap_source returned 0; 0.004 sec.
-@I [HLS-100] Command         ap_source returned 0; 0.192 sec.
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Command         ap_source returned 0; 0.107 sec.
 @I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/dsp48.gen 
-@I [HLS-100] Command         ap_source returned 0; 0.004 sec.
-@I [HLS-100] Command       ap_source returned 0; 0.207 sec.
-@I [HLS-100] Command     ap_source returned 0; 0.209 sec.
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
+@I [HLS-100] Command       ap_source returned 0; 0.109 sec.
+@I [HLS-100] Command     ap_source returned 0; 0.11 sec.
 @I [HLS-100] Execute     open_platform DefaultPlatform 
 @I [HLS-100] Command     open_platform returned 0; 0 sec.
 @I [HLS-100] Execute     import_lib D:/Vivado_HLS/2016.4/common/technology/xilinx/zynq/zynq_fpv6 
 @I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/xilinx_fpv7.lib 
 @I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/xilinx_hp.lib 
-@I [HLS-100] Command         ap_source returned 0; 0.003 sec.
-@I [HLS-100] Command       ap_source returned 0; 0.007 sec.
+@I [HLS-100] Command         ap_source returned 0; 0.001 sec.
+@I [HLS-100] Command       ap_source returned 0; 0.003 sec.
 @I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/xilinx_fpv.hlp 
 @I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/xilinx.hlp 
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/target_info.tcl 
-@I [HLS-100] Command           ap_source returned 0; 0.01 sec.
+@I [HLS-100] Command           ap_source returned 0; 0.005 sec.
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/xilinx_interface.hlp 
 @I [HLS-100] Execute             source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/maxi.hlp 
 @I [HLS-100] Command             ap_source returned 0; 0 sec.
@@ -102,67 +102,855 @@
 @I [HLS-100] Command             ap_source returned 0; 0.001 sec.
 @I [HLS-100] Command           ap_source returned 0; 0.001 sec.
 @I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/dsp48.hlp 
-@I [HLS-100] Command           ap_source returned 0; 0.001 sec.
-@I [HLS-100] Command         ap_source returned 0; 0.013 sec.
-@I [HLS-100] Command       ap_source returned 0; 0.016 sec.
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Command         ap_source returned 0; 0.009 sec.
+@I [HLS-100] Command       ap_source returned 0; 0.009 sec.
 @I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/xilinx/zynq/zynq_hp.hlp 
-@I [HLS-100] Command       ap_source returned 0; 0.005 sec.
-@I [HLS-100] Command     import_lib returned 0; 0.046 sec.
+@I [HLS-100] Command       ap_source returned 0; 0.001 sec.
+@I [HLS-100] Command     import_lib returned 0; 0.021 sec.
 @I [HLS-100] Execute     source D:/Vivado_HLS/2016.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
 @I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/xilinx_fpv6.gen 
-@I [HLS-100] Command       ap_source returned 0; 0.013 sec.
-@I [HLS-100] Command     ap_source returned 0; 0.015 sec.
+@I [HLS-100] Command       ap_source returned 0; 0.002 sec.
+@I [HLS-100] Command     ap_source returned 0; 0.002 sec.
 @I [HLS-100] Execute     set_part xc7z020clg484-1 
 @I [HLS-100] Execute       add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
 @I [HLS-100] Execute         get_default_platform 
 @I [HLS-100] Command         get_default_platform returned 0; 0 sec.
 @I [HLS-100] Execute         license_isbetapart xc7z020 
-@I [HLS-100] Command         license_isbetapart returned 1; 0.314 sec.
+@I [HLS-100] Command         license_isbetapart returned 1; 0.012 sec.
 @I [HLS-100] Execute         get_default_platform 
 @I [HLS-100] Command         get_default_platform returned 0; 0 sec.
 @I [HLS-100] Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
 @I [HLS-100] Command         config_chip_info returned 0; 0 sec.
 @I [HLS-100] Execute         config_chip_info -quiet -speed slow 
 @I [HLS-100] Command         config_chip_info returned 0; 0 sec.
-@I [HLS-100] Command       add_library returned 0; 0.322 sec.
+@I [HLS-100] Command       add_library returned 0; 0.019 sec.
 @I [HLS-100] Execute       add_library xilinx/zynq/zynq_fpv6 
 @I [HLS-100] Execute         get_default_platform 
 @I [HLS-100] Command         get_default_platform returned 0; 0 sec.
-@I [HLS-100] Command       add_library returned 0; 0.002 sec.
+@I [HLS-100] Command       add_library returned 0; 0.001 sec.
 @I [HLS-10] Setting target device to 'xc7z020clg484-1'
-@I [HLS-100] Command     set_part returned 0; 0.331 sec.
+@I [HLS-100] Command     set_part returned 0; 0.028 sec.
 @I [HLS-100] Execute     get_default_platform 
 @I [HLS-100] Command     get_default_platform returned 0; 0 sec.
 @I [HLS-100] Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
 @I [HLS-100] Command     config_chip_info returned 0; 0 sec.
 @I [HLS-100] Execute     config_chip_info -quiet -speed slow 
 @I [HLS-100] Command     config_chip_info returned 0; 0 sec.
-@I [HLS-100] Command   open_solution returned 0; 1.039 sec.
-@I [HLS-100] Execute   csim_design -quiet 
-@I [SIM-2] *************** CSIM start ***************
-@W [SIM-51] HLS only supports CLANG compiler in Linux.
-@I [SIM-4] CSIM will launch GCC as the compiler.
-@I [HLS-100] Execute     is_encrypted C:/Users/Nostreum/DeepLearningHLS/layer4_hls_test.c 
-@I [HLS-100] Command     is_encrypted returned 0; 0 sec.
-@I [HLS-100] Execute     is_xip C:/Users/Nostreum/DeepLearningHLS/layer4_hls_test.c 
-@I [HLS-100] Command     is_xip returned 0; 0.001 sec.
-@I [HLS-100] Execute     is_encrypted C:/Users/Nostreum/DeepLearningHLS/layer4_hls.c 
-@I [HLS-100] Command     is_encrypted returned 0; 0 sec.
-@I [HLS-100] Execute     is_xip C:/Users/Nostreum/DeepLearningHLS/layer4_hls.c 
-@I [HLS-100] Command     is_xip returned 0; 0 sec.
-@I [HLS-100] Execute     is_encrypted C:/Users/Nostreum/DeepLearningHLS/layer4_hls.h 
-@I [HLS-100] Command     is_encrypted returned 0; 0.001 sec.
-@I [HLS-100] Execute     is_xip C:/Users/Nostreum/DeepLearningHLS/layer4_hls.h 
-@I [HLS-100] Command     is_xip returned 0; 0 sec.
-@I [HLS-100] Execute     is_encrypted C:/Users/Nostreum/DeepLearningHLS/weights.h 
-@I [HLS-100] Command     is_encrypted returned 0; 0 sec.
-@I [HLS-100] Execute     is_xip C:/Users/Nostreum/DeepLearningHLS/weights.h 
-@I [HLS-100] Command     is_xip returned 0; 0 sec.
-@I [HLS-100] Execute     source run_sim.tcl 
-@I [HLS-100] Command     ap_source returned 0; 0.996 sec.
-@I [SIM-1] CSim done with 0 errors.
-@I [SIM-3] *************** CSIM finish ***************
-@I [HLS-100] Command   csim_design returned 0; 19.575 sec.
-@I [HLS-100] Command ap_source returned 0; 20.625 sec.
+@I [HLS-100] Command   open_solution returned 0; 0.202 sec.
+@I [HLS-100] Execute   set_part xc7z020clg484-1 -tool vivado 
+@I [HLS-100] Execute     add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
+@I [HLS-100] Execute       get_default_platform 
+@I [HLS-100] Command       get_default_platform returned 0; 0 sec.
+@I [HLS-100] Execute       license_isbetapart xc7z020 
+@I [HLS-100] Command       license_isbetapart returned 1; 0.001 sec.
+@I [HLS-100] Execute       get_default_platform 
+@I [HLS-100] Command       get_default_platform returned 0; 0 sec.
+@I [HLS-100] Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+@I [HLS-100] Command       config_chip_info returned 0; 0 sec.
+@I [HLS-100] Execute       config_chip_info -quiet -speed slow 
+@I [HLS-100] Command       config_chip_info returned 0; 0 sec.
+@I [HLS-100] Command     add_library returned 0; 0.006 sec.
+@I [HLS-100] Execute     add_library xilinx/zynq/zynq_fpv6 
+@I [HLS-100] Execute       get_default_platform 
+@I [HLS-100] Command       get_default_platform returned 0; 0 sec.
+@I [HLS-100] Command     add_library returned 0; 0.002 sec.
+@I [HLS-100] Command   set_part returned 0; 0.013 sec.
+@I [HLS-100] Execute   create_clock -period 10 -name default 
+@I [HLS-100] Execute     config_clock -quiet -name default -period 10 -default=false 
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-100] Command     config_clock returned 0; 0 sec.
+@I [HLS-100] Command   create_clock returned 0; 0.003 sec.
+@I [HLS-100] Execute   csynth_design 
+@I [HLS-100] Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 
+@I [HLS-10] Analyzing design file 'DeepLearningHLS/layer4_hls.c' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] Handling DeepLearningHLS/layer4_hls.c as C
+@I [HLS-0] Syntax Checking before pre-processing...
+@I [HLS-100] Execute       clang  -fno-limit-debug-info -gcc-toolchain "D:/Vivado_HLS/2016.4/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Vivado_HLS/2016.4/common/technology/autopilot" -I "D:/Vivado_HLS/2016.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__cdecl=  "DeepLearningHLS/layer4_hls.c"  -o "C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pp.00.o" 
+@I [HLS-100] Command       clang returned 0; 0.328 sec.
+@I [HLS-100] Execute       is_encrypted C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pp.00.o 
+@I [HLS-100] Command       is_encrypted returned 0; 0 sec.
+@I [HLS-0] Source preprocessing
+@I [HLS-100] Execute       clang  -fno-limit-debug-info -gcc-toolchain "D:/Vivado_HLS/2016.4/msys" -hls -fno-exceptions  -D__llvm__  -CC -E "DeepLearningHLS/layer4_hls.c"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Vivado_HLS/2016.4/common/technology/autopilot" -I "D:/Vivado_HLS/2016.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__cdecl=  -o "C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pp.0.c" 
+@I [HLS-100] Command       clang returned 0; 0.313 sec.
+@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-100] Execute       list_core -type functional_unit 
+@I [HLS-100] Command       list_core returned 0; 0 sec.
+@I [HLS-0] CDT Preprocessing...
+@I [HLS-0] Marker-Pragma convertor: C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pp.0.c C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pp.0.c.ap-line.c C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pp.0.c.ap-line.c.CXX 1
+@I [HLS-0] Converting Markers to Pragmas...
+@I [HLS-100] Execute       cdt  "C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pp.0.c.ap-line.c"  -m "calculateLayer4" -o "C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pp.0.c.ap-cdt.c" -c --pp --directive C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/solution1.directive --source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/layer4_hls.c --error C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ca --gf --pd --p2d C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db --sd --scff C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/.systemc_flag --ad 
+@I [HLS-100] Command       cdt returned 0; 0.6 sec.
+@I [HLS-0] Marker-Pragma convertor: C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pp.0.c.ap-cdt.c C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pragma.0.c C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pragma.0.c.ap-line.CXX 0
+@I [HLS-0] Converting Pragmas to Markers...
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/pragma.status.tcl 
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
+@I [HLS-0] Pragma Handling...
+@I [HLS-0] Source preprocessing
+@I [HLS-100] Execute       clang  -fno-limit-debug-info -gcc-toolchain "D:/Vivado_HLS/2016.4/msys" -hls -fno-exceptions  -D__llvm__  -CC -E "C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pragma.1.c"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Vivado_HLS/2016.4/common/technology/autopilot" -I "D:/Vivado_HLS/2016.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__cdecl=  -o "C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pragma.2.c" 
+@I [HLS-100] Command       clang returned 0; 0.324 sec.
+@I [HLS-0] Processing labels
+@I [HLS-100] Execute       clang  -fno-limit-debug-info -gcc-toolchain D:/Vivado_HLS/2016.4/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.pragma.2.c"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89  -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Vivado_HLS/2016.4/common/technology/autopilot" -I "D:/Vivado_HLS/2016.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.g.bc" 
+@I [HLS-100] Command       clang returned 0; 0.311 sec.
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/pragma.status.tcl 
+@I [HLS-100] Command       ap_source returned 0; 0.001 sec.
+@I [HLS-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 92.676 ; gain = 43.770
+@I [HLS-0] Linking Release ...
+@I [HLS-100] Execute       llvm-ld C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.bc -disable-opt -LD:/Vivado_HLS/2016.4/win64/lib -lm_basic -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o 
+@I [HLS-0] WARNING: Linking two modules of different data layouts!
+WARNING: Linking two modules of different target triples: D:/Vivado_HLS/2016.4/win64/lib/libm_basic.a(r:/builds/2016.4/nightly/2017_01_23_1756540/build/win64.o/products/hls/ext/hlslibm/lib_hlsm.pragma.o): 'x86_64-w64-mingw32' and 'i686-pc-mingw32'
+@I [HLS-100] Command       llvm-ld returned 0; 2.036 sec.
+@I [HLS-100] Execute       disassemble C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o 
+@I [HLS-100] Execute         is_encrypted C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.bc 
+@I [HLS-100] Command         is_encrypted returned 0; 0 sec.
+@I [HLS-100] Command       disassemble returned 0; 1.313 sec.
+@I [HLS-0] Disassemble time: 1 seconds per iteration
+@I [HLS-0] Linking Debug ...
+@I [HLS-100] Execute       llvm-ld C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/layer4_hls.g.bc -disable-opt -LD:/Vivado_HLS/2016.4/win64/lib -lm_basic -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g 
+@I [HLS-0] WARNING: Linking two modules of different data layouts!
+WARNING: Linking two modules of different target triples: D:/Vivado_HLS/2016.4/win64/lib/libm_basic.a(r:/builds/2016.4/nightly/2017_01_23_1756540/build/win64.o/products/hls/ext/hlslibm/lib_hlsm.pragma.o): 'x86_64-w64-mingw32' and 'i686-pc-mingw32'
+@I [HLS-100] Command       llvm-ld returned 0; 2.001 sec.
+@I [HLS-100] Execute       disassemble C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g 
+@I [HLS-100] Execute         is_encrypted C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g.bc 
+@I [HLS-100] Command         is_encrypted returned 0; 0 sec.
+@I [HLS-100] Command       disassemble returned 0; 1.348 sec.
+@I [HLS-0] Disassemble time: 1 seconds per iteration
+@I [HLS-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 92.676 ; gain = 43.770
+@I [HLS-100] Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+@I [HLS-100] Execute         cleanup_all_models 
+@I [HLS-100] Command         cleanup_all_models returned 0; 0 sec.
+@I [HLS-10] Starting code transformations ...
+@I [HLS-100] Execute         transform -promote-dbg-pointer C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.pp.bc -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.pp.0.bc -f 
+@I [HLS-100] Command         transform returned 0; 0.719 sec.
+@I [HLS-100] Execute         llvm-ld C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.pp.0.bc -disable-opt -LD:/Vivado_HLS/2016.4/win64/lib -lfloatconversion -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g.0 
+@I [HLS-0] WARNING: Linking two modules of different data layouts!
+WARNING: Linking two modules of different target triples: D:/Vivado_HLS/2016.4/win64/lib/libfloatconversion.a(r:/builds/2016.4/nightly/2017_01_23_1756540/build/win64.o/products/hls/ext/hlslibm/lib_floatconversion.pragma.o): 'x86_64-w64-mingw32' and 'i686-pc-mingw32'
+@I [HLS-100] Command         llvm-ld returned 0; 3.225 sec.
+@I [HLS-0] Running Standard Transforms...
+@I [HLS-100] Execute         transform -hls -share-std-xform -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top calculateLayer4 -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -promote-dbg-pointer -norm-name C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g.0.bc -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+@I [XFORM-603] Inlining function 'ap_fixed_base<42, 7, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'hls::cordic::hyperb_range_redux<7, 12, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1154).
+@I [XFORM-603] Inlining function 'ap_fixed_base<112, 60, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'hls::cast_IEEE754<unsigned char, double>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395).
+@I [XFORM-603] Inlining function 'ap_fixed_base<1, 9, false, (ap_q_mode)5, (ap_o_mode)0, 0>::overflow_adjust' into 'ap_fixed_base<1, 9, false, (ap_q_mode)5, (ap_o_mode)0, 0>::ap_fixed_base<60, 60, false, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
+@I [XFORM-603] Inlining function 'ap_fixed_base<34, 2, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'hls::cordic::cordic_hyperb_v1<34, 34, 0, 0, 0, ap_fixed<34, 2, (ap_q_mode)5, (ap_o_mode)3, 0> >' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:360).
+@I [XFORM-603] Inlining function 'ap_fixed_base<34, 2, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'hls::cordic::cordic_hyperb_v1<34, 34, 0, 0, 0, ap_fixed<34, 2, (ap_q_mode)5, (ap_o_mode)3, 0> >' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:355).
+@I [XFORM-603] Inlining function 'hls::cordic::cordic_hyperb_v1<34, 34, 0, 0, 0, ap_fixed<34, 2, (ap_q_mode)5, (ap_o_mode)3, 0> >' into 'hls::cordic::sinh_cosh_range_redux_cordic' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1224).
+@I [XFORM-603] Inlining function 'ap_fixed_base<34, 2, true, (ap_q_mode)5, (ap_o_mode)3, 0>::to_float' into 'hls::cordic::sinh_cosh_range_redux_cordic' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1225).
+@I [XFORM-603] Inlining function 'ap_fixed_base<34, 2, true, (ap_q_mode)5, (ap_o_mode)3, 0>::to_float' into 'hls::cordic::sinh_cosh_range_redux_cordic' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1225).
+@I [XFORM-603] Inlining function 'ap_fixed_base<62, 39, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'hls::cast_IEEE754<unsigned short, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395).
+@I [XFORM-603] Inlining function 'ap_fixed_base<1, 17, false, (ap_q_mode)5, (ap_o_mode)0, 0>::overflow_adjust' into 'ap_fixed_base<1, 17, false, (ap_q_mode)5, (ap_o_mode)0, 0>::ap_fixed_base<39, 39, false, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
+@I [HLS-100] Command         transform returned 0; 2.719 sec.
+@I [HLS-100] Execute         disassemble C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g.1 C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g.1 
+@I [HLS-100] Execute           is_encrypted C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g.1.bc 
+@I [HLS-100] Command           is_encrypted returned 0; 0 sec.
+@I [HLS-100] Command         disassemble returned 0; 1.266 sec.
+@I [HLS-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:18 . Memory (MB): peak = 367.109 ; gain = 318.203
+@I [HLS-10] Checking synthesizability ...
+@I [HLS-0] Checking Synthesizability 1/2..
+@I [HLS-100] Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g.1.bc -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+@I [XFORM-602] Inlining function 'hls::big_mult<42, 35>' into 'hls::big_mult<42, 7, 35, 1>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:359) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<double>::mantissa' into 'hls::cast_IEEE754<unsigned char, double>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:392) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<double>::expv' into 'hls::cast_IEEE754<unsigned char, double>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<double>::__signbit' into 'hls::cast_IEEE754<unsigned char, double>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:402) automatically.
+@I [XFORM-602] Inlining function 'hls::cast_IEEE754<unsigned char, double>' into '__hls_fptoui_double_i8' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_floatconversion.cpp:51) automatically.
+@I [XFORM-602] Inlining function 'hls::big_mult<35, 35>' into 'hls::big_mult<35, 0, 35, 0>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:359) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::expv' into 'hls::cordic::hyperb_range_redux<7, 12, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1152) automatically.
+@I [XFORM-602] Inlining function 'hls::big_mult<42, 7, 35, 1>' into 'hls::cordic::hyperb_range_redux<7, 12, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1171) automatically.
+@I [XFORM-602] Inlining function '__hls_fptoui_double_i8' into 'hls::cordic::hyperb_range_redux<7, 12, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1173) automatically.
+@I [XFORM-602] Inlining function 'hls::big_mult<35, 0, 35, 0>' into 'hls::cordic::hyperb_range_redux<7, 12, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1184) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::data' into 'fp_struct<float>::to_float' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:347) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::to_float' into 'fp_struct<float>::to_ieee' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:368) automatically.
+@I [XFORM-602] Inlining function 'hls::cordic::addsub<0, 0, ap_fixed<34, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<34, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, bool>' into 'hls::cordic::sinh_cosh_range_redux_cordic' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:356->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1224) automatically.
+@I [XFORM-602] Inlining function 'hls::cordic::addsub<0, 0, ap_fixed<34, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<34, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_uint<1> >' into 'hls::cordic::sinh_cosh_range_redux_cordic' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:367->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1224) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::to_ieee' into 'hls::cordic::sinh_cosh_range_redux_cordic' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1266) automatically.
+@I [XFORM-602] Inlining function 'hls::cordic::sinhf' into 'hls::sinhf' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls_math.h:655) automatically.
+@I [XFORM-602] Inlining function 'hls::sinhf' into 'sinhf' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_hlsm.cpp:86) automatically.
+@I [XFORM-602] Inlining function 'hls::cordic::coshf' into 'hls::coshf' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls_math.h:662) automatically.
+@I [XFORM-602] Inlining function 'hls::coshf' into 'coshf' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_hlsm.cpp:90) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::mantissa' into 'hls::cast_IEEE754<unsigned short, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:392) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::expv' into 'hls::cast_IEEE754<unsigned short, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::__signbit' into 'hls::cast_IEEE754<unsigned short, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:402) automatically.
+@I [XFORM-602] Inlining function 'hls::cast_IEEE754<unsigned short, float>' into '__hls_fptoui_float_i16' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_floatconversion.cpp:48) automatically.
+@I [XFORM-602] Inlining function 'sinhf' into 'calculateLayer4' (DeepLearningHLS/layer4_hls.c:27) automatically.
+@I [XFORM-602] Inlining function 'coshf' into 'calculateLayer4' (DeepLearningHLS/layer4_hls.c:27) automatically.
+@I [XFORM-602] Inlining function '__hls_fptoui_float_i16' into 'calculateLayer4' (DeepLearningHLS/layer4_hls.c:27) automatically.
+@I [HLS-100] Command         transform returned 0; 0.814 sec.
+@I [HLS-0] Checking Synthesizability 2/2..
+@I [HLS-100] Execute         transform -syn-check C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+@W [SYNCHK-23] r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:262: variable-indexed range selection may cause suboptimal QoR.
+@I [SYNCHK-10] 0 error(s), 1 warning(s).
+@I [HLS-100] Command         transform returned 0; 0.667 sec.
+@I [HLS-111] Finished Checking Synthesizability Time (s): cpu = 00:00:05 ; elapsed = 00:00:19 . Memory (MB): peak = 454.762 ; gain = 405.855
+@I [HLS-0] Compiler optimizing ...
+@I [HLS-0] Share syncheck's 1.bc for syn flow: copy C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.g.1.bc to C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.1.bc
+@I [HLS-0] Presyn 1...
+@I [HLS-100] Execute         transform -hls -tmp C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -simplifycfg -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.1.bc -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+@I [XFORM-502] Unrolling all sub-loops inside loop 'J' (DeepLearningHLS/layer4_hls.c:23) in function 'calculateLayer4' for pipelining.
+@I [XFORM-501] Unrolling loop 'K' (DeepLearningHLS/layer4_hls.c:24) in function 'calculateLayer4' completely.
+@I [XFORM-501] Unrolling loop 'M' (DeepLearningHLS/layer4_hls.c:25) in function 'calculateLayer4' completely.
+@I [XFORM-102] Automatically partitioning small array 'pp.V' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:258) completely based on array size.
+@I [XFORM-102] Automatically partitioning small array 'pps.V' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:266) completely based on array size.
+@I [XFORM-102] Automatically partitioning small array 'pp.V' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:258) completely based on array size.
+@I [XFORM-102] Automatically partitioning small array 'pps.V' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:266) completely based on array size.
+@I [XFORM-101] Partitioning array 'pp.V' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:258) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'pps.V' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:266) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'pp.V' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:258) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'pps.V' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:266) in dimension 1 completely.
+@I [XFORM-602] Inlining function 'hls::big_mult<42, 35>' into 'hls::big_mult<42, 7, 35, 1>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:359) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<double>::mantissa' into 'hls::cast_IEEE754<unsigned char, double>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:392) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<double>::expv' into 'hls::cast_IEEE754<unsigned char, double>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395) automatically.
+@I [XFORM-602] Inlining function 'hls::cast_IEEE754<unsigned char, double>' into '__hls_fptoui_double_i8' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_floatconversion.cpp:51) automatically.
+@I [XFORM-602] Inlining function 'hls::big_mult<35, 35>' into 'hls::big_mult<35, 0, 35, 0>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:359) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::expv' into 'hls::cordic::hyperb_range_redux<7, 12, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1152) automatically.
+@I [XFORM-602] Inlining function 'hls::big_mult<42, 7, 35, 1>' into 'hls::cordic::hyperb_range_redux<7, 12, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1171) automatically.
+@I [XFORM-602] Inlining function '__hls_fptoui_double_i8' into 'hls::cordic::hyperb_range_redux<7, 12, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1173) automatically.
+@I [XFORM-602] Inlining function 'hls::big_mult<35, 0, 35, 0>' into 'hls::cordic::hyperb_range_redux<7, 12, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1184) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::data' into 'fp_struct<float>::to_float' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:347) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::to_float' into 'fp_struct<float>::to_ieee' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:368) automatically.
+@I [XFORM-602] Inlining function 'hls::cordic::hyperb_range_redux<7, 12, float>' into 'hls::cordic::sinh_cosh_range_redux_cordic' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1210) automatically.
+@I [XFORM-602] Inlining function 'hls::cordic::addsub<0, 0, ap_fixed<34, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<34, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, bool>' into 'hls::cordic::sinh_cosh_range_redux_cordic' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:356->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1224) automatically.
+@I [XFORM-602] Inlining function 'hls::cordic::addsub<0, 0, ap_fixed<34, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<34, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_uint<1> >' into 'hls::cordic::sinh_cosh_range_redux_cordic' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:367->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1224) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::to_ieee' into 'hls::cordic::sinh_cosh_range_redux_cordic' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1266) automatically.
+@I [XFORM-602] Inlining function 'hls::cordic::sinhf' into 'hls::sinhf' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls_math.h:655) automatically.
+@I [XFORM-602] Inlining function 'hls::sinhf' into 'sinhf' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_hlsm.cpp:86) automatically.
+@I [XFORM-602] Inlining function 'hls::cordic::coshf' into 'hls::coshf' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls_math.h:662) automatically.
+@I [XFORM-602] Inlining function 'hls::coshf' into 'coshf' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_hlsm.cpp:90) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::mantissa' into 'hls::cast_IEEE754<unsigned short, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:392) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::expv' into 'hls::cast_IEEE754<unsigned short, float>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395) automatically.
+@I [XFORM-602] Inlining function 'hls::cast_IEEE754<unsigned short, float>' into '__hls_fptoui_float_i16' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_floatconversion.cpp:48) automatically.
+@I [XFORM-602] Inlining function 'sinhf' into 'calculateLayer4' (DeepLearningHLS/layer4_hls.c:27) automatically.
+@I [XFORM-602] Inlining function 'coshf' into 'calculateLayer4' (DeepLearningHLS/layer4_hls.c:27) automatically.
+@I [XFORM-602] Inlining function '__hls_fptoui_float_i16' into 'calculateLayer4' (DeepLearningHLS/layer4_hls.c:27) automatically.
+@I [HLS-100] Command         transform returned 0; 1.231 sec.
+@I [HLS-0] Presyn 2...
+@I [HLS-100] Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+@I [XFORM-401] Performing if-conversion on hyperblock from (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1202:8) to (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:335:7) in function 'hls::cordic::sinh_cosh_range_redux_cordic'... converting 5 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1225:6) to (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:1297:1) in function 'hls::cordic::sinh_cosh_range_redux_cordic'... converting 12 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:261:51) to (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:260:24) in function 'hls::big_mult_v3small<42, 35, 17>'... converting 6 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:261:51) to (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:260:24) in function 'hls::big_mult_v3small<35, 35, 17>'... converting 6 basic blocks.
+@I [XFORM-11] Balancing expressions in function 'calculateLayer4' (DeepLearningHLS/layer4_hls.c:9)...25 expression(s) balanced.
+@I [HLS-100] Command         transform returned 0; 0.764 sec.
+@I [HLS-100] Execute         disassemble C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.2 C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.2 
+@I [HLS-100] Execute           is_encrypted C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.2.bc 
+@I [HLS-100] Command           is_encrypted returned 0; 0 sec.
+@I [HLS-100] Command         disassemble returned 0; 1.02 sec.
+@I [HLS-111] Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:22 . Memory (MB): peak = 637.035 ; gain = 588.129
+@I [HLS-0] Building ssdm...
+@I [HLS-100] Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -interface-preproc -interface-gen -deadargelim -directive-preproc -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -read-loop-dep -dce -bitwidth -loop-dep -norm-name -legalize -cdfg-build C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.2.bc -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+@W [XFORM-542] Cannot flatten a loop nest 'I' (DeepLearningHLS/layer4_hls.c:17:26) in function 'calculateLayer4' : 
+               the outer loop is not a perfect loop.
+@W [XFORM-631] Renaming function 'hls::cordic::sinh_cosh_range_redux_cordic' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_cordic.h:107:20) into sinh_cosh_range_redu.
+@W [XFORM-631] Renaming function 'hls::big_mult_v3small<42, 35, 17>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:260:26) into big_mult_v3small.
+@W [XFORM-631] Renaming function 'hls::big_mult_v3small<35, 35, 17>' (r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_big_mult.h:260:26) into big_mult_v3small.1.
+@I [HLS-100] Command         transform returned 0; 0.905 sec.
+@I [HLS-100] Execute         disassemble C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.3 C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.3 
+@I [HLS-100] Execute           is_encrypted C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.o.3.bc 
+@I [HLS-100] Command           is_encrypted returned 0; 0 sec.
+@I [HLS-100] Command         disassemble returned 0; 0.872 sec.
+@I [HLS-111] Finished Architecture Synthesis Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 723.254 ; gain = 674.348
+@I [HLS-0] Finish building internal data model.
+@I [HLS-100] Command       opt_and_import_c returned 0; 14.314 sec.
+@I [HLS-100] Command     elaborate returned 0; 23.379 sec.
+@I [HLS-100] Execute     autosyn 
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-0] Synthesizing C/C++ design ...
+@I [HLS-10] Synthesizing 'calculateLayer4' ...
+@I [HLS-100] Execute       ap_set_top_model calculateLayer4 
+@W [SYN-103] Legalizing function name 'big_mult_v3small.1' to 'big_mult_v3small_1'.
+@I [HLS-100] Command       ap_set_top_model returned 0; 0 sec.
+@I [HLS-100] Execute       get_model_list calculateLayer4 -filter all-wo-channel -topdown 
+@I [HLS-100] Command       get_model_list returned 0; 0 sec.
+@I [HLS-100] Execute       preproc_iomode -model calculateLayer4 
+@I [HLS-100] Command       preproc_iomode returned 0; 0 sec.
+@I [HLS-100] Execute       preproc_iomode -model sinh_cosh_range_redu 
+@I [HLS-100] Command       preproc_iomode returned 0; 0 sec.
+@I [HLS-100] Execute       preproc_iomode -model big_mult_v3small.1 
+@I [HLS-100] Command       preproc_iomode returned 0; 0 sec.
+@I [HLS-100] Execute       preproc_iomode -model big_mult_v3small 
+@I [HLS-100] Command       preproc_iomode returned 0; 0 sec.
+@I [HLS-100] Execute       get_model_list calculateLayer4 -filter all-wo-channel 
+@I [HLS-100] Command       get_model_list returned 0; 0 sec.
+@I [HLS-0] Model list for configure: big_mult_v3small big_mult_v3small.1 sinh_cosh_range_redu calculateLayer4
+@I [HLS-0] Configuring Module : big_mult_v3small ...
+@I [HLS-100] Execute       set_default_model big_mult_v3small 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       apply_spec_resource_limit big_mult_v3small 
+@I [HLS-100] Command       apply_spec_resource_limit returned 0; 0 sec.
+@I [HLS-0] Configuring Module : big_mult_v3small.1 ...
+@I [HLS-100] Execute       set_default_model big_mult_v3small.1 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       apply_spec_resource_limit big_mult_v3small.1 
+@I [HLS-100] Command       apply_spec_resource_limit returned 0; 0 sec.
+@I [HLS-0] Configuring Module : sinh_cosh_range_redu ...
+@I [HLS-100] Execute       set_default_model sinh_cosh_range_redu 
+@I [HLS-100] Command       set_default_model returned 0; 0.001 sec.
+@I [HLS-100] Execute       apply_spec_resource_limit sinh_cosh_range_redu 
+@I [HLS-100] Command       apply_spec_resource_limit returned 0; 0 sec.
+@I [HLS-0] Configuring Module : calculateLayer4 ...
+@I [HLS-100] Execute       set_default_model calculateLayer4 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       apply_spec_resource_limit calculateLayer4 
+@I [HLS-100] Command       apply_spec_resource_limit returned 0; 0 sec.
+@I [HLS-0] Model list for preprocess: big_mult_v3small big_mult_v3small.1 sinh_cosh_range_redu calculateLayer4
+@I [HLS-0] Preprocessing Module: big_mult_v3small ...
+@I [HLS-100] Execute       set_default_model big_mult_v3small 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       cdfg_preprocess -model big_mult_v3small 
+@I [HLS-100] Command       cdfg_preprocess returned 0; 0 sec.
+@I [HLS-100] Execute       rtl_gen_preprocess big_mult_v3small 
+@I [HLS-100] Command       rtl_gen_preprocess returned 0; 0.001 sec.
+@I [HLS-0] Preprocessing Module: big_mult_v3small.1 ...
+@I [HLS-100] Execute       set_default_model big_mult_v3small.1 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       cdfg_preprocess -model big_mult_v3small.1 
+@I [HLS-100] Command       cdfg_preprocess returned 0; 0 sec.
+@I [HLS-100] Execute       rtl_gen_preprocess big_mult_v3small.1 
+@I [HLS-100] Command       rtl_gen_preprocess returned 0; 0 sec.
+@I [HLS-0] Preprocessing Module: sinh_cosh_range_redu ...
+@I [HLS-100] Execute       set_default_model sinh_cosh_range_redu 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       cdfg_preprocess -model sinh_cosh_range_redu 
+@I [HLS-100] Command       cdfg_preprocess returned 0; 0.001 sec.
+@I [HLS-100] Execute       rtl_gen_preprocess sinh_cosh_range_redu 
+@I [HLS-100] Command       rtl_gen_preprocess returned 0; 0.001 sec.
+@I [HLS-0] Preprocessing Module: calculateLayer4 ...
+@I [HLS-100] Execute       set_default_model calculateLayer4 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       cdfg_preprocess -model calculateLayer4 
+@I [HLS-100] Command       cdfg_preprocess returned 0; 0.001 sec.
+@I [HLS-100] Execute       rtl_gen_preprocess calculateLayer4 
+@I [HLS-100] Command       rtl_gen_preprocess returned 0; 0 sec.
+@I [HLS-0] Model list for synthesis: big_mult_v3small big_mult_v3small.1 sinh_cosh_range_redu calculateLayer4
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Implementing module 'big_mult_v3small' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-100] Execute       set_default_model big_mult_v3small 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       schedule -model big_mult_v3small 
+@I [SCHED-11] Starting scheduling ...
+@W [SCHED-65] Unable to satisfy pipeline directive: Function contains subloop(s) not being unrolled.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command       schedule returned 0; 0.073 sec.
+@I [HLS-111]  Elapsed time: 24.438 seconds; current allocated memory: 649.093 MB.
+@I [HLS-100] Execute       report -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small.verbose.sched.rpt -verbose -f 
+@I [HLS-100] Command       report returned 0; 0.03 sec.
+@I [HLS-100] Execute       db_write -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small.sched.adb -f 
+@I [HLS-100] Command       db_write returned 0; 0.035 sec.
+@I [HLS-0] Finish scheduling big_mult_v3small.
+@I [HLS-100] Execute       set_default_model big_mult_v3small 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       bind -model big_mult_v3small 
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=big_mult_v3small
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command       bind returned 0; 0.013 sec.
+@I [HLS-111]  Elapsed time: 0.192 seconds; current allocated memory: 649.289 MB.
+@I [HLS-100] Execute       report -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small.verbose.bind.rpt -verbose -f 
+@I [HLS-100] Command       report returned 0; 0.061 sec.
+@I [HLS-100] Execute       db_write -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small.bind.adb -f 
+@I [HLS-100] Command       db_write returned 0; 0.039 sec.
+@I [HLS-0] Finish binding big_mult_v3small.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Implementing module 'big_mult_v3small_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-100] Execute       set_default_model big_mult_v3small.1 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       schedule -model big_mult_v3small.1 
+@I [SCHED-11] Starting scheduling ...
+@W [SCHED-65] Unable to satisfy pipeline directive: Function contains subloop(s) not being unrolled.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command       schedule returned 0; 0.062 sec.
+@I [HLS-111]  Elapsed time: 0.261 seconds; current allocated memory: 649.220 MB.
+@I [HLS-100] Execute       report -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small_1.verbose.sched.rpt -verbose -f 
+@I [HLS-100] Command       report returned 0; 0.028 sec.
+@I [HLS-100] Execute       db_write -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small_1.sched.adb -f 
+@I [HLS-100] Command       db_write returned 0; 0.035 sec.
+@I [HLS-0] Finish scheduling big_mult_v3small.1.
+@I [HLS-100] Execute       set_default_model big_mult_v3small.1 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       bind -model big_mult_v3small.1 
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=big_mult_v3small.1
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command       bind returned 0; 0.013 sec.
+@I [HLS-111]  Elapsed time: 0.189 seconds; current allocated memory: 649.415 MB.
+@I [HLS-100] Execute       report -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small_1.verbose.bind.rpt -verbose -f 
+@I [HLS-100] Command       report returned 0; 0.051 sec.
+@I [HLS-100] Execute       db_write -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small_1.bind.adb -f 
+@I [HLS-100] Command       db_write returned 0; 0.042 sec.
+@I [HLS-0] Finish binding big_mult_v3small.1.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Implementing module 'sinh_cosh_range_redu' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-100] Execute       set_default_model sinh_cosh_range_redu 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       schedule -model sinh_cosh_range_redu 
+@I [SCHED-11] Starting scheduling ...
+@W [SCHED-65] Unable to satisfy pipeline directive: Function contains subloop(s) not being unrolled.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command       schedule returned 0; 0.075 sec.
+@I [HLS-111]  Elapsed time: 0.27 seconds; current allocated memory: 649.346 MB.
+@I [HLS-100] Execute       report -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/sinh_cosh_range_redu.verbose.sched.rpt -verbose -f 
+@I [HLS-100] Command       report returned 0; 0.058 sec.
+@I [HLS-100] Execute       db_write -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/sinh_cosh_range_redu.sched.adb -f 
+@I [HLS-100] Command       db_write returned 0; 0.058 sec.
+@I [HLS-0] Finish scheduling sinh_cosh_range_redu.
+@I [HLS-100] Execute       set_default_model sinh_cosh_range_redu 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       bind -model sinh_cosh_range_redu 
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=sinh_cosh_range_redu
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command       bind returned 0; 0.081 sec.
+@I [HLS-111]  Elapsed time: 0.305 seconds; current allocated memory: 649.368 MB.
+@I [HLS-100] Execute       report -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/sinh_cosh_range_redu.verbose.bind.rpt -verbose -f 
+@I [HLS-100] Command       report returned 0; 0.139 sec.
+@I [HLS-100] Execute       db_write -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/sinh_cosh_range_redu.bind.adb -f 
+@I [HLS-100] Command       db_write returned 0; 0.065 sec.
+@I [HLS-0] Finish binding sinh_cosh_range_redu.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Implementing module 'calculateLayer4' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-100] Execute       set_default_model calculateLayer4 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       schedule -model calculateLayer4 
+@I [SCHED-11] Starting scheduling ...
+@W [SCHED-67] Unable to satisfy pipeline directive: subfunction 'sinh_cosh_range_redu' is not pipelined.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command       schedule returned 0; 0.144 sec.
+@I [HLS-111]  Elapsed time: 0.447 seconds; current allocated memory: 648.408 MB.
+@I [HLS-100] Execute       report -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.verbose.sched.rpt -verbose -f 
+@I [HLS-100] Command       report returned 0; 0.104 sec.
+@I [HLS-100] Execute       db_write -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.sched.adb -f 
+@I [HLS-100] Command       db_write returned 0; 0.112 sec.
+@I [HLS-0] Finish scheduling calculateLayer4.
+@I [HLS-100] Execute       set_default_model calculateLayer4 
+@I [HLS-100] Command       set_default_model returned 0; 0 sec.
+@I [HLS-100] Execute       bind -model calculateLayer4 
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=calculateLayer4
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command       bind returned 0; 0.083 sec.
+@I [HLS-111]  Elapsed time: 0.41 seconds; current allocated memory: 648.867 MB.
+@I [HLS-100] Execute       report -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.verbose.bind.rpt -verbose -f 
+@I [HLS-100] Command       report returned 0; 0.219 sec.
+@I [HLS-100] Execute       db_write -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.bind.adb -f 
+@I [HLS-100] Command       db_write returned 0; 0.127 sec.
+@I [HLS-0] Finish binding calculateLayer4.
+@I [HLS-100] Execute       get_model_list calculateLayer4 -filter all-wo-channel 
+@I [HLS-100] Command       get_model_list returned 0; 0.001 sec.
+@I [HLS-0] Preprocessing for RTLGen ...
+@I [HLS-100] Execute       rtl_gen_preprocess big_mult_v3small 
+@I [HLS-100] Command       rtl_gen_preprocess returned 0; 0 sec.
+@I [HLS-100] Execute       rtl_gen_preprocess big_mult_v3small.1 
+@I [HLS-100] Command       rtl_gen_preprocess returned 0; 0 sec.
+@I [HLS-100] Execute       rtl_gen_preprocess sinh_cosh_range_redu 
+@I [HLS-100] Command       rtl_gen_preprocess returned 0; 0.001 sec.
+@I [HLS-100] Execute       rtl_gen_preprocess calculateLayer4 
+@I [HLS-100] Command       rtl_gen_preprocess returned 0; 0 sec.
+@I [HLS-0] Model list for RTL generation: big_mult_v3small big_mult_v3small.1 sinh_cosh_range_redu calculateLayer4
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'big_mult_v3small' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-100] Execute       create_rtl_model big_mult_v3small -vendor xilinx -mg_file C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small.compgen.tcl 
+@I [SYN-210] Renamed object name 'calculateLayer4_mul_42ns_36ns_52_7' to 'calculateLayer4_mbkb' due to the length limit 20
+@I [RTGEN-100] Generating core module 'calculateLayer4_mbkb': 1 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'big_mult_v3small'.
+@I [HLS-100] Command       create_rtl_model returned 0; 0.018 sec.
+@I [HLS-111]  Elapsed time: 0.474 seconds; current allocated memory: 649.054 MB.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.rtl_wrap.cfg.tcl 
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
+@I [HLS-100] Execute       gen_rtl big_mult_v3small -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/systemc/big_mult_v3small -synmodules big_mult_v3small big_mult_v3small.1 sinh_cosh_range_redu calculateLayer4 
+@I [HLS-100] Command       gen_rtl returned 0; 0.008 sec.
+@I [HLS-100] Execute       gen_rtl big_mult_v3small -style xilinx -f -lang vhdl -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/vhdl/big_mult_v3small 
+@I [HLS-100] Command       gen_rtl returned 0; 0.006 sec.
+@I [HLS-100] Execute       gen_rtl big_mult_v3small -style xilinx -f -lang vlog -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/verilog/big_mult_v3small 
+@I [HLS-100] Command       gen_rtl returned 0; 0.008 sec.
+@I [HLS-100] Execute       gen_tb_info big_mult_v3small -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small -p C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db 
+@I [HLS-100] Command       gen_tb_info returned 0; 0.013 sec.
+@I [HLS-100] Execute       report -model big_mult_v3small -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/report/big_mult_v3small_csynth.rpt -f 
+@I [HLS-100] Command       report returned 0; 0.017 sec.
+@I [HLS-100] Execute       report -model big_mult_v3small -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/report/big_mult_v3small_csynth.xml -f -x 
+@I [HLS-100] Command       report returned 0; 0.016 sec.
+@I [HLS-100] Execute       report -model big_mult_v3small -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small.verbose.rpt -verbose -f 
+@I [HLS-100] Command       report returned 0; 0.066 sec.
+@I [HLS-100] Execute       db_write -model big_mult_v3small -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small.adb -f 
+@I [HLS-100] Command       db_write returned 0; 0.055 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'big_mult_v3small_1' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-100] Execute       create_rtl_model big_mult_v3small.1 -vendor xilinx -mg_file C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small_1.compgen.tcl 
+@I [SYN-210] Renamed object name 'calculateLayer4_mul_35ns_36ns_52_6' to 'calculateLayer4_mcud' due to the length limit 20
+@I [RTGEN-100] Generating core module 'calculateLayer4_mcud': 1 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'big_mult_v3small_1'.
+@I [HLS-100] Command       create_rtl_model returned 0; 0.017 sec.
+@I [HLS-111]  Elapsed time: 0.338 seconds; current allocated memory: 649.368 MB.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.rtl_wrap.cfg.tcl 
+@I [HLS-100] Command       ap_source returned 0; 0.001 sec.
+@I [HLS-100] Execute       gen_rtl big_mult_v3small.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/systemc/big_mult_v3small_1 -synmodules big_mult_v3small big_mult_v3small.1 sinh_cosh_range_redu calculateLayer4 
+@I [HLS-100] Command       gen_rtl returned 0; 0.009 sec.
+@I [HLS-100] Execute       gen_rtl big_mult_v3small.1 -style xilinx -f -lang vhdl -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/vhdl/big_mult_v3small_1 
+@I [HLS-100] Command       gen_rtl returned 0; 0.006 sec.
+@I [HLS-100] Execute       gen_rtl big_mult_v3small.1 -style xilinx -f -lang vlog -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/verilog/big_mult_v3small_1 
+@I [HLS-100] Command       gen_rtl returned 0; 0.008 sec.
+@I [HLS-100] Execute       gen_tb_info big_mult_v3small.1 -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small_1 -p C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db 
+@I [HLS-100] Command       gen_tb_info returned 0; 0.013 sec.
+@I [HLS-100] Execute       report -model big_mult_v3small.1 -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/report/big_mult_v3small_1_csynth.rpt -f 
+@I [HLS-100] Command       report returned 0; 0.016 sec.
+@I [HLS-100] Execute       report -model big_mult_v3small.1 -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/report/big_mult_v3small_1_csynth.xml -f -x 
+@I [HLS-100] Command       report returned 0; 0.015 sec.
+@I [HLS-100] Execute       report -model big_mult_v3small.1 -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small_1.verbose.rpt -verbose -f 
+@I [HLS-100] Command       report returned 0; 0.066 sec.
+@I [HLS-100] Execute       db_write -model big_mult_v3small.1 -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small_1.adb -f 
+@I [HLS-100] Command       db_write returned 0; 0.05 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'sinh_cosh_range_redu' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-100] Execute       create_rtl_model sinh_cosh_range_redu -vendor xilinx -mg_file C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/sinh_cosh_range_redu.compgen.tcl 
+@I [SYN-210] Renamed object name 'sinh_cosh_range_redu_hls_cordic_hyperb_t' to 'sinh_cosh_range_rdEe' due to the length limit 20
+@I [SYN-210] Renamed object name 'calculateLayer4_faddfsub_32ns_32ns_32_5_full_dsp' to 'calculateLayer4_feOg' due to the length limit 20
+@I [SYN-210] Renamed object name 'calculateLayer4_fadd_32ns_32ns_32_5_full_dsp' to 'calculateLayer4_ffYi' due to the length limit 20
+@I [SYN-210] Renamed object name 'calculateLayer4_fmul_32ns_32ns_32_4_max_dsp' to 'calculateLayer4_fg8j' due to the length limit 20
+@I [SYN-210] Renamed object name 'calculateLayer4_sitofp_64s_32_6' to 'calculateLayer4_shbi' due to the length limit 20
+@I [SYN-210] Renamed object name 'calculateLayer4_sitodp_32ns_64_6' to 'calculateLayer4_sibs' due to the length limit 20
+@I [RTGEN-100] Generating core module 'calculateLayer4_feOg': 1 instance(s).
+@I [RTGEN-100] Generating core module 'calculateLayer4_ffYi': 1 instance(s).
+@I [RTGEN-100] Generating core module 'calculateLayer4_fg8j': 4 instance(s).
+@I [RTGEN-100] Generating core module 'calculateLayer4_shbi': 2 instance(s).
+@I [RTGEN-100] Generating core module 'calculateLayer4_sibs': 1 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'sinh_cosh_range_redu'.
+@I [HLS-100] Command       create_rtl_model returned 0; 0.042 sec.
+@I [HLS-111]  Elapsed time: 0.364 seconds; current allocated memory: 650.527 MB.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.rtl_wrap.cfg.tcl 
+@I [HLS-100] Command       ap_source returned 0; 0.001 sec.
+@I [HLS-100] Execute       gen_rtl sinh_cosh_range_redu -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/systemc/sinh_cosh_range_redu -synmodules big_mult_v3small big_mult_v3small.1 sinh_cosh_range_redu calculateLayer4 
+@I [HLS-100] Command       gen_rtl returned 0; 0.01 sec.
+@I [HLS-100] Execute       gen_rtl sinh_cosh_range_redu -style xilinx -f -lang vhdl -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/vhdl/sinh_cosh_range_redu 
+@I [HLS-100] Command       gen_rtl returned 0; 0.006 sec.
+@I [HLS-100] Execute       gen_rtl sinh_cosh_range_redu -style xilinx -f -lang vlog -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/verilog/sinh_cosh_range_redu 
+@I [HLS-100] Command       gen_rtl returned 0; 0.014 sec.
+@I [HLS-100] Execute       gen_tb_info sinh_cosh_range_redu -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/sinh_cosh_range_redu -p C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db 
+@I [HLS-100] Command       gen_tb_info returned 0; 0.044 sec.
+@I [HLS-100] Execute       report -model sinh_cosh_range_redu -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/report/sinh_cosh_range_redu_csynth.rpt -f 
+@I [HLS-100] Command       report returned 0; 0.029 sec.
+@I [HLS-100] Execute       report -model sinh_cosh_range_redu -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/report/sinh_cosh_range_redu_csynth.xml -f -x 
+@I [HLS-100] Command       report returned 0; 0.019 sec.
+@I [HLS-100] Execute       report -model sinh_cosh_range_redu -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/sinh_cosh_range_redu.verbose.rpt -verbose -f 
+@I [HLS-100] Command       report returned 0; 0.155 sec.
+@I [HLS-100] Execute       db_write -model sinh_cosh_range_redu -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/sinh_cosh_range_redu.adb -f 
+@I [HLS-100] Command       db_write returned 0; 0.083 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'calculateLayer4' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-100] Execute       create_rtl_model calculateLayer4 -vendor xilinx -mg_file C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.compgen.tcl 
+@I [RTGEN-500] Setting interface mode on port 'calculateLayer4/Layer3_Neurons_CPU_hls' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'calculateLayer4/Layer3_Weights_CPU_hls' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'calculateLayer4/Layer4_Neurons_CPU_hls' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on function 'calculateLayer4' to 'ap_ctrl_hs'.
+@I [SYN-210] Renamed object name 'calculateLayer4_fdiv_32ns_32ns_32_16' to 'calculateLayer4_fjbC' due to the length limit 20
+@I [SYN-210] Renamed object name 'calculateLayer4_fptrunc_64ns_32_1' to 'calculateLayer4_fkbM' due to the length limit 20
+@I [SYN-210] Renamed object name 'calculateLayer4_dmul_64ns_64ns_64_6_max_dsp' to 'calculateLayer4_dlbW' due to the length limit 20
+@W [RTGEN-101] RTL name 'calculateLayer4_sibs' is changed to 'calculateLayer4_sibs_x' due to conflict.
+@I [SYN-210] Renamed object name 'calculateLayer4_mul_mul_16ns_16ns_24_1' to 'calculateLayer4_mmb6' due to the length limit 20
+@I [RTGEN-100] Generating core module 'calculateLayer4_dlbW': 1 instance(s).
+@I [RTGEN-100] Generating core module 'calculateLayer4_fjbC': 1 instance(s).
+@I [RTGEN-100] Generating core module 'calculateLayer4_fkbM': 1 instance(s).
+@I [RTGEN-100] Generating core module 'calculateLayer4_mmb6': 25 instance(s).
+@I [RTGEN-100] Generating core module 'calculateLayer4_sibs': 1 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'calculateLayer4'.
+@I [HLS-100] Command       create_rtl_model returned 0; 0.075 sec.
+@I [HLS-111]  Elapsed time: 0.61 seconds; current allocated memory: 653.157 MB.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.rtl_wrap.cfg.tcl 
+@I [HLS-100] Command       ap_source returned 0; 0.007 sec.
+@I [HLS-100] Execute       gen_rtl calculateLayer4 -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/systemc/calculateLayer4 -synmodules big_mult_v3small big_mult_v3small.1 sinh_cosh_range_redu calculateLayer4 
+@I [HLS-100] Command       gen_rtl returned 0; 0.011 sec.
+@I [HLS-100] Execute       gen_rtl calculateLayer4 -istop -style xilinx -f -lang vhdl -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/vhdl/calculateLayer4 
+@I [HLS-100] Command       gen_rtl returned 0; 0.034 sec.
+@I [HLS-100] Execute       gen_rtl calculateLayer4 -istop -style xilinx -f -lang vlog -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/verilog/calculateLayer4 
+@I [HLS-100] Command       gen_rtl returned 0; 0.026 sec.
+@I [HLS-100] Execute       export_constraint_db -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.constraint.tcl -f -tool general 
+@I [HLS-100] Command       export_constraint_db returned 0; 0.001 sec.
+@I [HLS-100] Execute       report -model calculateLayer4 -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.design.xml -verbose -f -dv 
+@I [HLS-100] Command       report returned 0; 0.104 sec.
+@I [HLS-100] Execute       report -model calculateLayer4 -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.sdaccel.xml -verbose -f -sdaccel 
+@I [HLS-100] Command       report returned 0; 0.047 sec.
+@I [HLS-100] Execute       gen_tb_info calculateLayer4 -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4 -p C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db 
+@I [HLS-100] Command       gen_tb_info returned 0; 0.017 sec.
+@I [HLS-100] Execute       report -model calculateLayer4 -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/report/calculateLayer4_csynth.rpt -f 
+@I [HLS-100] Command       report returned 0; 0.021 sec.
+@I [HLS-100] Execute       report -model calculateLayer4 -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/syn/report/calculateLayer4_csynth.xml -f -x 
+@I [HLS-100] Command       report returned 0; 0.018 sec.
+@I [HLS-100] Execute       report -model calculateLayer4 -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.verbose.rpt -verbose -f 
+@I [HLS-100] Command       report returned 0; 0.233 sec.
+@I [HLS-100] Execute       db_write -model calculateLayer4 -o C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.adb -f 
+@I [HLS-100] Command       db_write returned 0; 0.146 sec.
+@I [HLS-100] Execute       sc_get_clocks calculateLayer4 
+@I [HLS-100] Command       sc_get_clocks returned 0; 0 sec.
+@I [HLS-100] Execute       sc_get_portdomain calculateLayer4 
+@I [HLS-100] Command       sc_get_portdomain returned 0; 0 sec.
+@I [HLS-0] Model list for RTL component generation: big_mult_v3small big_mult_v3small.1 sinh_cosh_range_redu calculateLayer4
+@I [HLS-0] Handling components in module [big_mult_v3small] ... 
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small.compgen.tcl 
+@I [HLS-0] Found component calculateLayer4_mbkb.
+@I [HLS-0] Append model calculateLayer4_mbkb
+@I [HLS-100] Command       ap_source returned 0; 0.005 sec.
+@I [HLS-0] Handling components in module [big_mult_v3small_1] ... 
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small_1.compgen.tcl 
+@I [HLS-0] Found component calculateLayer4_mcud.
+@I [HLS-0] Append model calculateLayer4_mcud
+@I [HLS-100] Command       ap_source returned 0; 0.004 sec.
+@I [HLS-0] Handling components in module [sinh_cosh_range_redu] ... 
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/sinh_cosh_range_redu.compgen.tcl 
+@I [HLS-0] Found component calculateLayer4_feOg.
+@I [HLS-0] Append model calculateLayer4_feOg
+@I [HLS-0] Found component calculateLayer4_ffYi.
+@I [HLS-0] Append model calculateLayer4_ffYi
+@I [HLS-0] Found component calculateLayer4_fg8j.
+@I [HLS-0] Append model calculateLayer4_fg8j
+@I [HLS-0] Found component calculateLayer4_shbi.
+@I [HLS-0] Append model calculateLayer4_shbi
+@I [HLS-0] Found component calculateLayer4_sibs.
+@I [HLS-0] Append model calculateLayer4_sibs
+@I [HLS-0] Found component sinh_cosh_range_rdEe.
+@I [HLS-0] Append model sinh_cosh_range_rdEe
+@I [HLS-100] Command       ap_source returned 0; 0.005 sec.
+@I [HLS-0] Handling components in module [calculateLayer4] ... 
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.compgen.tcl 
+@I [HLS-0] Found component calculateLayer4_fjbC.
+@I [HLS-0] Append model calculateLayer4_fjbC
+@I [HLS-0] Found component calculateLayer4_fkbM.
+@I [HLS-0] Append model calculateLayer4_fkbM
+@I [HLS-0] Found component calculateLayer4_dlbW.
+@I [HLS-0] Append model calculateLayer4_dlbW
+@I [HLS-0] Found component calculateLayer4_mmb6.
+@I [HLS-0] Append model calculateLayer4_mmb6
+@I [HLS-100] Command       ap_source returned 0; 0.005 sec.
+@I [HLS-0] Append model big_mult_v3small
+@I [HLS-0] Append model big_mult_v3small_1
+@I [HLS-0] Append model sinh_cosh_range_redu
+@I [HLS-0] Append model calculateLayer4
+@I [HLS-0] Generating RTL model list ...
+@I [HLS-0] All models in this session: calculateLayer4_mbkb calculateLayer4_mcud calculateLayer4_feOg calculateLayer4_ffYi calculateLayer4_fg8j calculateLayer4_shbi calculateLayer4_sibs sinh_cosh_range_rdEe calculateLayer4_fjbC calculateLayer4_fkbM calculateLayer4_dlbW calculateLayer4_mmb6 big_mult_v3small big_mult_v3small_1 sinh_cosh_range_redu calculateLayer4
+@I [HLS-0] To file: write model calculateLayer4_mbkb
+@I [HLS-0] To file: write model calculateLayer4_mcud
+@I [HLS-0] To file: write model calculateLayer4_feOg
+@I [HLS-0] To file: write model calculateLayer4_ffYi
+@I [HLS-0] To file: write model calculateLayer4_fg8j
+@I [HLS-0] To file: write model calculateLayer4_shbi
+@I [HLS-0] To file: write model calculateLayer4_sibs
+@I [HLS-0] To file: write model sinh_cosh_range_rdEe
+@I [HLS-0] To file: write model calculateLayer4_fjbC
+@I [HLS-0] To file: write model calculateLayer4_fkbM
+@I [HLS-0] To file: write model calculateLayer4_dlbW
+@I [HLS-0] To file: write model calculateLayer4_mmb6
+@I [HLS-0] To file: write model big_mult_v3small
+@I [HLS-0] To file: write model big_mult_v3small_1
+@I [HLS-0] To file: write model sinh_cosh_range_redu
+@I [HLS-0] To file: write model calculateLayer4
+@I [HLS-0] Finished generating RTL model list.
+
+
+@I [HLS-0] RTL Generation done.
+@I [HLS-0] CAS Generation done.
+@I [HLS-0] CBC Generation done.
+@I [HLS-100] Execute       export_ssdm C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/a.export.ll 
+@I [HLS-100] Command       export_ssdm returned 0; 0.007 sec.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/global.setting.tcl 
+@I [HLS-100] Command       ap_source returned 0; 0.001 sec.
+@I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/generic/autopilot/common.gen 
+@I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/generic/autopilot/APCoreGen.gen 
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
+@I [HLS-100] Command       ap_source returned 0; 0.001 sec.
+@I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/generic/autopilot/op.gen 
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
+@I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/generic/autopilot/op_simcore.gen 
+@I [HLS-100] Command       ap_source returned 0; 0.001 sec.
+@I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/generic/autopilot/interface.gen 
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/global.setting.tcl 
+@I [HLS-100] Command       ap_source returned 0; 0.001 sec.
+@I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/xilinx/zynq/zynq.gen 
+@I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/virtex.gen 
+@I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/xilinx.gen 
+@I [HLS-100] Execute             source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/plb46.gen 
+@I [HLS-100] Command             ap_source returned 0; 0.001 sec.
+@I [HLS-100] Execute             source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/fsl.gen 
+@I [HLS-100] Command             ap_source returned 0; 0 sec.
+@I [HLS-100] Execute             source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/axi4.gen 
+@I [HLS-100] Command             ap_source returned 0; 0.001 sec.
+@I [HLS-100] Execute             source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/nativeAXI4.gen 
+@I [HLS-100] Execute               source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/saxilite.gen 
+@I [HLS-100] Command               ap_source returned 0; 0.003 sec.
+@I [HLS-100] Execute               source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/maxi.gen 
+@I [HLS-100] Command               ap_source returned 0; 0.006 sec.
+@I [HLS-100] Command             ap_source returned 0; 0.012 sec.
+@I [HLS-100] Execute             source D:/Vivado_HLS/2016.4/common/technology/xilinx/scripts/xilinxcoregen.gen 
+@I [HLS-100] Command             ap_source returned 0; 0.008 sec.
+@I [HLS-100] Execute             source D:/Vivado_HLS/2016.4/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+@I [HLS-100] Command             ap_source returned 0; 0.006 sec.
+@I [HLS-100] Execute             source D:/Vivado_HLS/2016.4/common/technology/xilinx/ip/dds_compiler.gen 
+@I [HLS-100] Command             ap_source returned 0; 0.003 sec.
+@I [HLS-100] Execute             source D:/Vivado_HLS/2016.4/common/technology/xilinx/ip/util.gen 
+@I [HLS-100] Command             ap_source returned 0; 0 sec.
+@I [HLS-100] Execute             source D:/Vivado_HLS/2016.4/common/technology/xilinx/ip/xfft.gen 
+@I [HLS-100] Command             ap_source returned 0; 0.068 sec.
+@I [HLS-100] Execute             source D:/Vivado_HLS/2016.4/common/technology/xilinx/ip/xfir.gen 
+@I [HLS-100] Command             ap_source returned 0; 0.001 sec.
+@I [HLS-100] Command           ap_source returned 0; 0.104 sec.
+@I [HLS-100] Execute           source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/dsp48.gen 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Command         ap_source returned 0; 0.105 sec.
+@I [HLS-100] Command       ap_source returned 0; 0.106 sec.
+@I [HLS-100] Execute       source D:/Vivado_HLS/2016.4/common/technology/xilinx/zynq/zynq_fpv6.gen 
+@I [HLS-100] Execute         source D:/Vivado_HLS/2016.4/common/technology/xilinx/common/xilinx_fpv6.gen 
+@I [HLS-100] Command         ap_source returned 0; 0.001 sec.
+@I [HLS-100] Command       ap_source returned 0; 0.001 sec.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/global.setting.tcl 
+@I [HLS-100] Command       ap_source returned 0; 0.001 sec.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/global.setting.tcl 
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/global.setting.tcl 
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/global.setting.tcl 
+@I [HLS-100] Command       ap_source returned 0; 0.001 sec.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small.compgen.tcl 
+@I [RTMG-282] Generating pipelined core: 'calculateLayer4_mbkb_MulnS_0'
+@I [HLS-100] Command       ap_source returned 0; 0.033 sec.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/big_mult_v3small_1.compgen.tcl 
+@I [RTMG-282] Generating pipelined core: 'calculateLayer4_mcud_MulnS_1'
+@I [HLS-100] Command       ap_source returned 0; 0.015 sec.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/sinh_cosh_range_redu.compgen.tcl 
+@I [RTMG-279] Implementing memory 'sinh_cosh_range_rdEe_rom' using auto ROMs.
+@I [HLS-100] Command       ap_source returned 0; 0.182 sec.
+@I [HLS-100] Execute       source C:/Users/Nostreum/Desktop/FPGA2/DeepLearningHLS/solution1/.autopilot/db/calculateLayer4.compgen.tcl 
+@I [HLS-100] Command       ap_source returned 0; 0.104 sec.
+@I [HLS-111] Finished generating all RTL models Time (s): cpu = 00:00:12 ; elapsed = 00:00:30 . Memory (MB): peak = 723.770 ; gain = 674.863
+@I [SYSC-301] Generating SystemC RTL for calculateLayer4.
+@I [VHDL-304] Generating VHDL RTL for calculateLayer4.
+@I [VLOG-307] Generating Verilog RTL for calculateLayer4.
+@I [HLS-100] Command     autosyn returned 0; 5.705 sec.
+@I [HLS-100] Command   csynth_design returned 0; 29.084 sec.
+@I [HLS-100] Command ap_source returned 0; 29.325 sec.
 @I [HLS-100] Execute cleanup_all 
-@I [HLS-100] Command cleanup_all returned 0; 0.001 sec.
+@I [HLS-100] Command cleanup_all returned 0; 0.013 sec.

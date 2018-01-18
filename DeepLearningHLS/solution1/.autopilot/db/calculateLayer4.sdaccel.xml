@@ -1,0 +1,328 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'calculateLayer4'" level="0">
+<item name = "Date">Thu Jan 18 19:33:28 2018
+</item>
+<item name = "Version">2016.4 (Build 1756540 on Mon Jan 23 19:31:01 MST 2017)</item>
+<item name = "Project">DeepLearningHLS</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Target clock period (ns)">10.00</item>
+<item name = "Clock uncertainty (ns)">1.25</item>
+<item name = "Estimated clock period (ns)">8.66</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">90301, 1075301, 90302, 1075302, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_sinh_cosh_range_redu_fu_676">sinh_cosh_range_redu, 167, 167, 167, 167, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- I">90300, 1075300, 903 ~ 10753, -, -, 100, no</column>
+<column name=" + J">900, 10750, 18 ~ 215, -, -, 50, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, 25, -, -</column>
+<column name="Expression">-, -, 0, 1124</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">4, 36, 5400, 13046</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 344</column>
+<column name="Register">-, -, 959, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">1, 27, 5, 27</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="calculateLayer4_dlbW_U17">calculateLayer4_dlbW, 0, 11, 317, 578</column>
+<column name="calculateLayer4_fjbC_U15">calculateLayer4_fjbC, 0, 0, 761, 994</column>
+<column name="calculateLayer4_fkbM_U16">calculateLayer4_fkbM, 0, 0, 128, 277</column>
+<column name="calculateLayer4_sibs_x_U18">calculateLayer4_sibs, 0, 0, 412, 645</column>
+<column name="grp_sinh_cosh_range_redu_fu_676">sinh_cosh_range_redu, 4, 25, 3782, 10552</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+<column name="calculateLayer4_mmb6_U19">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U20">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U21">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U22">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U23">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U24">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U25">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U26">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U27">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U28">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U29">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U30">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U31">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U32">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U33">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U34">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U35">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U36">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U37">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U38">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U39">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U40">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U41">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U42">calculateLayer4_mmb6, i0 * i1</column>
+<column name="calculateLayer4_mmb6_U43">calculateLayer4_mmb6, i0 * i1</column>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="i_1_fu_730_p2">+, 0, 0, 7, 7, 1</column>
+<column name="j_1_fu_752_p2">+, 0, 0, 6, 6, 1</column>
+<column name="next_mul2_fu_718_p2">+, 0, 0, 12, 12, 11</column>
+<column name="next_mul_fu_1630_p2">+, 0, 0, 11, 11, 5</column>
+<column name="sh_assign_fu_1883_p2">+, 0, 0, 9, 8, 9</column>
+<column name="somme_3_4_4_fu_1831_p2">+, 0, 0, 8, 16, 16</column>
+<column name="sum5_0_1_fu_784_p2">+, 0, 0, 12, 12, 1</column>
+<column name="sum5_0_2_fu_806_p2">+, 0, 0, 12, 12, 2</column>
+<column name="sum5_0_3_fu_827_p2">+, 0, 0, 12, 12, 2</column>
+<column name="sum5_0_4_fu_882_p2">+, 0, 0, 12, 12, 3</column>
+<column name="sum5_1_1_fu_958_p2">+, 0, 0, 12, 12, 3</column>
+<column name="sum5_1_2_fu_979_p2">+, 0, 0, 12, 12, 3</column>
+<column name="sum5_1_3_fu_1034_p2">+, 0, 0, 12, 12, 4</column>
+<column name="sum5_1_4_fu_1055_p2">+, 0, 0, 12, 12, 4</column>
+<column name="sum5_1_fu_903_p2">+, 0, 0, 12, 12, 3</column>
+<column name="sum5_2_1_fu_1140_p2">+, 0, 0, 12, 12, 4</column>
+<column name="sum5_2_2_fu_1204_p2">+, 0, 0, 12, 12, 4</column>
+<column name="sum5_2_3_fu_1259_p2">+, 0, 0, 12, 12, 4</column>
+<column name="sum5_2_4_fu_1280_p2">+, 0, 0, 12, 12, 4</column>
+<column name="sum5_2_fu_1119_p2">+, 0, 0, 12, 12, 4</column>
+<column name="sum5_3_1_fu_1343_p2">+, 0, 0, 12, 12, 5</column>
+<column name="sum5_3_2_fu_1427_p2">+, 0, 0, 12, 12, 5</column>
+<column name="sum5_3_3_fu_1448_p2">+, 0, 0, 12, 12, 5</column>
+<column name="sum5_3_4_fu_1503_p2">+, 0, 0, 12, 12, 5</column>
+<column name="sum5_3_fu_1322_p2">+, 0, 0, 12, 12, 4</column>
+<column name="sum5_4_1_fu_1588_p2">+, 0, 0, 12, 12, 5</column>
+<column name="sum5_4_2_fu_1609_p2">+, 0, 0, 12, 12, 5</column>
+<column name="sum5_4_3_fu_1670_p2">+, 0, 0, 12, 12, 5</column>
+<column name="sum5_4_4_fu_1691_p2">+, 0, 0, 12, 12, 5</column>
+<column name="sum5_4_fu_1524_p2">+, 0, 0, 12, 12, 5</column>
+<column name="sum5_fu_773_p2">+, 0, 0, 12, 12, 12</column>
+<column name="sum_0_2_fu_816_p2">+, 0, 0, 11, 11, 2</column>
+<column name="sum_0_3_fu_837_p2">+, 0, 0, 11, 11, 2</column>
+<column name="sum_0_4_fu_892_p2">+, 0, 0, 11, 11, 3</column>
+<column name="sum_1_1_fu_968_p2">+, 0, 0, 11, 11, 3</column>
+<column name="sum_1_2_fu_989_p2">+, 0, 0, 11, 11, 3</column>
+<column name="sum_1_3_fu_1044_p2">+, 0, 0, 11, 11, 4</column>
+<column name="sum_1_4_fu_1065_p2">+, 0, 0, 11, 11, 4</column>
+<column name="sum_1_fu_913_p2">+, 0, 0, 11, 11, 3</column>
+<column name="sum_2_1_fu_1150_p2">+, 0, 0, 11, 11, 4</column>
+<column name="sum_2_2_fu_1214_p2">+, 0, 0, 11, 11, 4</column>
+<column name="sum_2_3_fu_1269_p2">+, 0, 0, 11, 11, 4</column>
+<column name="sum_2_4_fu_1290_p2">+, 0, 0, 11, 11, 4</column>
+<column name="sum_2_fu_1129_p2">+, 0, 0, 11, 11, 4</column>
+<column name="sum_3_1_fu_1353_p2">+, 0, 0, 11, 11, 5</column>
+<column name="sum_3_2_fu_1437_p2">+, 0, 0, 11, 11, 5</column>
+<column name="sum_3_3_fu_1458_p2">+, 0, 0, 11, 11, 5</column>
+<column name="sum_3_4_fu_1513_p2">+, 0, 0, 11, 11, 5</column>
+<column name="sum_3_fu_1332_p2">+, 0, 0, 11, 11, 4</column>
+<column name="sum_4_1_fu_1598_p2">+, 0, 0, 11, 11, 5</column>
+<column name="sum_4_2_fu_1619_p2">+, 0, 0, 11, 11, 5</column>
+<column name="sum_4_3_fu_1680_p2">+, 0, 0, 11, 11, 5</column>
+<column name="sum_4_4_fu_1701_p2">+, 0, 0, 11, 11, 5</column>
+<column name="sum_4_fu_1534_p2">+, 0, 0, 11, 11, 5</column>
+<column name="tmp10_fu_1301_p2">+, 0, 0, 16, 16, 16</column>
+<column name="tmp11_fu_1376_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp12_fu_1372_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp13_fu_1821_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp14_fu_1793_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp15_fu_1549_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp16_fu_1545_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp17_fu_1716_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp18_fu_1712_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp19_fu_1815_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp1_fu_763_p2">+, 0, 0, 11, 11, 1</column>
+<column name="tmp20_fu_1797_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp21_fu_1755_p2">+, 0, 0, 16, 16, 16</column>
+<column name="tmp22_fu_1809_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp23_fu_1801_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp24_fu_1805_p2">+, 0, 0, 16, 16, 16</column>
+<column name="tmp2_fu_1387_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp3_fu_1364_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp4_fu_1080_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp5_fu_1076_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp6_fu_1165_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp7_fu_1161_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp8_fu_1381_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp9_fu_1368_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp_26_fu_1827_p2">+, 0, 0, 8, 16, 16</column>
+<column name="tmp_38_i_i_fu_1897_p2">-, 0, 0, 8, 7, 8</column>
+<column name="exitcond2_fu_746_p2">icmp, 0, 0, 3, 6, 5</column>
+<column name="exitcond3_fu_724_p2">icmp, 0, 0, 3, 7, 6</column>
+<column name="ifzero_fu_800_p2">icmp, 0, 0, 3, 6, 5</column>
+<column name="tmp_40_i_i_fu_1926_p2">lshr, 0, 0, 63, 24, 24</column>
+<column name="Layer4_Neurons_CPU_hls_d0">select, 0, 0, 16, 1, 16</column>
+<column name="sh_assign_5_fu_1906_p3">select, 0, 0, 9, 1, 9</column>
+<column name="tmp_41_i_i_fu_1932_p2">shl, 0, 0, 186, 62, 62</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="Layer3_Neurons_CPU_hls_address0">33, 14, 11, 154</column>
+<column name="Layer3_Neurons_CPU_hls_address1">33, 13, 11, 143</column>
+<column name="Layer3_Weights_CPU_hls_address0">33, 14, 11, 154</column>
+<column name="Layer3_Weights_CPU_hls_address1">33, 14, 11, 154</column>
+<column name="ap_NS_fsm">96, 52, 1, 52</column>
+<column name="i_reg_619">7, 2, 7, 14</column>
+<column name="j_reg_653">6, 2, 6, 12</column>
+<column name="phi_mul1_reg_631">12, 2, 12, 24</column>
+<column name="phi_mul_reg_664">11, 2, 11, 22</column>
+<column name="reg_698">16, 2, 16, 32</column>
+<column name="reg_703">16, 2, 16, 32</column>
+<column name="reg_708">16, 2, 16, 32</column>
+<column name="reg_713">16, 2, 16, 32</column>
+<column name="somme1_reg_643">16, 2, 16, 32</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="Layer4_Neurons_CPU_h_reg_2167">7, 0, 7, 0</column>
+<column name="ap_CS_fsm">51, 0, 51, 0</column>
+<column name="ap_reg_grp_sinh_cosh_range_redu_fu_676_ap_start">1, 0, 1, 0</column>
+<column name="i_1_reg_2152">7, 0, 7, 0</column>
+<column name="i_reg_619">7, 0, 7, 0</column>
+<column name="ifzero_reg_2227">1, 0, 1, 0</column>
+<column name="j_1_reg_2175">6, 0, 6, 0</column>
+<column name="j_reg_653">6, 0, 6, 0</column>
+<column name="loc_V_4_reg_2673">23, 0, 23, 0</column>
+<column name="loc_V_reg_2667">8, 0, 8, 0</column>
+<column name="next_mul2_reg_2144">12, 0, 12, 0</column>
+<column name="next_mul_reg_2561">11, 0, 11, 0</column>
+<column name="phi_mul1_reg_631">12, 0, 12, 0</column>
+<column name="phi_mul_reg_664">11, 0, 11, 0</column>
+<column name="reg_698">16, 0, 16, 0</column>
+<column name="reg_703">16, 0, 16, 0</column>
+<column name="reg_708">16, 0, 16, 0</column>
+<column name="reg_713">16, 0, 16, 0</column>
+<column name="somme1_reg_643">16, 0, 16, 0</column>
+<column name="somme_3_4_4_reg_2631">16, 0, 16, 0</column>
+<column name="sum5_reg_2180">12, 0, 12, 0</column>
+<column name="tmp10_reg_2431">16, 0, 16, 0</column>
+<column name="tmp13_reg_2626">16, 0, 16, 0</column>
+<column name="tmp15_reg_2526">16, 0, 16, 0</column>
+<column name="tmp17_reg_2596">16, 0, 16, 0</column>
+<column name="tmp21_reg_2611">16, 0, 16, 0</column>
+<column name="tmp2_reg_2461">16, 0, 16, 0</column>
+<column name="tmp4_reg_2341">16, 0, 16, 0</column>
+<column name="tmp6_reg_2376">16, 0, 16, 0</column>
+<column name="tmp_121_0_1_reg_2256">16, 0, 16, 0</column>
+<column name="tmp_121_0_2_reg_2281">16, 0, 16, 0</column>
+<column name="tmp_121_0_3_reg_2286">16, 0, 16, 0</column>
+<column name="tmp_121_0_4_reg_2311">16, 0, 16, 0</column>
+<column name="tmp_121_1_1_reg_2346">16, 0, 16, 0</column>
+<column name="tmp_121_1_2_reg_2351">16, 0, 16, 0</column>
+<column name="tmp_121_1_3_reg_2381">16, 0, 16, 0</column>
+<column name="tmp_121_1_4_reg_2386">16, 0, 16, 0</column>
+<column name="tmp_121_1_reg_2316">16, 0, 16, 0</column>
+<column name="tmp_121_2_1_reg_2406">16, 0, 16, 0</column>
+<column name="tmp_121_2_2_reg_2436">16, 0, 16, 0</column>
+<column name="tmp_121_2_3_reg_2466">16, 0, 16, 0</column>
+<column name="tmp_121_2_4_reg_2471">16, 0, 16, 0</column>
+<column name="tmp_121_2_reg_2401">16, 0, 16, 0</column>
+<column name="tmp_121_3_1_reg_2501">16, 0, 16, 0</column>
+<column name="tmp_121_3_2_reg_2531">16, 0, 16, 0</column>
+<column name="tmp_121_3_3_reg_2536">16, 0, 16, 0</column>
+<column name="tmp_121_3_4_reg_2566">16, 0, 16, 0</column>
+<column name="tmp_121_3_reg_2496">16, 0, 16, 0</column>
+<column name="tmp_121_4_1_reg_2601">16, 0, 16, 0</column>
+<column name="tmp_121_4_2_reg_2606">16, 0, 16, 0</column>
+<column name="tmp_121_4_3_reg_2616">16, 0, 16, 0</column>
+<column name="tmp_121_4_4_reg_2621">16, 0, 16, 0</column>
+<column name="tmp_121_4_reg_2571">16, 0, 16, 0</column>
+<column name="tmp_25_reg_2251">16, 0, 16, 0</column>
+<column name="tmp_27_reg_2642">64, 0, 64, 0</column>
+<column name="tmp_28_reg_2647">64, 0, 64, 0</column>
+<column name="x_assign_reg_2652">32, 0, 32, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, calculateLayer4, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, calculateLayer4, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, calculateLayer4, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, calculateLayer4, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, calculateLayer4, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, calculateLayer4, return value</column>
+<column name="Layer3_Neurons_CPU_hls_address0">out, 11, ap_memory, Layer3_Neurons_CPU_hls, array</column>
+<column name="Layer3_Neurons_CPU_hls_ce0">out, 1, ap_memory, Layer3_Neurons_CPU_hls, array</column>
+<column name="Layer3_Neurons_CPU_hls_q0">in, 16, ap_memory, Layer3_Neurons_CPU_hls, array</column>
+<column name="Layer3_Neurons_CPU_hls_address1">out, 11, ap_memory, Layer3_Neurons_CPU_hls, array</column>
+<column name="Layer3_Neurons_CPU_hls_ce1">out, 1, ap_memory, Layer3_Neurons_CPU_hls, array</column>
+<column name="Layer3_Neurons_CPU_hls_q1">in, 16, ap_memory, Layer3_Neurons_CPU_hls, array</column>
+<column name="Layer3_Weights_CPU_hls_address0">out, 11, ap_memory, Layer3_Weights_CPU_hls, array</column>
+<column name="Layer3_Weights_CPU_hls_ce0">out, 1, ap_memory, Layer3_Weights_CPU_hls, array</column>
+<column name="Layer3_Weights_CPU_hls_q0">in, 16, ap_memory, Layer3_Weights_CPU_hls, array</column>
+<column name="Layer3_Weights_CPU_hls_address1">out, 11, ap_memory, Layer3_Weights_CPU_hls, array</column>
+<column name="Layer3_Weights_CPU_hls_ce1">out, 1, ap_memory, Layer3_Weights_CPU_hls, array</column>
+<column name="Layer3_Weights_CPU_hls_q1">in, 16, ap_memory, Layer3_Weights_CPU_hls, array</column>
+<column name="Layer4_Neurons_CPU_hls_address0">out, 7, ap_memory, Layer4_Neurons_CPU_hls, array</column>
+<column name="Layer4_Neurons_CPU_hls_ce0">out, 1, ap_memory, Layer4_Neurons_CPU_hls, array</column>
+<column name="Layer4_Neurons_CPU_hls_we0">out, 1, ap_memory, Layer4_Neurons_CPU_hls, array</column>
+<column name="Layer4_Neurons_CPU_hls_d0">out, 16, ap_memory, Layer4_Neurons_CPU_hls, array</column>
+</table>
+</item>
+</section>
+
+<section name = "Critical Path" level="0">
+<item name = "Max Delay">8.58</item>
+<item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
+<keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
+<column name="'tmp_i_i_i_cast', r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:338->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_floatconversion.cpp:48->DeepLearningHLS/layer4_hls.c:27">zext, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'sh', r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/utils/x_hls_utils.h:338->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_floatconversion.cpp:48->DeepLearningHLS/layer4_hls.c:27">add, 1.72, 1.72, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'sh', r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_floatconversion.cpp:48->DeepLearningHLS/layer4_hls.c:27">select, 1.37, 3.09, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'sh_assign_5_cast_cas', r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_floatconversion.cpp:48->DeepLearningHLS/layer4_hls.c:27">sext, 0.00, 3.09, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'tmp_40_i_i', r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_floatconversion.cpp:48->DeepLearningHLS/layer4_hls.c:27">lshr, 0.00, 3.09, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'tmp', r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_floatconversion.cpp:48->DeepLearningHLS/layer4_hls.c:27">bitselect, 0.00, 3.09, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'tmp_29', r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_floatconversion.cpp:48->DeepLearningHLS/layer4_hls.c:27">zext, 0.00, 3.09, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'result.V', r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395->r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_floatconversion.cpp:48->DeepLearningHLS/layer4_hls.c:27">select, 2.78, 5.87, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="DeepLearningHLS/layer4_hls.c:27">store, 2.71, 8.58, &apos;result.V&apos;, r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/hls/hls_round.h:395-&gt;r:/builds/2016.4/nightly/2017_01_23_1756540/src/products/hls/hls_lib/src/lib_floatconversion.cpp:48-&gt;DeepLearningHLS/layer4_hls.c:27, -, -, -, -, -, &apos;Layer4_Neurons_CPU_hls&apos;, -, -, -, -</column>
+</table>
+</item>
+</section>
+</profile>

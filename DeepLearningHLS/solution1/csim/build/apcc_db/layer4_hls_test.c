@@ -140,7 +140,7 @@ long double fmodl(long double, long double);
 signed int _main(void);
 void calculateLayer1_int(signed short *llvm_cbe_input, signed short *llvm_cbe_Layer1_Neurons_CPU);
 void calculateLayer2_int(signed short *llvm_cbe_Layer1_Neurons_CPU, signed short *llvm_cbe_Layer1_Weights_CPU, signed short *llvm_cbe_Layer2_Neurons_CPU);
-void calculateLayer3_int(signed short *llvm_cbe_Layer2_Neurons_CPU, signed short *llvm_cbe_Layer2_Weights_CPU, signed short *llvm_cbe_Layer3_Neurons_CPU);
+void calculateLayer3_int_ref(signed short *llvm_cbe_Layer2_Neurons_CPU, signed short *llvm_cbe_Layer2_Weights_CPU, signed short *llvm_cbe_Layer3_Neurons_CPU);
 void calculateLayer4_int_ref(signed short *llvm_cbe_Layer3_Neurons_CPU, signed short *llvm_cbe_Layer3_Weights_CPU, signed short *llvm_cbe_Layer4_Neurons_CPU);
 void calculateLayer4(signed short *, signed short *, signed short *);
 void calculateLayer5_int(signed short *llvm_cbe_Layer4_Neurons_CPU, signed short *llvm_cbe_Layer4_Weights_CPU, double *llvm_cbe_Layer5_Neurons_CPU);
@@ -155,10 +155,9 @@ signed short Layer3_Weights_CPU_int[125100] = { ((unsigned short )31), ((unsigne
 signed short Layer4_Weights_CPU_int[1010] = { ((unsigned short )0), ((unsigned short )-3), ((unsigned short )-2), ((unsigned short )14), ((unsigned short )2), ((unsigned short )-1), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )2), ((unsigned short )-2), ((unsigned short )4), ((unsigned short )2), ((unsigned short )108), ((unsigned short )-1), ((unsigned short )-5), ((unsigned short )0), ((unsigned short )-5), ((unsigned short )0), ((unsigned short )1), ((unsigned short )2), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )-2), ((unsigned short )-4), ((unsigned short )1), ((unsigned short )22), ((unsigned short )1), ((unsigned short )3), ((unsigned short )2), ((unsigned short )0), ((unsigned short )0), ((unsigned short )4), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-11), ((unsigned short )7), ((unsigned short )1), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )5), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-2), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-2), ((unsigned short )0), ((unsigned short )-3), ((unsigned short )0), ((unsigned short )1), ((unsigned short )-4), ((unsigned short )-2), ((unsigned short )11), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )1), ((unsigned short )3), ((unsigned short )0), ((unsigned short )2), ((unsigned short )3), ((unsigned short )5), ((unsigned short )0), ((unsigned short )1), ((unsigned short )-1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )1), ((unsigned short )0), ((unsigned short )-101), ((unsigned short )0), ((unsigned short )1), ((unsigned short )0), ((unsigned short )-2), ((unsigned short )3), ((unsigned short )0), ((unsigned short )14), ((unsigned short )0), ((unsigned short )-6), ((unsigned short )1), ((unsigned short )0), ((unsigned short )-6), ((unsigned short )1), ((unsigned short )0), ((unsigned short )1), ((unsigned short )0), ((unsigned short )1), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )3), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )-8), ((unsigned short )-4), ((unsigned short )-2), ((unsigned short )-1), ((unsigned short )1), ((unsigned short )24), ((unsigned short )6), ((unsigned short )-2), ((unsigned short )-2), ((unsigned short )2), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-8), ((unsigned short )-6), ((unsigned short )7), ((unsigned short )128), ((unsigned short )1), ((unsigned short )-2), ((unsigned short )3), ((unsigned short )-18), ((unsigned short )1), ((unsigned short )-4), ((unsigned short )-4), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-2), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )12), ((unsigned short )0), ((unsigned short )-2), ((unsigned short )3), ((unsigned short )-3), ((unsigned short )0), ((unsigned short )-6), ((unsigned short )-3), ((unsigned short )-2), ((unsigned short )-3), ((unsigned short )-10), ((unsigned short )7), ((unsigned short )0), ((unsigned short )7), ((unsigned short )7), ((unsigned short )4), ((unsigned short )2), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )-1), ((unsigned short )-2), ((unsigned short )7), ((unsigned short )0), ((unsigned short )0), ((unsigned short )5), ((unsigned short )-4), ((unsigned short )3), ((unsigned short )4), ((unsigned short )-2), ((unsigned short )-6), ((unsigned short )-3), ((unsigned short )-2), ((unsigned short )-11), ((unsigned short )1), ((unsigned short )-2), ((unsigned short )5), ((unsigned short )2), ((unsigned short )8), ((unsigned short )0), ((unsigned short )5), ((unsigned short )-2), ((unsigned short )1), ((unsigned short )1), ((unsigned short )2), ((unsigned short )3), ((unsigned short )10), ((unsigned short )2), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )-8), ((unsigned short )-2), ((unsigned short )-88), ((unsigned short )-2), ((unsigned short )-3), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )-9), ((unsigned short )-4), ((unsigned short )4), ((unsigned short )4), ((unsigned short )2), ((unsigned short )-11), ((unsigned short )8), ((unsigned short )0), ((unsigned short )1), ((unsigned short )-2), ((unsigned short )-4), ((unsigned short )5), ((unsigned short )2), ((unsigned short )0), ((unsigned short )8), ((unsigned short )0), ((unsigned short )1), ((unsigned short )-6), ((unsigned short )-35), ((unsigned short )2), ((unsigned short )0), ((unsigned short )29), ((unsigned short )-2), ((unsigned short )0), ((unsigned short )-3), ((unsigned short )6), ((unsigned short )2), ((unsigned short )-14), ((unsigned short )-23), ((unsigned short )0), ((unsigned short )80), ((unsigned short )-4), ((unsigned short )17), ((unsigned short )-24), ((unsigned short )53), ((unsigned short )-5), ((unsigned short )2), ((unsigned short )3), ((unsigned short )-3), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-8), ((unsigned short )-2), ((unsigned short )0), ((unsigned short )9), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-5), ((unsigned short )7), ((unsigned short )-3), ((unsigned short )11), ((unsigned short )3), ((unsigned short )-1), ((unsigned short )-1), ((unsigned short )6), ((unsigned short )-8), ((unsigned short )0), ((unsigned short )0), ((unsigned short )14), ((unsigned short )5), ((unsigned short )-14), ((unsigned short )0), ((unsigned short )3), ((unsigned short )2), ((unsigned short )3), ((unsigned short )1), ((unsigned short )6), ((unsigned short )2), ((unsigned short )4), ((unsigned short )0), ((unsigned short )7), ((unsigned short )3), ((unsigned short )-1), ((unsigned short )26), ((unsigned short )4), ((unsigned short )2), ((unsigned short )-17), ((unsigned short )6), ((unsigned short )-7), ((unsigned short )-25), ((unsigned short )-1), ((unsigned short )7), ((unsigned short )-1), ((unsigned short )-6), ((unsigned short )-4), ((unsigned short )0), ((unsigned short )1), ((unsigned short )0), ((unsigned short )-2), ((unsigned short )26), ((unsigned short )-4), ((unsigned short )0), ((unsigned short )-2), ((unsigned short )-1), ((unsigned short )-8), ((unsigned short )0), ((unsigned short )5), ((unsigned short )-2), ((unsigned short )3), ((unsigned short )0), ((unsigned short )1), ((unsigned short )-12), ((unsigned short )1), ((unsigned short )-1), ((unsigned short )4), ((unsigned short )3), ((unsigned short )5), ((unsigned short )-9), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )-4), ((unsigned short )-1), ((unsigned short )12), ((unsigned short )9), ((unsigned short )3), ((unsigned short )-4), ((unsigned short )1), ((unsigned short )6), ((unsigned short )-38), ((unsigned short )-1), ((unsigned short )2), ((unsigned short )7), ((unsigned short )-2), ((unsigned short )7), ((unsigned short )1), ((unsigned short )7), ((unsigned short )52), ((unsigned short )2), ((unsigned short )-2), ((unsigned short )152), ((unsigned short )0), ((unsigned short )23), ((unsigned short )11), ((unsigned short )-9), ((unsigned short )-3), ((unsigned short )1), ((unsigned short )11), ((unsigned short )0), ((unsigned short )2), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )2), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )7), ((unsigned short )-1), ((unsigned short )3), ((unsigned short )-23), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )2), ((unsigned short )1), ((unsigned short )2), ((unsigned short )-4), ((unsigned short )-9), ((unsigned short )-2), ((unsigned short )2), ((unsigned short )-33), ((unsigned short )-5), ((unsigned short )0), ((unsigned short )2), ((unsigned short )0), ((unsigned short )2), ((unsigned short )2), ((unsigned short )0), ((unsigned short )-6), ((unsigned short )-9), ((unsigned short )1), ((unsigned short )2), ((unsigned short )-3), ((unsigned short )-6), ((unsigned short )0), ((unsigned short )-11), ((unsigned short )-12), ((unsigned short )4), ((unsigned short )-26), ((unsigned short )-8), ((unsigned short )2), ((unsigned short )6), ((unsigned short )12), ((unsigned short )3), ((unsigned short )2), ((unsigned short )2), ((unsigned short )-1), ((unsigned short )-2), ((unsigned short )-7), ((unsigned short )5), ((unsigned short )0), ((unsigned short )5), ((unsigned short )1), ((unsigned short )0), ((unsigned short )-3), ((unsigned short )0), ((unsigned short )13), ((unsigned short )0), ((unsigned short )3), ((unsigned short )0), ((unsigned short )-7), ((unsigned short )-4), ((unsigned short )-2), ((unsigned short )-14), ((unsigned short )2), ((unsigned short )-1), ((unsigned short )-5), ((unsigned short )0), ((unsigned short )4), ((unsigned short )-1), ((unsigned short )2), ((unsigned short )-7), ((unsigned short )-3), ((unsigned short )2), ((unsigned short )-2), ((unsigned short )0), ((unsigned short )9), ((unsigned short )10), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )-13), ((unsigned short )-21), ((unsigned short )-2), ((unsigned short )6), ((unsigned short )-10), ((unsigned short )0), ((unsigned short )5), ((unsigned short )50), ((unsigned short )-4), ((unsigned short )1), ((unsigned short )6), ((unsigned short )3), ((unsigned short )-2), ((unsigned short )137), ((unsigned short )0), ((unsigned short )17), ((unsigned short )-3), ((unsigned short )-14), ((unsigned short )3), ((unsigned short )-1), ((unsigned short )-4), ((unsigned short )-2), ((unsigned short )0), ((unsigned short )1), ((unsigned short )-3), ((unsigned short )3), ((unsigned short )0), ((unsigned short )15), ((unsigned short )21), ((unsigned short )1), ((unsigned short )1), ((unsigned short )-2), ((unsigned short )1), ((unsigned short )4), ((unsigned short )-1), ((unsigned short )14), ((unsigned short )-6), ((unsigned short )1), ((unsigned short )6), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )-2), ((unsigned short )-10), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )2), ((unsigned short )-3), ((unsigned short )0), ((unsigned short )-9), ((unsigned short )1), ((unsigned short )-2), ((unsigned short )-10), ((unsigned short )-5), ((unsigned short )18), ((unsigned short )-18), ((unsigned short )2), ((unsigned short )1), ((unsigned short )8), ((unsigned short )-1), ((unsigned short )-15), ((unsigned short )3), ((unsigned short )1), ((unsigned short )3), ((unsigned short )-7), ((unsigned short )-20), ((unsigned short )-2), ((unsigned short )1), ((unsigned short )-3), ((unsigned short )2), ((unsigned short )0), ((unsigned short )10), ((unsigned short )0), ((unsigned short )3), ((unsigned short )4), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-17), ((unsigned short )7), ((unsigned short )37), ((unsigned short )15), ((unsigned short )-4), ((unsigned short )-9), ((unsigned short )2), ((unsigned short )5), ((unsigned short )-4), ((unsigned short )-3), ((unsigned short )-8), ((unsigned short )-2), ((unsigned short )6), ((unsigned short )-4), ((unsigned short )-6), ((unsigned short )1), ((unsigned short )0), ((unsigned short )2), ((unsigned short )-6), ((unsigned short )1), ((unsigned short )-7), ((unsigned short )-9), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )13), ((unsigned short )67), ((unsigned short )0), ((unsigned short )3), ((unsigned short )0), ((unsigned short )-2), ((unsigned short )-1), ((unsigned short )-2), ((unsigned short )7), ((unsigned short )26), ((unsigned short )2), ((unsigned short )1), ((unsigned short )98), ((unsigned short )3), ((unsigned short )-20), ((unsigned short )1), ((unsigned short )0), ((unsigned short )2), ((unsigned short )3), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )-2), ((unsigned short )-4), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )29), ((unsigned short )4), ((unsigned short )9), ((unsigned short )-2), ((unsigned short )16), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )10), ((unsigned short )13), ((unsigned short )8), ((unsigned short )0), ((unsigned short )17), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )-7), ((unsigned short )2), ((unsigned short )1), ((unsigned short )7), ((unsigned short )-8), ((unsigned short )3), ((unsigned short )4), ((unsigned short )3), ((unsigned short )9), ((unsigned short )-1), ((unsigned short )3), ((unsigned short )0), ((unsigned short )5), ((unsigned short )-3), ((unsigned short )-8), ((unsigned short )-4), ((unsigned short )4), ((unsigned short )-2), ((unsigned short )1), ((unsigned short )-2), ((unsigned short )-3), ((unsigned short )0), ((unsigned short )0), ((unsigned short )12), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )-13), ((unsigned short )0), ((unsigned short )0), ((unsigned short )8), ((unsigned short )3), ((unsigned short )1), ((unsigned short )3), ((unsigned short )0), ((unsigned short )1), ((unsigned short )-2), ((unsigned short )-4), ((unsigned short )1), ((unsigned short )0), ((unsigned short )1), ((unsigned short )0), ((unsigned short )1), ((unsigned short )3), ((unsigned short )7), ((unsigned short )0), ((unsigned short )2), ((unsigned short )23), ((unsigned short )-36), ((unsigned short )-19), ((unsigned short )-1), ((unsigned short )8), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-8), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-13), ((unsigned short )2), ((unsigned short )-2), ((unsigned short )91), ((unsigned short )0), ((unsigned short )-5), ((unsigned short )-3), ((unsigned short )-5), ((unsigned short )1), ((unsigned short )-2), ((unsigned short )-3), ((unsigned short )2), ((unsigned short )2), ((unsigned short )0), ((unsigned short )-5), ((unsigned short )-5), ((unsigned short )0), ((unsigned short )-74), ((unsigned short )3), ((unsigned short )5), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )9), ((unsigned short )0), ((unsigned short )3), ((unsigned short )4), ((unsigned short )-24), ((unsigned short )6), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-6), ((unsigned short )2), ((unsigned short )-1), ((unsigned short )1), ((unsigned short )-2), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )-3), ((unsigned short )1), ((unsigned short )-6), ((unsigned short )0), ((unsigned short )1), ((unsigned short )-4), ((unsigned short )1), ((unsigned short )-9), ((unsigned short )-4), ((unsigned short )5), ((unsigned short )-2), ((unsigned short )0), ((unsigned short )0), ((unsigned short )2), ((unsigned short )7), ((unsigned short )3), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-2), ((unsigned short )1), ((unsigned short )0), ((unsigned short )-6), ((unsigned short )3), ((unsigned short )37), ((unsigned short )-1), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )-4), ((unsigned short )0), ((unsigned short )0), ((unsigned short )18), ((unsigned short )0), ((unsigned short )-5), ((unsigned short )1), ((unsigned short )0), ((unsigned short )8), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )5), ((unsigned short )0), ((unsigned short )2), ((unsigned short )-2), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )4), ((unsigned short )-8), ((unsigned short )-4), ((unsigned short )-2), ((unsigned short )16), ((unsigned short )14), ((unsigned short )3), ((unsigned short )0), ((unsigned short )11), ((unsigned short )-43), ((unsigned short )5), ((unsigned short )-1), ((unsigned short )-19), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-15), ((unsigned short )0), ((unsigned short )-2), ((unsigned short )-22), ((unsigned short )15), ((unsigned short )4), ((unsigned short )77), ((unsigned short )-4), ((unsigned short )0), ((unsigned short )5), ((unsigned short )-14), ((unsigned short )4), ((unsigned short )-5), ((unsigned short )-9), ((unsigned short )1), ((unsigned short )0), ((unsigned short )1), ((unsigned short )-1), ((unsigned short )2), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )8), ((unsigned short )5), ((unsigned short )-3), ((unsigned short )14), ((unsigned short )0), ((unsigned short )-8), ((unsigned short )0), ((unsigned short )2), ((unsigned short )2), ((unsigned short )-2), ((unsigned short )-3), ((unsigned short )-2), ((unsigned short )3), ((unsigned short )-11), ((unsigned short )9), ((unsigned short )5), ((unsigned short )0), ((unsigned short )0), ((unsigned short )6), ((unsigned short )0), ((unsigned short )-6), ((unsigned short )4), ((unsigned short )7), ((unsigned short )-3), ((unsigned short )-6), ((unsigned short )-14), ((unsigned short )0), ((unsigned short )-3), ((unsigned short )0), ((unsigned short )5), ((unsigned short )-3), ((unsigned short )56), ((unsigned short )0), ((unsigned short )4), ((unsigned short )0), ((unsigned short )-4), ((unsigned short )4), ((unsigned short )1), ((unsigned short )-3), ((unsigned short )1), ((unsigned short )0), ((unsigned short )4), ((unsigned short )-7), ((unsigned short )-5), ((unsigned short )-1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )2), ((unsigned short )3), ((unsigned short )-16), ((unsigned short )1), ((unsigned short )31), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )-9), ((unsigned short )11), ((unsigned short )3), ((unsigned short )-8), ((unsigned short )-1), ((unsigned short )-28), ((unsigned short )3), ((unsigned short )-6), ((unsigned short )3), ((unsigned short )0), ((unsigned short )-2), ((unsigned short )9), ((unsigned short )-3), ((unsigned short )11), ((unsigned short )6), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )4), ((unsigned short )-19), ((unsigned short )-9), ((unsigned short )0), ((unsigned short )-3), ((unsigned short )-6), ((unsigned short )0), ((unsigned short )-6), ((unsigned short )-1), ((unsigned short )-6), ((unsigned short )-25), ((unsigned short )9), ((unsigned short )-3), ((unsigned short )243), ((unsigned short )1), ((unsigned short )-43), ((unsigned short )1), ((unsigned short )-8), ((unsigned short )-2), ((unsigned short )1), ((unsigned short )-3), ((unsigned short )5), ((unsigned short )0), ((unsigned short )0), ((unsigned short )32), ((unsigned short )0), ((unsigned short )0), ((unsigned short )20), ((unsigned short )3), ((unsigned short )-12), ((unsigned short )-5), ((unsigned short )-12), ((unsigned short )1), ((unsigned short )-18), ((unsigned short )-2), ((unsigned short )-1), ((unsigned short )-2), ((unsigned short )31), ((unsigned short )-24), ((unsigned short )-1), ((unsigned short )-9), ((unsigned short )2), ((unsigned short )2), ((unsigned short )2), ((unsigned short )3), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )3), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )-8), ((unsigned short )20), ((unsigned short )6), ((unsigned short )20), ((unsigned short )7), ((unsigned short )-4), ((unsigned short )-10), ((unsigned short )-1), ((unsigned short )-5), ((unsigned short )3), ((unsigned short )-2), ((unsigned short )-1), ((unsigned short )3), ((unsigned short )5), ((unsigned short )3), ((unsigned short )-2), ((unsigned short )-2), ((unsigned short )4), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )0), ((unsigned short )1), ((unsigned short )23), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )11), ((unsigned short )4), ((unsigned short )20), ((unsigned short )0), ((unsigned short )30), ((unsigned short )-6), ((unsigned short )0), ((unsigned short )11), ((unsigned short )14), ((unsigned short )-2), ((unsigned short )3), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )4), ((unsigned short )-2), ((unsigned short )2), ((unsigned short )4), ((unsigned short )12), ((unsigned short )-1), ((unsigned short )-10), ((unsigned short )-25), ((unsigned short )-2), ((unsigned short )0), ((unsigned short )-14), ((unsigned short )-55), ((unsigned short )-22), ((unsigned short )3), ((unsigned short )-17), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-31), ((unsigned short )0), ((unsigned short )-11), ((unsigned short )-16), ((unsigned short )2), ((unsigned short )-3), ((unsigned short )167), ((unsigned short )2), ((unsigned short )17), ((unsigned short )6), ((unsigned short )4), ((unsigned short )-4), ((unsigned short )2), ((unsigned short )6), ((unsigned short )-2), ((unsigned short )0), ((unsigned short )0), ((unsigned short )-9), ((unsigned short )3), ((unsigned short )0), ((unsigned short )8), ((unsigned short )-42), ((unsigned short )-7), ((unsigned short )5), ((unsigned short )7), ((unsigned short )1), ((unsigned short )5), ((unsigned short )3), ((unsigned short )-16), ((unsigned short )3), ((unsigned short )-9), ((unsigned short )13), ((unsigned short )-1), ((unsigned short )-1), ((unsigned short )14), ((unsigned short )-9), ((unsigned short )5), ((unsigned short )-3), ((unsigned short )-1), ((unsigned short )-1), ((unsigned short )-1), ((unsigned short )14), ((unsigned short )8), ((unsigned short )7), ((unsigned short )-11), ((unsigned short )3), ((unsigned short )-25), ((unsigned short )15), ((unsigned short )3), ((unsigned short )-1), ((unsigned short )-6), ((unsigned short )2), ((unsigned short )-19), ((unsigned short )0), ((unsigned short )-4), ((unsigned short )5), ((unsigned short )-7), ((unsigned short )-7), ((unsigned short )0), ((unsigned short )1), ((unsigned short )4), ((unsigned short )2), ((unsigned short )4), ((unsigned short )-7), ((unsigned short )2), ((unsigned short )23), ((unsigned short )-4), ((unsigned short )-2), ((unsigned short )1), ((unsigned short )0), ((unsigned short )16), ((unsigned short )-10), ((unsigned short )-4), ((unsigned short )-13), ((unsigned short )1), ((unsigned short )17), ((unsigned short )0), ((unsigned short )12), ((unsigned short )-21), ((unsigned short )3), ((unsigned short )0), ((unsigned short )-1), ((unsigned short )13), ((unsigned short )8), ((unsigned short )10), ((unsigned short )4), ((unsigned short )0), ((unsigned short )3), ((unsigned short )-10), ((unsigned short )4), ((unsigned short )-20), ((unsigned short )-8), ((unsigned short )2), ((unsigned short )0), ((unsigned short )-3) };
 static signed short aesl_internal__main_OC_Input[841] = { ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )0), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1), ((unsigned short )1) };
 static  char aesl_internal__OC_str2[23] = "Le resultat est : %d \n";
-static  char aesl_internal__OC_str4[6] = "%.0f ";
-static  char aesl_internal_str[13] = "LAYER 4 REF ";
-static  char aesl_internal_str1[17] = "Error occured ! ";
-static  char aesl_internal_str2[15] = "Test passed ! ";
+static  char aesl_internal__OC_str3[6] = "%.0f ";
+static  char aesl_internal_str[17] = "Error occured ! ";
+static  char aesl_internal_str1[15] = "Test passed ! ";
 
 
 /* Function Bodies */
@@ -589,8 +588,8 @@ printf("\n  %%6 = getelementptr inbounds [1250 x i16]* %%Layer3_Neurons_CPU_int,
 if (AESL_DEBUG_TRACE) {
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  call void @calculateLayer3_int(i16* %%5, i16* getelementptr inbounds ([7800 x i16]* @Layer2_Weights_CPU_int, i32 0, i32 0), i16* %%6), !dbg !12 for 0x%I64xth hint within @_main  --> \n", ++aesl_llvm_cbe_16_count);
-  calculateLayer3_int((signed short *)llvm_cbe_tmp__5, (signed short *)((&Layer2_Weights_CPU_int[(((signed int )0u))
+printf("\n  call void @calculateLayer3_int_ref(i16* %%5, i16* getelementptr inbounds ([7800 x i16]* @Layer2_Weights_CPU_int, i32 0, i32 0), i16* %%6), !dbg !12 for 0x%I64xth hint within @_main  --> \n", ++aesl_llvm_cbe_16_count);
+  calculateLayer3_int_ref((signed short *)llvm_cbe_tmp__5, (signed short *)((&Layer2_Weights_CPU_int[(((signed int )0u))
 #ifdef AESL_BC_SIM
  % 7800
 #endif
@@ -708,8 +707,8 @@ printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__13&4294967295ull)));
   } while (1); /* end of syntactic loop '' */
 llvm_cbe_tmp__57:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%puts = call i32 @puts(i8* getelementptr inbounds ([17 x i8]* @aesl_internal_str1, i32 0, i32 0)), !dbg !14 for 0x%I64xth hint within @_main  --> \n", ++aesl_llvm_cbe_puts_count);
-  puts(( char *)((&aesl_internal_str1[(((signed int )0u))
+printf("\n  %%puts = call i32 @puts(i8* getelementptr inbounds ([17 x i8]* @aesl_internal_str, i32 0, i32 0)), !dbg !14 for 0x%I64xth hint within @_main  --> \n", ++aesl_llvm_cbe_puts_count);
+  puts(( char *)((&aesl_internal_str[(((signed int )0u))
 #ifdef AESL_BC_SIM
  % 17
 #endif
@@ -721,8 +720,8 @@ printf("\nReturn puts = 0x%X",llvm_cbe_puts);
 
 llvm_cbe_tmp__56:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%puts2 = call i32 @puts(i8* getelementptr inbounds ([15 x i8]* @aesl_internal_str2, i32 0, i32 0)), !dbg !15 for 0x%I64xth hint within @_main  --> \n", ++aesl_llvm_cbe_puts2_count);
-  puts(( char *)((&aesl_internal_str2[(((signed int )0u))
+printf("\n  %%puts2 = call i32 @puts(i8* getelementptr inbounds ([15 x i8]* @aesl_internal_str1, i32 0, i32 0)), !dbg !15 for 0x%I64xth hint within @_main  --> \n", ++aesl_llvm_cbe_puts2_count);
+  puts(( char *)((&aesl_internal_str1[(((signed int )0u))
 #ifdef AESL_BC_SIM
  % 15
 #endif
@@ -1132,7 +1131,6 @@ void calculateLayer2_int(signed short *llvm_cbe_Layer1_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_311_count = 0;
   unsigned short llvm_cbe_tmp__69;
   static  unsigned long long aesl_llvm_cbe_312_count = 0;
-  float llvm_cbe_tmp__70;
   static  unsigned long long aesl_llvm_cbe_313_count = 0;
   static  unsigned long long aesl_llvm_cbe_314_count = 0;
   static  unsigned long long aesl_llvm_cbe_315_count = 0;
@@ -1141,19 +1139,20 @@ void calculateLayer2_int(signed short *llvm_cbe_Layer1_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_318_count = 0;
   static  unsigned long long aesl_llvm_cbe_319_count = 0;
   static  unsigned long long aesl_llvm_cbe_320_count = 0;
+  unsigned int llvm_cbe_tmp__70;
   static  unsigned long long aesl_llvm_cbe_321_count = 0;
-  unsigned int llvm_cbe_tmp__71;
-  static  unsigned long long aesl_llvm_cbe_322_count = 0;
   static  unsigned long long aesl_llvm_cbe_storemerge37_count = 0;
   unsigned int llvm_cbe_storemerge37;
   unsigned int llvm_cbe_storemerge37__PHI_TEMPORARY;
+  static  unsigned long long aesl_llvm_cbe_322_count = 0;
+  unsigned short llvm_cbe_tmp__71;
+  unsigned short llvm_cbe_tmp__71__PHI_TEMPORARY;
   static  unsigned long long aesl_llvm_cbe_323_count = 0;
-  float llvm_cbe_tmp__72;
-  float llvm_cbe_tmp__72__PHI_TEMPORARY;
   static  unsigned long long aesl_llvm_cbe_324_count = 0;
   static  unsigned long long aesl_llvm_cbe_325_count = 0;
   static  unsigned long long aesl_llvm_cbe_326_count = 0;
   static  unsigned long long aesl_llvm_cbe_327_count = 0;
+  unsigned int llvm_cbe_tmp__72;
   static  unsigned long long aesl_llvm_cbe_328_count = 0;
   unsigned int llvm_cbe_tmp__73;
   static  unsigned long long aesl_llvm_cbe_329_count = 0;
@@ -1163,27 +1162,26 @@ void calculateLayer2_int(signed short *llvm_cbe_Layer1_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_331_count = 0;
   unsigned int llvm_cbe_tmp__76;
   static  unsigned long long aesl_llvm_cbe_332_count = 0;
-  unsigned int llvm_cbe_tmp__77;
+  signed short *llvm_cbe_tmp__77;
   static  unsigned long long aesl_llvm_cbe_333_count = 0;
-  signed short *llvm_cbe_tmp__78;
+  unsigned short llvm_cbe_tmp__78;
   static  unsigned long long aesl_llvm_cbe_334_count = 0;
-  unsigned short llvm_cbe_tmp__79;
+  unsigned int llvm_cbe_tmp__79;
   static  unsigned long long aesl_llvm_cbe_335_count = 0;
-  unsigned int llvm_cbe_tmp__80;
+  signed short *llvm_cbe_tmp__80;
   static  unsigned long long aesl_llvm_cbe_336_count = 0;
-  signed short *llvm_cbe_tmp__81;
+  unsigned short llvm_cbe_tmp__81;
   static  unsigned long long aesl_llvm_cbe_337_count = 0;
-  unsigned short llvm_cbe_tmp__82;
+  unsigned int llvm_cbe_tmp__82;
   static  unsigned long long aesl_llvm_cbe_338_count = 0;
   unsigned int llvm_cbe_tmp__83;
   static  unsigned long long aesl_llvm_cbe_339_count = 0;
   unsigned int llvm_cbe_tmp__84;
   static  unsigned long long aesl_llvm_cbe_340_count = 0;
-  unsigned int llvm_cbe_tmp__85;
+  unsigned short llvm_cbe_tmp__85;
   static  unsigned long long aesl_llvm_cbe_341_count = 0;
-  float llvm_cbe_tmp__86;
+  unsigned short llvm_cbe_tmp__86;
   static  unsigned long long aesl_llvm_cbe_342_count = 0;
-  float llvm_cbe_tmp__87;
   static  unsigned long long aesl_llvm_cbe_343_count = 0;
   static  unsigned long long aesl_llvm_cbe_344_count = 0;
   static  unsigned long long aesl_llvm_cbe_345_count = 0;
@@ -1192,30 +1190,30 @@ void calculateLayer2_int(signed short *llvm_cbe_Layer1_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_348_count = 0;
   static  unsigned long long aesl_llvm_cbe_349_count = 0;
   static  unsigned long long aesl_llvm_cbe_350_count = 0;
+  unsigned int llvm_cbe_tmp__87;
   static  unsigned long long aesl_llvm_cbe_351_count = 0;
-  unsigned int llvm_cbe_tmp__88;
+  signed short *llvm_cbe_tmp__88;
   static  unsigned long long aesl_llvm_cbe_352_count = 0;
-  signed short *llvm_cbe_tmp__89;
+  unsigned short llvm_cbe_tmp__89;
   static  unsigned long long aesl_llvm_cbe_353_count = 0;
-  unsigned short llvm_cbe_tmp__90;
+  unsigned int llvm_cbe_tmp__90;
   static  unsigned long long aesl_llvm_cbe_354_count = 0;
   unsigned int llvm_cbe_tmp__91;
   static  unsigned long long aesl_llvm_cbe_355_count = 0;
-  unsigned int llvm_cbe_tmp__92;
+  signed short *llvm_cbe_tmp__92;
   static  unsigned long long aesl_llvm_cbe_356_count = 0;
-  signed short *llvm_cbe_tmp__93;
+  unsigned short llvm_cbe_tmp__93;
   static  unsigned long long aesl_llvm_cbe_357_count = 0;
-  unsigned short llvm_cbe_tmp__94;
+  unsigned int llvm_cbe_tmp__94;
   static  unsigned long long aesl_llvm_cbe_358_count = 0;
   unsigned int llvm_cbe_tmp__95;
   static  unsigned long long aesl_llvm_cbe_359_count = 0;
   unsigned int llvm_cbe_tmp__96;
   static  unsigned long long aesl_llvm_cbe_360_count = 0;
-  unsigned int llvm_cbe_tmp__97;
+  unsigned short llvm_cbe_tmp__97;
   static  unsigned long long aesl_llvm_cbe_361_count = 0;
-  float llvm_cbe_tmp__98;
+  unsigned short llvm_cbe_tmp__98;
   static  unsigned long long aesl_llvm_cbe_362_count = 0;
-  float llvm_cbe_tmp__99;
   static  unsigned long long aesl_llvm_cbe_363_count = 0;
   static  unsigned long long aesl_llvm_cbe_364_count = 0;
   static  unsigned long long aesl_llvm_cbe_365_count = 0;
@@ -1224,30 +1222,30 @@ void calculateLayer2_int(signed short *llvm_cbe_Layer1_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_368_count = 0;
   static  unsigned long long aesl_llvm_cbe_369_count = 0;
   static  unsigned long long aesl_llvm_cbe_370_count = 0;
+  unsigned int llvm_cbe_tmp__99;
   static  unsigned long long aesl_llvm_cbe_371_count = 0;
-  unsigned int llvm_cbe_tmp__100;
+  signed short *llvm_cbe_tmp__100;
   static  unsigned long long aesl_llvm_cbe_372_count = 0;
-  signed short *llvm_cbe_tmp__101;
+  unsigned short llvm_cbe_tmp__101;
   static  unsigned long long aesl_llvm_cbe_373_count = 0;
-  unsigned short llvm_cbe_tmp__102;
+  unsigned int llvm_cbe_tmp__102;
   static  unsigned long long aesl_llvm_cbe_374_count = 0;
   unsigned int llvm_cbe_tmp__103;
   static  unsigned long long aesl_llvm_cbe_375_count = 0;
-  unsigned int llvm_cbe_tmp__104;
+  signed short *llvm_cbe_tmp__104;
   static  unsigned long long aesl_llvm_cbe_376_count = 0;
-  signed short *llvm_cbe_tmp__105;
+  unsigned short llvm_cbe_tmp__105;
   static  unsigned long long aesl_llvm_cbe_377_count = 0;
-  unsigned short llvm_cbe_tmp__106;
+  unsigned int llvm_cbe_tmp__106;
   static  unsigned long long aesl_llvm_cbe_378_count = 0;
   unsigned int llvm_cbe_tmp__107;
   static  unsigned long long aesl_llvm_cbe_379_count = 0;
   unsigned int llvm_cbe_tmp__108;
   static  unsigned long long aesl_llvm_cbe_380_count = 0;
-  unsigned int llvm_cbe_tmp__109;
+  unsigned short llvm_cbe_tmp__109;
   static  unsigned long long aesl_llvm_cbe_381_count = 0;
-  float llvm_cbe_tmp__110;
+  unsigned short llvm_cbe_tmp__110;
   static  unsigned long long aesl_llvm_cbe_382_count = 0;
-  float llvm_cbe_tmp__111;
   static  unsigned long long aesl_llvm_cbe_383_count = 0;
   static  unsigned long long aesl_llvm_cbe_384_count = 0;
   static  unsigned long long aesl_llvm_cbe_385_count = 0;
@@ -1256,30 +1254,30 @@ void calculateLayer2_int(signed short *llvm_cbe_Layer1_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_388_count = 0;
   static  unsigned long long aesl_llvm_cbe_389_count = 0;
   static  unsigned long long aesl_llvm_cbe_390_count = 0;
+  unsigned int llvm_cbe_tmp__111;
   static  unsigned long long aesl_llvm_cbe_391_count = 0;
-  unsigned int llvm_cbe_tmp__112;
+  signed short *llvm_cbe_tmp__112;
   static  unsigned long long aesl_llvm_cbe_392_count = 0;
-  signed short *llvm_cbe_tmp__113;
+  unsigned short llvm_cbe_tmp__113;
   static  unsigned long long aesl_llvm_cbe_393_count = 0;
-  unsigned short llvm_cbe_tmp__114;
+  unsigned int llvm_cbe_tmp__114;
   static  unsigned long long aesl_llvm_cbe_394_count = 0;
   unsigned int llvm_cbe_tmp__115;
   static  unsigned long long aesl_llvm_cbe_395_count = 0;
-  unsigned int llvm_cbe_tmp__116;
+  signed short *llvm_cbe_tmp__116;
   static  unsigned long long aesl_llvm_cbe_396_count = 0;
-  signed short *llvm_cbe_tmp__117;
+  unsigned short llvm_cbe_tmp__117;
   static  unsigned long long aesl_llvm_cbe_397_count = 0;
-  unsigned short llvm_cbe_tmp__118;
+  unsigned int llvm_cbe_tmp__118;
   static  unsigned long long aesl_llvm_cbe_398_count = 0;
   unsigned int llvm_cbe_tmp__119;
   static  unsigned long long aesl_llvm_cbe_399_count = 0;
   unsigned int llvm_cbe_tmp__120;
   static  unsigned long long aesl_llvm_cbe_400_count = 0;
-  unsigned int llvm_cbe_tmp__121;
+  unsigned short llvm_cbe_tmp__121;
   static  unsigned long long aesl_llvm_cbe_401_count = 0;
-  float llvm_cbe_tmp__122;
+  unsigned short llvm_cbe_tmp__122;
   static  unsigned long long aesl_llvm_cbe_402_count = 0;
-  float llvm_cbe_tmp__123;
   static  unsigned long long aesl_llvm_cbe_403_count = 0;
   static  unsigned long long aesl_llvm_cbe_404_count = 0;
   static  unsigned long long aesl_llvm_cbe_405_count = 0;
@@ -1288,30 +1286,30 @@ void calculateLayer2_int(signed short *llvm_cbe_Layer1_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_408_count = 0;
   static  unsigned long long aesl_llvm_cbe_409_count = 0;
   static  unsigned long long aesl_llvm_cbe_410_count = 0;
+  unsigned int llvm_cbe_tmp__123;
   static  unsigned long long aesl_llvm_cbe_411_count = 0;
-  unsigned int llvm_cbe_tmp__124;
+  signed short *llvm_cbe_tmp__124;
   static  unsigned long long aesl_llvm_cbe_412_count = 0;
-  signed short *llvm_cbe_tmp__125;
+  unsigned short llvm_cbe_tmp__125;
   static  unsigned long long aesl_llvm_cbe_413_count = 0;
-  unsigned short llvm_cbe_tmp__126;
+  unsigned int llvm_cbe_tmp__126;
   static  unsigned long long aesl_llvm_cbe_414_count = 0;
   unsigned int llvm_cbe_tmp__127;
   static  unsigned long long aesl_llvm_cbe_415_count = 0;
-  unsigned int llvm_cbe_tmp__128;
+  signed short *llvm_cbe_tmp__128;
   static  unsigned long long aesl_llvm_cbe_416_count = 0;
-  signed short *llvm_cbe_tmp__129;
+  unsigned short llvm_cbe_tmp__129;
   static  unsigned long long aesl_llvm_cbe_417_count = 0;
-  unsigned short llvm_cbe_tmp__130;
+  unsigned int llvm_cbe_tmp__130;
   static  unsigned long long aesl_llvm_cbe_418_count = 0;
   unsigned int llvm_cbe_tmp__131;
   static  unsigned long long aesl_llvm_cbe_419_count = 0;
   unsigned int llvm_cbe_tmp__132;
   static  unsigned long long aesl_llvm_cbe_420_count = 0;
-  unsigned int llvm_cbe_tmp__133;
+  unsigned short llvm_cbe_tmp__133;
   static  unsigned long long aesl_llvm_cbe_421_count = 0;
-  float llvm_cbe_tmp__134;
+  unsigned short llvm_cbe_tmp__134;
   static  unsigned long long aesl_llvm_cbe_422_count = 0;
-  float llvm_cbe_tmp__135;
   static  unsigned long long aesl_llvm_cbe_423_count = 0;
   static  unsigned long long aesl_llvm_cbe_424_count = 0;
   static  unsigned long long aesl_llvm_cbe_425_count = 0;
@@ -1320,15 +1318,16 @@ void calculateLayer2_int(signed short *llvm_cbe_Layer1_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_428_count = 0;
   static  unsigned long long aesl_llvm_cbe_429_count = 0;
   static  unsigned long long aesl_llvm_cbe_430_count = 0;
+  unsigned int llvm_cbe_tmp__135;
   static  unsigned long long aesl_llvm_cbe_431_count = 0;
-  unsigned int llvm_cbe_tmp__136;
   static  unsigned long long aesl_llvm_cbe_432_count = 0;
   static  unsigned long long aesl_llvm_cbe_433_count = 0;
   static  unsigned long long aesl_llvm_cbe_434_count = 0;
   static  unsigned long long aesl_llvm_cbe_435_count = 0;
-  static  unsigned long long aesl_llvm_cbe_436_count = 0;
   static  unsigned long long aesl_llvm_cbe_exitcond_count = 0;
+  static  unsigned long long aesl_llvm_cbe_436_count = 0;
   static  unsigned long long aesl_llvm_cbe_437_count = 0;
+  unsigned int llvm_cbe_tmp__136;
   static  unsigned long long aesl_llvm_cbe_438_count = 0;
   double llvm_cbe_tmp__137;
   static  unsigned long long aesl_llvm_cbe_439_count = 0;
@@ -1473,7 +1472,7 @@ printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__146&4294967295ull)));
   do {     /* Syntactic loop '' to make GCC happy */
 llvm_cbe_tmp__150:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%storemerge29 = phi i32 [ 0, %%.preheader8 ], [ %%86, %%77  for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_storemerge29_count);
+printf("\n  %%storemerge29 = phi i32 [ 0, %%.preheader8 ], [ %%86, %%76  for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_storemerge29_count);
   llvm_cbe_storemerge29 = (unsigned int )llvm_cbe_storemerge29__PHI_TEMPORARY;
 if (AESL_DEBUG_TRACE) {
 printf("\nstoremerge29 = 0x%X",llvm_cbe_storemerge29);
@@ -1486,23 +1485,23 @@ printf("\n  %%9 = load i16* %%2, align 2, !dbg !10 for 0x%I64xth hint within @ca
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__69);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%10 = uitofp i16 %%9 to float, !dbg !10 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_312_count);
-  llvm_cbe_tmp__70 = (float )((float )(unsigned short )llvm_cbe_tmp__69);
+printf("\n  %%10 = shl i32 %%storemerge29, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_320_count);
+  llvm_cbe_tmp__70 = (unsigned int )llvm_cbe_storemerge29 << 1u;
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__70, *(int*)(&llvm_cbe_tmp__70));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%11 = shl i32 %%storemerge29, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_321_count);
-  llvm_cbe_tmp__71 = (unsigned int )llvm_cbe_storemerge29 << 1u;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__71);
+printf("\n = 0x%X\n", llvm_cbe_tmp__70);
   llvm_cbe_storemerge37__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
-  llvm_cbe_tmp__72__PHI_TEMPORARY = (float )llvm_cbe_tmp__70;   /* for PHI node */
+  llvm_cbe_tmp__71__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__69;   /* for PHI node */
   goto llvm_cbe__2e_preheader;
 
 llvm_cbe_tmp__152:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%78 = fpext float %%75 to double, !dbg !11 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_438_count);
-  llvm_cbe_tmp__137 = (double )((double )llvm_cbe_tmp__135);
+printf("\n  %%77 = zext i16 %%74 to i32, !dbg !11 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_437_count);
+  llvm_cbe_tmp__136 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__134&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__136);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%78 = sitofp i32 %%77 to double, !dbg !11 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_438_count);
+  llvm_cbe_tmp__137 = (double )((double )(signed int )llvm_cbe_tmp__136);
 if (AESL_DEBUG_TRACE)
 printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__137, *(long long*)(&llvm_cbe_tmp__137));
 if (AESL_DEBUG_TRACE)
@@ -1563,356 +1562,356 @@ printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__145&4294967295ull)));
   do {     /* Syntactic loop '.preheader' to make GCC happy */
 llvm_cbe__2e_preheader:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%storemerge37 = phi i32 [ 0, %%8 ], [ %%76, %%.preheader  for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_storemerge37_count);
+printf("\n  %%storemerge37 = phi i32 [ 0, %%8 ], [ %%75, %%.preheader  for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_storemerge37_count);
   llvm_cbe_storemerge37 = (unsigned int )llvm_cbe_storemerge37__PHI_TEMPORARY;
 if (AESL_DEBUG_TRACE) {
 printf("\nstoremerge37 = 0x%X",llvm_cbe_storemerge37);
 printf("\n = 0x%X",0u);
-printf("\n = 0x%X",llvm_cbe_tmp__136);
+printf("\n = 0x%X",llvm_cbe_tmp__135);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%12 = phi float [ %%10, %%8 ], [ %%75, %%.preheader  for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_323_count);
-  llvm_cbe_tmp__72 = (float )llvm_cbe_tmp__72__PHI_TEMPORARY;
+printf("\n  %%11 = phi i16 [ %%9, %%8 ], [ %%74, %%.preheader  for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_322_count);
+  llvm_cbe_tmp__71 = (unsigned short )llvm_cbe_tmp__71__PHI_TEMPORARY;
 if (AESL_DEBUG_TRACE) {
-printf("\n = %f",llvm_cbe_tmp__72);
-printf("\n = %f",llvm_cbe_tmp__70);
-printf("\n = %f",llvm_cbe_tmp__135);
+printf("\n = 0x%X",llvm_cbe_tmp__71);
+printf("\n = 0x%X",llvm_cbe_tmp__69);
+printf("\n = 0x%X",llvm_cbe_tmp__134);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%13 = mul nsw i32 %%storemerge37, 5, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_328_count);
-  llvm_cbe_tmp__73 = (unsigned int )((unsigned int )(llvm_cbe_storemerge37&4294967295ull)) * ((unsigned int )(5u&4294967295ull));
+printf("\n  %%12 = mul nsw i32 %%storemerge37, 5, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_327_count);
+  llvm_cbe_tmp__72 = (unsigned int )((unsigned int )(llvm_cbe_storemerge37&4294967295ull)) * ((unsigned int )(5u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__72&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%13 = add i32 %%3, %%12, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_328_count);
+  llvm_cbe_tmp__73 = (unsigned int )((unsigned int )(llvm_cbe_tmp__64&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__72&4294967295ull));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__73&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%14 = add i32 %%3, %%13, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_329_count);
-  llvm_cbe_tmp__74 = (unsigned int )((unsigned int )(llvm_cbe_tmp__64&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__73&4294967295ull));
+printf("\n  %%14 = add nsw i32 %%storemerge37, %%5, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_329_count);
+  llvm_cbe_tmp__74 = (unsigned int )((unsigned int )(llvm_cbe_storemerge37&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__66&4294967295ull));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__74&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%15 = add nsw i32 %%storemerge37, %%5, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_330_count);
-  llvm_cbe_tmp__75 = (unsigned int )((unsigned int )(llvm_cbe_storemerge37&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__66&4294967295ull));
+printf("\n  %%15 = mul nsw i32 %%14, 29, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_330_count);
+  llvm_cbe_tmp__75 = (unsigned int )((unsigned int )(llvm_cbe_tmp__74&4294967295ull)) * ((unsigned int )(29u&4294967295ull));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__75&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%16 = mul nsw i32 %%15, 29, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_331_count);
-  llvm_cbe_tmp__76 = (unsigned int )((unsigned int )(llvm_cbe_tmp__75&4294967295ull)) * ((unsigned int )(29u&4294967295ull));
+printf("\n  %%16 = add i32 %%15, %%10, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_331_count);
+  llvm_cbe_tmp__76 = (unsigned int )((unsigned int )(llvm_cbe_tmp__75&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__70&4294967295ull));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__76&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%17 = add i32 %%16, %%11, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_332_count);
-  llvm_cbe_tmp__77 = (unsigned int )((unsigned int )(llvm_cbe_tmp__76&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__71&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__77&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%18 = getelementptr inbounds i16* %%Layer1_Weights_CPU, i32 %%14, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_333_count);
-  llvm_cbe_tmp__78 = (signed short *)(&llvm_cbe_Layer1_Weights_CPU[(((signed int )llvm_cbe_tmp__74))]);
+printf("\n  %%17 = getelementptr inbounds i16* %%Layer1_Weights_CPU, i32 %%13, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_332_count);
+  llvm_cbe_tmp__77 = (signed short *)(&llvm_cbe_Layer1_Weights_CPU[(((signed int )llvm_cbe_tmp__73))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__74));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__73));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%19 = load i16* %%18, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_334_count);
-  llvm_cbe_tmp__79 = (unsigned short )*llvm_cbe_tmp__78;
+printf("\n  %%18 = load i16* %%17, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_333_count);
+  llvm_cbe_tmp__78 = (unsigned short )*llvm_cbe_tmp__77;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__78);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%19 = zext i16 %%18 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_334_count);
+  llvm_cbe_tmp__79 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__78&65535U);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__79);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%20 = zext i16 %%19 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_335_count);
-  llvm_cbe_tmp__80 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__79&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__80);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%21 = getelementptr inbounds i16* %%Layer1_Neurons_CPU, i32 %%17, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_336_count);
-  llvm_cbe_tmp__81 = (signed short *)(&llvm_cbe_Layer1_Neurons_CPU[(((signed int )llvm_cbe_tmp__77))]);
+printf("\n  %%20 = getelementptr inbounds i16* %%Layer1_Neurons_CPU, i32 %%16, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_335_count);
+  llvm_cbe_tmp__80 = (signed short *)(&llvm_cbe_Layer1_Neurons_CPU[(((signed int )llvm_cbe_tmp__76))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__77));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__76));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%22 = load i16* %%21, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_337_count);
-  llvm_cbe_tmp__82 = (unsigned short )*llvm_cbe_tmp__81;
+printf("\n  %%21 = load i16* %%20, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_336_count);
+  llvm_cbe_tmp__81 = (unsigned short )*llvm_cbe_tmp__80;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__81);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%22 = zext i16 %%21 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_337_count);
+  llvm_cbe_tmp__82 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__81&65535U);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__82);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%23 = zext i16 %%22 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_338_count);
-  llvm_cbe_tmp__83 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__82&65535U);
+printf("\n  %%23 = mul nsw i32 %%22, %%19, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_338_count);
+  llvm_cbe_tmp__83 = (unsigned int )((unsigned int )(llvm_cbe_tmp__82&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__79&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__83);
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__83&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%24 = mul nsw i32 %%23, %%20, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_339_count);
-  llvm_cbe_tmp__84 = (unsigned int )((unsigned int )(llvm_cbe_tmp__83&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__80&4294967295ull));
+printf("\n  %%24 = lshr i32 %%23, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_339_count);
+  llvm_cbe_tmp__84 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__83&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__84&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%25 = lshr i32 %%24, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_340_count);
-  llvm_cbe_tmp__85 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__84&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+printf("\n  %%25 = trunc i32 %%24 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_340_count);
+  llvm_cbe_tmp__85 = (unsigned short )((unsigned short )llvm_cbe_tmp__84&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__85&4294967295ull)));
+printf("\n = 0x%X\n", llvm_cbe_tmp__85);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%26 = sitofp i32 %%25 to float, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_341_count);
-  llvm_cbe_tmp__86 = (float )((float )(signed int )llvm_cbe_tmp__85);
+printf("\n  %%26 = add i16 %%25, %%11, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_341_count);
+  llvm_cbe_tmp__86 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__85&65535ull)) + ((unsigned short )(llvm_cbe_tmp__71&65535ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__86, *(int*)(&llvm_cbe_tmp__86));
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__86&65535ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%27 = fadd float %%12, %%26, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_342_count);
-  llvm_cbe_tmp__87 = (float )((float )(llvm_cbe_tmp__72 + llvm_cbe_tmp__86));
+printf("\n  %%27 = add i32 %%13, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_350_count);
+  llvm_cbe_tmp__87 = (unsigned int )((unsigned int )(llvm_cbe_tmp__73&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__87, *(int*)(&llvm_cbe_tmp__87));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__87&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%28 = add i32 %%14, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_351_count);
-  llvm_cbe_tmp__88 = (unsigned int )((unsigned int )(llvm_cbe_tmp__74&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__88&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%29 = getelementptr inbounds i16* %%Layer1_Weights_CPU, i32 %%28, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_352_count);
-  llvm_cbe_tmp__89 = (signed short *)(&llvm_cbe_Layer1_Weights_CPU[(((signed int )llvm_cbe_tmp__88))]);
+printf("\n  %%28 = getelementptr inbounds i16* %%Layer1_Weights_CPU, i32 %%27, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_351_count);
+  llvm_cbe_tmp__88 = (signed short *)(&llvm_cbe_Layer1_Weights_CPU[(((signed int )llvm_cbe_tmp__87))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__88));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__87));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%30 = load i16* %%29, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_353_count);
-  llvm_cbe_tmp__90 = (unsigned short )*llvm_cbe_tmp__89;
+printf("\n  %%29 = load i16* %%28, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_352_count);
+  llvm_cbe_tmp__89 = (unsigned short )*llvm_cbe_tmp__88;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__89);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%30 = zext i16 %%29 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_353_count);
+  llvm_cbe_tmp__90 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__89&65535U);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__90);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%31 = zext i16 %%30 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_354_count);
-  llvm_cbe_tmp__91 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__90&65535U);
+printf("\n  %%31 = add i32 %%16, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_354_count);
+  llvm_cbe_tmp__91 = (unsigned int )((unsigned int )(llvm_cbe_tmp__76&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__91);
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__91&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%32 = add i32 %%17, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_355_count);
-  llvm_cbe_tmp__92 = (unsigned int )((unsigned int )(llvm_cbe_tmp__77&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__92&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%33 = getelementptr inbounds i16* %%Layer1_Neurons_CPU, i32 %%32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_356_count);
-  llvm_cbe_tmp__93 = (signed short *)(&llvm_cbe_Layer1_Neurons_CPU[(((signed int )llvm_cbe_tmp__92))]);
+printf("\n  %%32 = getelementptr inbounds i16* %%Layer1_Neurons_CPU, i32 %%31, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_355_count);
+  llvm_cbe_tmp__92 = (signed short *)(&llvm_cbe_Layer1_Neurons_CPU[(((signed int )llvm_cbe_tmp__91))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__92));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__91));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%34 = load i16* %%33, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_357_count);
-  llvm_cbe_tmp__94 = (unsigned short )*llvm_cbe_tmp__93;
+printf("\n  %%33 = load i16* %%32, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_356_count);
+  llvm_cbe_tmp__93 = (unsigned short )*llvm_cbe_tmp__92;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__93);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%34 = zext i16 %%33 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_357_count);
+  llvm_cbe_tmp__94 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__93&65535U);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__94);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%35 = zext i16 %%34 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_358_count);
-  llvm_cbe_tmp__95 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__94&65535U);
+printf("\n  %%35 = mul nsw i32 %%34, %%30, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_358_count);
+  llvm_cbe_tmp__95 = (unsigned int )((unsigned int )(llvm_cbe_tmp__94&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__90&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__95);
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__95&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%36 = mul nsw i32 %%35, %%31, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_359_count);
-  llvm_cbe_tmp__96 = (unsigned int )((unsigned int )(llvm_cbe_tmp__95&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__91&4294967295ull));
+printf("\n  %%36 = lshr i32 %%35, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_359_count);
+  llvm_cbe_tmp__96 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__95&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__96&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%37 = lshr i32 %%36, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_360_count);
-  llvm_cbe_tmp__97 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__96&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+printf("\n  %%37 = trunc i32 %%36 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_360_count);
+  llvm_cbe_tmp__97 = (unsigned short )((unsigned short )llvm_cbe_tmp__96&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__97&4294967295ull)));
+printf("\n = 0x%X\n", llvm_cbe_tmp__97);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%38 = sitofp i32 %%37 to float, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_361_count);
-  llvm_cbe_tmp__98 = (float )((float )(signed int )llvm_cbe_tmp__97);
+printf("\n  %%38 = add i16 %%37, %%26, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_361_count);
+  llvm_cbe_tmp__98 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__97&65535ull)) + ((unsigned short )(llvm_cbe_tmp__86&65535ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__98, *(int*)(&llvm_cbe_tmp__98));
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__98&65535ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%39 = fadd float %%27, %%38, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_362_count);
-  llvm_cbe_tmp__99 = (float )((float )(llvm_cbe_tmp__87 + llvm_cbe_tmp__98));
+printf("\n  %%39 = add i32 %%13, 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_370_count);
+  llvm_cbe_tmp__99 = (unsigned int )((unsigned int )(llvm_cbe_tmp__73&4294967295ull)) + ((unsigned int )(2u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__99, *(int*)(&llvm_cbe_tmp__99));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__99&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%40 = add i32 %%14, 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_371_count);
-  llvm_cbe_tmp__100 = (unsigned int )((unsigned int )(llvm_cbe_tmp__74&4294967295ull)) + ((unsigned int )(2u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__100&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%41 = getelementptr inbounds i16* %%Layer1_Weights_CPU, i32 %%40, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_372_count);
-  llvm_cbe_tmp__101 = (signed short *)(&llvm_cbe_Layer1_Weights_CPU[(((signed int )llvm_cbe_tmp__100))]);
+printf("\n  %%40 = getelementptr inbounds i16* %%Layer1_Weights_CPU, i32 %%39, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_371_count);
+  llvm_cbe_tmp__100 = (signed short *)(&llvm_cbe_Layer1_Weights_CPU[(((signed int )llvm_cbe_tmp__99))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__100));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__99));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%42 = load i16* %%41, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_373_count);
-  llvm_cbe_tmp__102 = (unsigned short )*llvm_cbe_tmp__101;
+printf("\n  %%41 = load i16* %%40, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_372_count);
+  llvm_cbe_tmp__101 = (unsigned short )*llvm_cbe_tmp__100;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__101);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%42 = zext i16 %%41 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_373_count);
+  llvm_cbe_tmp__102 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__101&65535U);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__102);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%43 = zext i16 %%42 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_374_count);
-  llvm_cbe_tmp__103 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__102&65535U);
+printf("\n  %%43 = add i32 %%16, 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_374_count);
+  llvm_cbe_tmp__103 = (unsigned int )((unsigned int )(llvm_cbe_tmp__76&4294967295ull)) + ((unsigned int )(2u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__103);
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__103&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%44 = add i32 %%17, 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_375_count);
-  llvm_cbe_tmp__104 = (unsigned int )((unsigned int )(llvm_cbe_tmp__77&4294967295ull)) + ((unsigned int )(2u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__104&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%45 = getelementptr inbounds i16* %%Layer1_Neurons_CPU, i32 %%44, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_376_count);
-  llvm_cbe_tmp__105 = (signed short *)(&llvm_cbe_Layer1_Neurons_CPU[(((signed int )llvm_cbe_tmp__104))]);
+printf("\n  %%44 = getelementptr inbounds i16* %%Layer1_Neurons_CPU, i32 %%43, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_375_count);
+  llvm_cbe_tmp__104 = (signed short *)(&llvm_cbe_Layer1_Neurons_CPU[(((signed int )llvm_cbe_tmp__103))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__104));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__103));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%46 = load i16* %%45, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_377_count);
-  llvm_cbe_tmp__106 = (unsigned short )*llvm_cbe_tmp__105;
+printf("\n  %%45 = load i16* %%44, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_376_count);
+  llvm_cbe_tmp__105 = (unsigned short )*llvm_cbe_tmp__104;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__105);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%46 = zext i16 %%45 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_377_count);
+  llvm_cbe_tmp__106 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__105&65535U);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__106);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%47 = zext i16 %%46 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_378_count);
-  llvm_cbe_tmp__107 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__106&65535U);
+printf("\n  %%47 = mul nsw i32 %%46, %%42, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_378_count);
+  llvm_cbe_tmp__107 = (unsigned int )((unsigned int )(llvm_cbe_tmp__106&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__102&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__107);
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__107&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%48 = mul nsw i32 %%47, %%43, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_379_count);
-  llvm_cbe_tmp__108 = (unsigned int )((unsigned int )(llvm_cbe_tmp__107&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__103&4294967295ull));
+printf("\n  %%48 = lshr i32 %%47, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_379_count);
+  llvm_cbe_tmp__108 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__107&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__108&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%49 = lshr i32 %%48, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_380_count);
-  llvm_cbe_tmp__109 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__108&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+printf("\n  %%49 = trunc i32 %%48 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_380_count);
+  llvm_cbe_tmp__109 = (unsigned short )((unsigned short )llvm_cbe_tmp__108&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__109&4294967295ull)));
+printf("\n = 0x%X\n", llvm_cbe_tmp__109);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%50 = sitofp i32 %%49 to float, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_381_count);
-  llvm_cbe_tmp__110 = (float )((float )(signed int )llvm_cbe_tmp__109);
+printf("\n  %%50 = add i16 %%49, %%38, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_381_count);
+  llvm_cbe_tmp__110 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__109&65535ull)) + ((unsigned short )(llvm_cbe_tmp__98&65535ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__110, *(int*)(&llvm_cbe_tmp__110));
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__110&65535ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%51 = fadd float %%39, %%50, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_382_count);
-  llvm_cbe_tmp__111 = (float )((float )(llvm_cbe_tmp__99 + llvm_cbe_tmp__110));
+printf("\n  %%51 = add i32 %%13, 3, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_390_count);
+  llvm_cbe_tmp__111 = (unsigned int )((unsigned int )(llvm_cbe_tmp__73&4294967295ull)) + ((unsigned int )(3u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__111, *(int*)(&llvm_cbe_tmp__111));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__111&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%52 = add i32 %%14, 3, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_391_count);
-  llvm_cbe_tmp__112 = (unsigned int )((unsigned int )(llvm_cbe_tmp__74&4294967295ull)) + ((unsigned int )(3u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__112&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%53 = getelementptr inbounds i16* %%Layer1_Weights_CPU, i32 %%52, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_392_count);
-  llvm_cbe_tmp__113 = (signed short *)(&llvm_cbe_Layer1_Weights_CPU[(((signed int )llvm_cbe_tmp__112))]);
+printf("\n  %%52 = getelementptr inbounds i16* %%Layer1_Weights_CPU, i32 %%51, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_391_count);
+  llvm_cbe_tmp__112 = (signed short *)(&llvm_cbe_Layer1_Weights_CPU[(((signed int )llvm_cbe_tmp__111))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__112));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__111));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%54 = load i16* %%53, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_393_count);
-  llvm_cbe_tmp__114 = (unsigned short )*llvm_cbe_tmp__113;
+printf("\n  %%53 = load i16* %%52, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_392_count);
+  llvm_cbe_tmp__113 = (unsigned short )*llvm_cbe_tmp__112;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__113);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%54 = zext i16 %%53 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_393_count);
+  llvm_cbe_tmp__114 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__113&65535U);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__114);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%55 = zext i16 %%54 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_394_count);
-  llvm_cbe_tmp__115 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__114&65535U);
+printf("\n  %%55 = add i32 %%16, 3, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_394_count);
+  llvm_cbe_tmp__115 = (unsigned int )((unsigned int )(llvm_cbe_tmp__76&4294967295ull)) + ((unsigned int )(3u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__115);
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__115&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%56 = add i32 %%17, 3, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_395_count);
-  llvm_cbe_tmp__116 = (unsigned int )((unsigned int )(llvm_cbe_tmp__77&4294967295ull)) + ((unsigned int )(3u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__116&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%57 = getelementptr inbounds i16* %%Layer1_Neurons_CPU, i32 %%56, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_396_count);
-  llvm_cbe_tmp__117 = (signed short *)(&llvm_cbe_Layer1_Neurons_CPU[(((signed int )llvm_cbe_tmp__116))]);
+printf("\n  %%56 = getelementptr inbounds i16* %%Layer1_Neurons_CPU, i32 %%55, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_395_count);
+  llvm_cbe_tmp__116 = (signed short *)(&llvm_cbe_Layer1_Neurons_CPU[(((signed int )llvm_cbe_tmp__115))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__116));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__115));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%58 = load i16* %%57, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_397_count);
-  llvm_cbe_tmp__118 = (unsigned short )*llvm_cbe_tmp__117;
+printf("\n  %%57 = load i16* %%56, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_396_count);
+  llvm_cbe_tmp__117 = (unsigned short )*llvm_cbe_tmp__116;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__117);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%58 = zext i16 %%57 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_397_count);
+  llvm_cbe_tmp__118 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__117&65535U);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__118);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%59 = zext i16 %%58 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_398_count);
-  llvm_cbe_tmp__119 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__118&65535U);
+printf("\n  %%59 = mul nsw i32 %%58, %%54, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_398_count);
+  llvm_cbe_tmp__119 = (unsigned int )((unsigned int )(llvm_cbe_tmp__118&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__114&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__119);
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__119&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%60 = mul nsw i32 %%59, %%55, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_399_count);
-  llvm_cbe_tmp__120 = (unsigned int )((unsigned int )(llvm_cbe_tmp__119&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__115&4294967295ull));
+printf("\n  %%60 = lshr i32 %%59, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_399_count);
+  llvm_cbe_tmp__120 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__119&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__120&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%61 = lshr i32 %%60, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_400_count);
-  llvm_cbe_tmp__121 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__120&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+printf("\n  %%61 = trunc i32 %%60 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_400_count);
+  llvm_cbe_tmp__121 = (unsigned short )((unsigned short )llvm_cbe_tmp__120&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__121&4294967295ull)));
+printf("\n = 0x%X\n", llvm_cbe_tmp__121);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%62 = sitofp i32 %%61 to float, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_401_count);
-  llvm_cbe_tmp__122 = (float )((float )(signed int )llvm_cbe_tmp__121);
+printf("\n  %%62 = add i16 %%61, %%50, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_401_count);
+  llvm_cbe_tmp__122 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__121&65535ull)) + ((unsigned short )(llvm_cbe_tmp__110&65535ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__122, *(int*)(&llvm_cbe_tmp__122));
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__122&65535ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%63 = fadd float %%51, %%62, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_402_count);
-  llvm_cbe_tmp__123 = (float )((float )(llvm_cbe_tmp__111 + llvm_cbe_tmp__122));
+printf("\n  %%63 = add i32 %%13, 4, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_410_count);
+  llvm_cbe_tmp__123 = (unsigned int )((unsigned int )(llvm_cbe_tmp__73&4294967295ull)) + ((unsigned int )(4u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__123, *(int*)(&llvm_cbe_tmp__123));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__123&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%64 = add i32 %%14, 4, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_411_count);
-  llvm_cbe_tmp__124 = (unsigned int )((unsigned int )(llvm_cbe_tmp__74&4294967295ull)) + ((unsigned int )(4u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__124&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%65 = getelementptr inbounds i16* %%Layer1_Weights_CPU, i32 %%64, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_412_count);
-  llvm_cbe_tmp__125 = (signed short *)(&llvm_cbe_Layer1_Weights_CPU[(((signed int )llvm_cbe_tmp__124))]);
+printf("\n  %%64 = getelementptr inbounds i16* %%Layer1_Weights_CPU, i32 %%63, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_411_count);
+  llvm_cbe_tmp__124 = (signed short *)(&llvm_cbe_Layer1_Weights_CPU[(((signed int )llvm_cbe_tmp__123))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__124));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__123));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%66 = load i16* %%65, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_413_count);
-  llvm_cbe_tmp__126 = (unsigned short )*llvm_cbe_tmp__125;
+printf("\n  %%65 = load i16* %%64, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_412_count);
+  llvm_cbe_tmp__125 = (unsigned short )*llvm_cbe_tmp__124;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__125);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%66 = zext i16 %%65 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_413_count);
+  llvm_cbe_tmp__126 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__125&65535U);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__126);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%67 = zext i16 %%66 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_414_count);
-  llvm_cbe_tmp__127 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__126&65535U);
+printf("\n  %%67 = add i32 %%16, 4, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_414_count);
+  llvm_cbe_tmp__127 = (unsigned int )((unsigned int )(llvm_cbe_tmp__76&4294967295ull)) + ((unsigned int )(4u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__127);
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__127&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%68 = add i32 %%17, 4, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_415_count);
-  llvm_cbe_tmp__128 = (unsigned int )((unsigned int )(llvm_cbe_tmp__77&4294967295ull)) + ((unsigned int )(4u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__128&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%69 = getelementptr inbounds i16* %%Layer1_Neurons_CPU, i32 %%68, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_416_count);
-  llvm_cbe_tmp__129 = (signed short *)(&llvm_cbe_Layer1_Neurons_CPU[(((signed int )llvm_cbe_tmp__128))]);
+printf("\n  %%68 = getelementptr inbounds i16* %%Layer1_Neurons_CPU, i32 %%67, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_415_count);
+  llvm_cbe_tmp__128 = (signed short *)(&llvm_cbe_Layer1_Neurons_CPU[(((signed int )llvm_cbe_tmp__127))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__128));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__127));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%70 = load i16* %%69, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_417_count);
-  llvm_cbe_tmp__130 = (unsigned short )*llvm_cbe_tmp__129;
+printf("\n  %%69 = load i16* %%68, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_416_count);
+  llvm_cbe_tmp__129 = (unsigned short )*llvm_cbe_tmp__128;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__129);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%70 = zext i16 %%69 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_417_count);
+  llvm_cbe_tmp__130 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__129&65535U);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__130);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%71 = zext i16 %%70 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_418_count);
-  llvm_cbe_tmp__131 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__130&65535U);
+printf("\n  %%71 = mul nsw i32 %%70, %%66, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_418_count);
+  llvm_cbe_tmp__131 = (unsigned int )((unsigned int )(llvm_cbe_tmp__130&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__126&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__131);
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__131&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%72 = mul nsw i32 %%71, %%67, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_419_count);
-  llvm_cbe_tmp__132 = (unsigned int )((unsigned int )(llvm_cbe_tmp__131&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__127&4294967295ull));
+printf("\n  %%72 = lshr i32 %%71, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_419_count);
+  llvm_cbe_tmp__132 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__131&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__132&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%73 = lshr i32 %%72, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_420_count);
-  llvm_cbe_tmp__133 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__132&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+printf("\n  %%73 = trunc i32 %%72 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_420_count);
+  llvm_cbe_tmp__133 = (unsigned short )((unsigned short )llvm_cbe_tmp__132&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__133&4294967295ull)));
+printf("\n = 0x%X\n", llvm_cbe_tmp__133);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%74 = sitofp i32 %%73 to float, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_421_count);
-  llvm_cbe_tmp__134 = (float )((float )(signed int )llvm_cbe_tmp__133);
+printf("\n  %%74 = add i16 %%73, %%62, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_421_count);
+  llvm_cbe_tmp__134 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__133&65535ull)) + ((unsigned short )(llvm_cbe_tmp__122&65535ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__134, *(int*)(&llvm_cbe_tmp__134));
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__134&65535ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%75 = fadd float %%63, %%74, !dbg !9 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_422_count);
-  llvm_cbe_tmp__135 = (float )((float )(llvm_cbe_tmp__123 + llvm_cbe_tmp__134));
+printf("\n  %%75 = add nsw i32 %%storemerge37, 1, !dbg !12 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_430_count);
+  llvm_cbe_tmp__135 = (unsigned int )((unsigned int )(llvm_cbe_storemerge37&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__135, *(int*)(&llvm_cbe_tmp__135));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%76 = add nsw i32 %%storemerge37, 1, !dbg !12 for 0x%I64xth hint within @calculateLayer2_int  --> \n", ++aesl_llvm_cbe_431_count);
-  llvm_cbe_tmp__136 = (unsigned int )((unsigned int )(llvm_cbe_storemerge37&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__136&4294967295ull)));
-  if (((llvm_cbe_tmp__136&4294967295U) == (5u&4294967295U))) {
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__135&4294967295ull)));
+  if (((llvm_cbe_tmp__135&4294967295U) == (5u&4294967295U))) {
     goto llvm_cbe_tmp__152;
   } else {
-    llvm_cbe_storemerge37__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__136;   /* for PHI node */
-    llvm_cbe_tmp__72__PHI_TEMPORARY = (float )llvm_cbe_tmp__135;   /* for PHI node */
+    llvm_cbe_storemerge37__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__135;   /* for PHI node */
+    llvm_cbe_tmp__71__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__134;   /* for PHI node */
     goto llvm_cbe__2e_preheader;
   }
 
@@ -1927,7 +1926,7 @@ llvm_cbe_tmp__149:
 }
 
 
-void calculateLayer3_int(signed short *llvm_cbe_Layer2_Neurons_CPU, signed short *llvm_cbe_Layer2_Weights_CPU, signed short *llvm_cbe_Layer3_Neurons_CPU) {
+void calculateLayer3_int_ref(signed short *llvm_cbe_Layer2_Neurons_CPU, signed short *llvm_cbe_Layer2_Weights_CPU, signed short *llvm_cbe_Layer3_Neurons_CPU) {
   static  unsigned long long aesl_llvm_cbe_470_count = 0;
   static  unsigned long long aesl_llvm_cbe_471_count = 0;
   static  unsigned long long aesl_llvm_cbe_472_count = 0;
@@ -2003,7 +2002,6 @@ void calculateLayer3_int(signed short *llvm_cbe_Layer2_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_526_count = 0;
   unsigned short llvm_cbe_tmp__160;
   static  unsigned long long aesl_llvm_cbe_527_count = 0;
-  float llvm_cbe_tmp__161;
   static  unsigned long long aesl_llvm_cbe_528_count = 0;
   static  unsigned long long aesl_llvm_cbe_529_count = 0;
   static  unsigned long long aesl_llvm_cbe_530_count = 0;
@@ -2028,14 +2026,14 @@ void calculateLayer3_int(signed short *llvm_cbe_Layer2_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_549_count = 0;
   static  unsigned long long aesl_llvm_cbe_550_count = 0;
   static  unsigned long long aesl_llvm_cbe_551_count = 0;
-  unsigned int llvm_cbe_tmp__162;
+  unsigned int llvm_cbe_tmp__161;
   static  unsigned long long aesl_llvm_cbe_552_count = 0;
   static  unsigned long long aesl_llvm_cbe_storemerge37_count = 0;
   unsigned int llvm_cbe_storemerge37;
   unsigned int llvm_cbe_storemerge37__PHI_TEMPORARY;
   static  unsigned long long aesl_llvm_cbe_553_count = 0;
-  float llvm_cbe_tmp__163;
-  float llvm_cbe_tmp__163__PHI_TEMPORARY;
+  unsigned short llvm_cbe_tmp__162;
+  unsigned short llvm_cbe_tmp__162__PHI_TEMPORARY;
   static  unsigned long long aesl_llvm_cbe_554_count = 0;
   static  unsigned long long aesl_llvm_cbe_555_count = 0;
   static  unsigned long long aesl_llvm_cbe_556_count = 0;
@@ -2051,154 +2049,178 @@ void calculateLayer3_int(signed short *llvm_cbe_Layer2_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_566_count = 0;
   static  unsigned long long aesl_llvm_cbe_567_count = 0;
   static  unsigned long long aesl_llvm_cbe_568_count = 0;
-  unsigned int llvm_cbe_tmp__164;
+  unsigned int llvm_cbe_tmp__163;
   static  unsigned long long aesl_llvm_cbe_569_count = 0;
-  unsigned int llvm_cbe_tmp__165;
+  unsigned int llvm_cbe_tmp__164;
   static  unsigned long long aesl_llvm_cbe_570_count = 0;
-  unsigned int llvm_cbe_tmp__166;
+  unsigned int llvm_cbe_tmp__165;
   static  unsigned long long aesl_llvm_cbe_571_count = 0;
-  unsigned int llvm_cbe_tmp__167;
+  unsigned int llvm_cbe_tmp__166;
   static  unsigned long long aesl_llvm_cbe_572_count = 0;
-  unsigned int llvm_cbe_tmp__168;
+  unsigned int llvm_cbe_tmp__167;
   static  unsigned long long aesl_llvm_cbe_573_count = 0;
-  unsigned int llvm_cbe_tmp__169;
+  unsigned int llvm_cbe_tmp__168;
   static  unsigned long long aesl_llvm_cbe_574_count = 0;
-  unsigned int llvm_cbe_tmp__170;
+  unsigned int llvm_cbe_tmp__169;
   static  unsigned long long aesl_llvm_cbe_575_count = 0;
-  unsigned int llvm_cbe_tmp__171;
+  unsigned int llvm_cbe_tmp__170;
   static  unsigned long long aesl_llvm_cbe_576_count = 0;
   static  unsigned long long aesl_llvm_cbe_storemerge45_count = 0;
   unsigned int llvm_cbe_storemerge45;
   unsigned int llvm_cbe_storemerge45__PHI_TEMPORARY;
   static  unsigned long long aesl_llvm_cbe_577_count = 0;
-  float llvm_cbe_tmp__172;
-  float llvm_cbe_tmp__172__PHI_TEMPORARY;
+  unsigned short llvm_cbe_tmp__171;
+  unsigned short llvm_cbe_tmp__171__PHI_TEMPORARY;
   static  unsigned long long aesl_llvm_cbe_578_count = 0;
-  unsigned int llvm_cbe_tmp__173;
+  unsigned int llvm_cbe_tmp__172;
   static  unsigned long long aesl_llvm_cbe_579_count = 0;
-  unsigned int llvm_cbe_tmp__174;
+  unsigned int llvm_cbe_tmp__173;
   static  unsigned long long aesl_llvm_cbe_580_count = 0;
-  unsigned int llvm_cbe_tmp__175;
+  unsigned int llvm_cbe_tmp__174;
   static  unsigned long long aesl_llvm_cbe_581_count = 0;
-  signed short *llvm_cbe_tmp__176;
+  signed short *llvm_cbe_tmp__175;
   static  unsigned long long aesl_llvm_cbe_582_count = 0;
-  unsigned short llvm_cbe_tmp__177;
+  unsigned short llvm_cbe_tmp__176;
   static  unsigned long long aesl_llvm_cbe_583_count = 0;
-  unsigned int llvm_cbe_tmp__178;
+  unsigned int llvm_cbe_tmp__177;
   static  unsigned long long aesl_llvm_cbe_584_count = 0;
-  unsigned int llvm_cbe_tmp__179;
+  unsigned int llvm_cbe_tmp__178;
   static  unsigned long long aesl_llvm_cbe_585_count = 0;
-  unsigned int llvm_cbe_tmp__180;
+  unsigned int llvm_cbe_tmp__179;
   static  unsigned long long aesl_llvm_cbe_586_count = 0;
-  signed short *llvm_cbe_tmp__181;
+  signed short *llvm_cbe_tmp__180;
   static  unsigned long long aesl_llvm_cbe_587_count = 0;
-  unsigned short llvm_cbe_tmp__182;
+  unsigned short llvm_cbe_tmp__181;
   static  unsigned long long aesl_llvm_cbe_588_count = 0;
-  unsigned int llvm_cbe_tmp__183;
+  unsigned int llvm_cbe_tmp__182;
   static  unsigned long long aesl_llvm_cbe_589_count = 0;
-  unsigned int llvm_cbe_tmp__184;
+  unsigned int llvm_cbe_tmp__183;
   static  unsigned long long aesl_llvm_cbe_590_count = 0;
-  unsigned int llvm_cbe_tmp__185;
+  unsigned int llvm_cbe_tmp__184;
   static  unsigned long long aesl_llvm_cbe_591_count = 0;
-  float llvm_cbe_tmp__186;
+  unsigned short llvm_cbe_tmp__185;
   static  unsigned long long aesl_llvm_cbe_592_count = 0;
-  float llvm_cbe_tmp__187;
+  unsigned int llvm_cbe_tmp__186;
   static  unsigned long long aesl_llvm_cbe_593_count = 0;
+  signed short *llvm_cbe_tmp__187;
   static  unsigned long long aesl_llvm_cbe_594_count = 0;
+  unsigned short llvm_cbe_tmp__188;
   static  unsigned long long aesl_llvm_cbe_595_count = 0;
+  unsigned int llvm_cbe_tmp__189;
   static  unsigned long long aesl_llvm_cbe_596_count = 0;
+  unsigned int llvm_cbe_tmp__190;
   static  unsigned long long aesl_llvm_cbe_597_count = 0;
+  signed short *llvm_cbe_tmp__191;
   static  unsigned long long aesl_llvm_cbe_598_count = 0;
+  unsigned short llvm_cbe_tmp__192;
   static  unsigned long long aesl_llvm_cbe_599_count = 0;
+  unsigned int llvm_cbe_tmp__193;
   static  unsigned long long aesl_llvm_cbe_600_count = 0;
+  unsigned int llvm_cbe_tmp__194;
   static  unsigned long long aesl_llvm_cbe_601_count = 0;
-  unsigned int llvm_cbe_tmp__188;
-  static  unsigned long long aesl_llvm_cbe_602_count = 0;
-  signed short *llvm_cbe_tmp__189;
-  static  unsigned long long aesl_llvm_cbe_603_count = 0;
-  unsigned short llvm_cbe_tmp__190;
-  static  unsigned long long aesl_llvm_cbe_604_count = 0;
-  unsigned int llvm_cbe_tmp__191;
-  static  unsigned long long aesl_llvm_cbe_605_count = 0;
-  unsigned int llvm_cbe_tmp__192;
-  static  unsigned long long aesl_llvm_cbe_606_count = 0;
-  signed short *llvm_cbe_tmp__193;
-  static  unsigned long long aesl_llvm_cbe_607_count = 0;
-  unsigned short llvm_cbe_tmp__194;
-  static  unsigned long long aesl_llvm_cbe_608_count = 0;
   unsigned int llvm_cbe_tmp__195;
-  static  unsigned long long aesl_llvm_cbe_609_count = 0;
-  unsigned int llvm_cbe_tmp__196;
-  static  unsigned long long aesl_llvm_cbe_610_count = 0;
+  static  unsigned long long aesl_llvm_cbe_602_count = 0;
+  unsigned short llvm_cbe_tmp__196;
+  static  unsigned long long aesl_llvm_cbe_603_count = 0;
   unsigned int llvm_cbe_tmp__197;
-  static  unsigned long long aesl_llvm_cbe_611_count = 0;
-  float llvm_cbe_tmp__198;
-  static  unsigned long long aesl_llvm_cbe_612_count = 0;
-  float llvm_cbe_tmp__199;
-  static  unsigned long long aesl_llvm_cbe_613_count = 0;
-  static  unsigned long long aesl_llvm_cbe_614_count = 0;
-  static  unsigned long long aesl_llvm_cbe_615_count = 0;
-  static  unsigned long long aesl_llvm_cbe_616_count = 0;
-  static  unsigned long long aesl_llvm_cbe_617_count = 0;
-  static  unsigned long long aesl_llvm_cbe_618_count = 0;
-  static  unsigned long long aesl_llvm_cbe_619_count = 0;
-  static  unsigned long long aesl_llvm_cbe_620_count = 0;
-  static  unsigned long long aesl_llvm_cbe_621_count = 0;
+  static  unsigned long long aesl_llvm_cbe_604_count = 0;
+  signed short *llvm_cbe_tmp__198;
+  static  unsigned long long aesl_llvm_cbe_605_count = 0;
+  unsigned short llvm_cbe_tmp__199;
+  static  unsigned long long aesl_llvm_cbe_606_count = 0;
   unsigned int llvm_cbe_tmp__200;
-  static  unsigned long long aesl_llvm_cbe_622_count = 0;
-  signed short *llvm_cbe_tmp__201;
-  static  unsigned long long aesl_llvm_cbe_623_count = 0;
-  unsigned short llvm_cbe_tmp__202;
-  static  unsigned long long aesl_llvm_cbe_624_count = 0;
-  unsigned int llvm_cbe_tmp__203;
-  static  unsigned long long aesl_llvm_cbe_625_count = 0;
+  static  unsigned long long aesl_llvm_cbe_607_count = 0;
+  unsigned int llvm_cbe_tmp__201;
+  static  unsigned long long aesl_llvm_cbe_608_count = 0;
+  signed short *llvm_cbe_tmp__202;
+  static  unsigned long long aesl_llvm_cbe_609_count = 0;
+  unsigned short llvm_cbe_tmp__203;
+  static  unsigned long long aesl_llvm_cbe_610_count = 0;
   unsigned int llvm_cbe_tmp__204;
-  static  unsigned long long aesl_llvm_cbe_626_count = 0;
-  signed short *llvm_cbe_tmp__205;
-  static  unsigned long long aesl_llvm_cbe_627_count = 0;
-  unsigned short llvm_cbe_tmp__206;
-  static  unsigned long long aesl_llvm_cbe_628_count = 0;
-  unsigned int llvm_cbe_tmp__207;
-  static  unsigned long long aesl_llvm_cbe_629_count = 0;
+  static  unsigned long long aesl_llvm_cbe_611_count = 0;
+  unsigned int llvm_cbe_tmp__205;
+  static  unsigned long long aesl_llvm_cbe_612_count = 0;
+  unsigned int llvm_cbe_tmp__206;
+  static  unsigned long long aesl_llvm_cbe_613_count = 0;
+  unsigned short llvm_cbe_tmp__207;
+  static  unsigned long long aesl_llvm_cbe_614_count = 0;
   unsigned int llvm_cbe_tmp__208;
-  static  unsigned long long aesl_llvm_cbe_630_count = 0;
-  unsigned int llvm_cbe_tmp__209;
-  static  unsigned long long aesl_llvm_cbe_631_count = 0;
-  float llvm_cbe_tmp__210;
-  static  unsigned long long aesl_llvm_cbe_632_count = 0;
-  float llvm_cbe_tmp__211;
-  static  unsigned long long aesl_llvm_cbe_633_count = 0;
-  static  unsigned long long aesl_llvm_cbe_634_count = 0;
-  static  unsigned long long aesl_llvm_cbe_635_count = 0;
-  static  unsigned long long aesl_llvm_cbe_636_count = 0;
-  static  unsigned long long aesl_llvm_cbe_637_count = 0;
-  static  unsigned long long aesl_llvm_cbe_638_count = 0;
-  static  unsigned long long aesl_llvm_cbe_639_count = 0;
-  static  unsigned long long aesl_llvm_cbe_640_count = 0;
-  static  unsigned long long aesl_llvm_cbe_641_count = 0;
+  static  unsigned long long aesl_llvm_cbe_615_count = 0;
+  signed short *llvm_cbe_tmp__209;
+  static  unsigned long long aesl_llvm_cbe_616_count = 0;
+  unsigned short llvm_cbe_tmp__210;
+  static  unsigned long long aesl_llvm_cbe_617_count = 0;
+  unsigned int llvm_cbe_tmp__211;
+  static  unsigned long long aesl_llvm_cbe_618_count = 0;
   unsigned int llvm_cbe_tmp__212;
-  static  unsigned long long aesl_llvm_cbe_642_count = 0;
+  static  unsigned long long aesl_llvm_cbe_619_count = 0;
   signed short *llvm_cbe_tmp__213;
-  static  unsigned long long aesl_llvm_cbe_643_count = 0;
+  static  unsigned long long aesl_llvm_cbe_620_count = 0;
   unsigned short llvm_cbe_tmp__214;
-  static  unsigned long long aesl_llvm_cbe_644_count = 0;
+  static  unsigned long long aesl_llvm_cbe_621_count = 0;
   unsigned int llvm_cbe_tmp__215;
-  static  unsigned long long aesl_llvm_cbe_645_count = 0;
+  static  unsigned long long aesl_llvm_cbe_622_count = 0;
   unsigned int llvm_cbe_tmp__216;
-  static  unsigned long long aesl_llvm_cbe_646_count = 0;
-  signed short *llvm_cbe_tmp__217;
-  static  unsigned long long aesl_llvm_cbe_647_count = 0;
+  static  unsigned long long aesl_llvm_cbe_623_count = 0;
+  unsigned int llvm_cbe_tmp__217;
+  static  unsigned long long aesl_llvm_cbe_624_count = 0;
   unsigned short llvm_cbe_tmp__218;
-  static  unsigned long long aesl_llvm_cbe_648_count = 0;
+  static  unsigned long long aesl_llvm_cbe_625_count = 0;
   unsigned int llvm_cbe_tmp__219;
+  static  unsigned long long aesl_llvm_cbe_626_count = 0;
+  signed short *llvm_cbe_tmp__220;
+  static  unsigned long long aesl_llvm_cbe_627_count = 0;
+  unsigned short llvm_cbe_tmp__221;
+  static  unsigned long long aesl_llvm_cbe_628_count = 0;
+  unsigned int llvm_cbe_tmp__222;
+  static  unsigned long long aesl_llvm_cbe_629_count = 0;
+  unsigned int llvm_cbe_tmp__223;
+  static  unsigned long long aesl_llvm_cbe_630_count = 0;
+  signed short *llvm_cbe_tmp__224;
+  static  unsigned long long aesl_llvm_cbe_631_count = 0;
+  unsigned short llvm_cbe_tmp__225;
+  static  unsigned long long aesl_llvm_cbe_632_count = 0;
+  unsigned int llvm_cbe_tmp__226;
+  static  unsigned long long aesl_llvm_cbe_633_count = 0;
+  unsigned int llvm_cbe_tmp__227;
+  static  unsigned long long aesl_llvm_cbe_634_count = 0;
+  unsigned int llvm_cbe_tmp__228;
+  static  unsigned long long aesl_llvm_cbe_635_count = 0;
+  unsigned short llvm_cbe_tmp__229;
+  static  unsigned long long aesl_llvm_cbe_636_count = 0;
+  unsigned int llvm_cbe_tmp__230;
+  static  unsigned long long aesl_llvm_cbe_637_count = 0;
+  signed short *llvm_cbe_tmp__231;
+  static  unsigned long long aesl_llvm_cbe_638_count = 0;
+  unsigned short llvm_cbe_tmp__232;
+  static  unsigned long long aesl_llvm_cbe_639_count = 0;
+  unsigned int llvm_cbe_tmp__233;
+  static  unsigned long long aesl_llvm_cbe_640_count = 0;
+  unsigned int llvm_cbe_tmp__234;
+  static  unsigned long long aesl_llvm_cbe_641_count = 0;
+  signed short *llvm_cbe_tmp__235;
+  static  unsigned long long aesl_llvm_cbe_642_count = 0;
+  unsigned short llvm_cbe_tmp__236;
+  static  unsigned long long aesl_llvm_cbe_643_count = 0;
+  unsigned int llvm_cbe_tmp__237;
+  static  unsigned long long aesl_llvm_cbe_644_count = 0;
+  unsigned int llvm_cbe_tmp__238;
+  static  unsigned long long aesl_llvm_cbe_645_count = 0;
+  unsigned int llvm_cbe_tmp__239;
+  static  unsigned long long aesl_llvm_cbe_646_count = 0;
+  unsigned short llvm_cbe_tmp__240;
+  static  unsigned long long aesl_llvm_cbe_647_count = 0;
+  unsigned short llvm_cbe_tmp__241;
+  static  unsigned long long aesl_llvm_cbe_648_count = 0;
+  unsigned short llvm_cbe_tmp__242;
   static  unsigned long long aesl_llvm_cbe_649_count = 0;
-  unsigned int llvm_cbe_tmp__220;
+  unsigned short llvm_cbe_tmp__243;
   static  unsigned long long aesl_llvm_cbe_650_count = 0;
-  unsigned int llvm_cbe_tmp__221;
+  unsigned short llvm_cbe_tmp__244;
   static  unsigned long long aesl_llvm_cbe_651_count = 0;
-  float llvm_cbe_tmp__222;
+  unsigned short llvm_cbe_tmp__245;
   static  unsigned long long aesl_llvm_cbe_652_count = 0;
-  float llvm_cbe_tmp__223;
+  unsigned short llvm_cbe_tmp__246;
   static  unsigned long long aesl_llvm_cbe_653_count = 0;
   static  unsigned long long aesl_llvm_cbe_654_count = 0;
   static  unsigned long long aesl_llvm_cbe_655_count = 0;
@@ -2208,77 +2230,67 @@ void calculateLayer3_int(signed short *llvm_cbe_Layer2_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_659_count = 0;
   static  unsigned long long aesl_llvm_cbe_660_count = 0;
   static  unsigned long long aesl_llvm_cbe_661_count = 0;
-  unsigned int llvm_cbe_tmp__224;
   static  unsigned long long aesl_llvm_cbe_662_count = 0;
-  signed short *llvm_cbe_tmp__225;
+  unsigned int llvm_cbe_tmp__247;
   static  unsigned long long aesl_llvm_cbe_663_count = 0;
-  unsigned short llvm_cbe_tmp__226;
   static  unsigned long long aesl_llvm_cbe_664_count = 0;
-  unsigned int llvm_cbe_tmp__227;
   static  unsigned long long aesl_llvm_cbe_665_count = 0;
-  unsigned int llvm_cbe_tmp__228;
   static  unsigned long long aesl_llvm_cbe_666_count = 0;
-  signed short *llvm_cbe_tmp__229;
   static  unsigned long long aesl_llvm_cbe_667_count = 0;
-  unsigned short llvm_cbe_tmp__230;
   static  unsigned long long aesl_llvm_cbe_668_count = 0;
-  unsigned int llvm_cbe_tmp__231;
   static  unsigned long long aesl_llvm_cbe_669_count = 0;
-  unsigned int llvm_cbe_tmp__232;
   static  unsigned long long aesl_llvm_cbe_670_count = 0;
-  unsigned int llvm_cbe_tmp__233;
   static  unsigned long long aesl_llvm_cbe_671_count = 0;
-  float llvm_cbe_tmp__234;
   static  unsigned long long aesl_llvm_cbe_672_count = 0;
-  float llvm_cbe_tmp__235;
   static  unsigned long long aesl_llvm_cbe_673_count = 0;
   static  unsigned long long aesl_llvm_cbe_674_count = 0;
   static  unsigned long long aesl_llvm_cbe_675_count = 0;
   static  unsigned long long aesl_llvm_cbe_676_count = 0;
   static  unsigned long long aesl_llvm_cbe_677_count = 0;
+  static  unsigned long long aesl_llvm_cbe_exitcond_count = 0;
   static  unsigned long long aesl_llvm_cbe_678_count = 0;
   static  unsigned long long aesl_llvm_cbe_679_count = 0;
+  unsigned int llvm_cbe_tmp__248;
   static  unsigned long long aesl_llvm_cbe_680_count = 0;
   static  unsigned long long aesl_llvm_cbe_681_count = 0;
-  unsigned int llvm_cbe_tmp__236;
   static  unsigned long long aesl_llvm_cbe_682_count = 0;
-  signed short *llvm_cbe_tmp__237;
   static  unsigned long long aesl_llvm_cbe_683_count = 0;
-  unsigned short llvm_cbe_tmp__238;
   static  unsigned long long aesl_llvm_cbe_684_count = 0;
-  unsigned int llvm_cbe_tmp__239;
   static  unsigned long long aesl_llvm_cbe_685_count = 0;
-  unsigned int llvm_cbe_tmp__240;
   static  unsigned long long aesl_llvm_cbe_686_count = 0;
-  signed short *llvm_cbe_tmp__241;
   static  unsigned long long aesl_llvm_cbe_687_count = 0;
-  unsigned short llvm_cbe_tmp__242;
   static  unsigned long long aesl_llvm_cbe_688_count = 0;
-  unsigned int llvm_cbe_tmp__243;
   static  unsigned long long aesl_llvm_cbe_689_count = 0;
-  unsigned int llvm_cbe_tmp__244;
   static  unsigned long long aesl_llvm_cbe_690_count = 0;
-  unsigned int llvm_cbe_tmp__245;
   static  unsigned long long aesl_llvm_cbe_691_count = 0;
-  float llvm_cbe_tmp__246;
   static  unsigned long long aesl_llvm_cbe_692_count = 0;
-  float llvm_cbe_tmp__247;
   static  unsigned long long aesl_llvm_cbe_693_count = 0;
   static  unsigned long long aesl_llvm_cbe_694_count = 0;
+  static  unsigned long long aesl_llvm_cbe_exitcond13_count = 0;
   static  unsigned long long aesl_llvm_cbe_695_count = 0;
   static  unsigned long long aesl_llvm_cbe_696_count = 0;
+  unsigned int llvm_cbe_tmp__249;
   static  unsigned long long aesl_llvm_cbe_697_count = 0;
+  double llvm_cbe_tmp__250;
   static  unsigned long long aesl_llvm_cbe_698_count = 0;
+  double llvm_cbe_tmp__251;
   static  unsigned long long aesl_llvm_cbe_699_count = 0;
+  float llvm_cbe_tmp__252;
   static  unsigned long long aesl_llvm_cbe_700_count = 0;
+  float llvm_cbe_tmp__253;
   static  unsigned long long aesl_llvm_cbe_701_count = 0;
-  unsigned int llvm_cbe_tmp__248;
+  float llvm_cbe_tmp__254;
   static  unsigned long long aesl_llvm_cbe_702_count = 0;
+  float llvm_cbe_tmp__255;
   static  unsigned long long aesl_llvm_cbe_703_count = 0;
+  unsigned short llvm_cbe_tmp__256;
   static  unsigned long long aesl_llvm_cbe_704_count = 0;
+  unsigned int llvm_cbe_tmp__257;
   static  unsigned long long aesl_llvm_cbe_705_count = 0;
+  signed short *llvm_cbe_tmp__258;
   static  unsigned long long aesl_llvm_cbe_706_count = 0;
   static  unsigned long long aesl_llvm_cbe_707_count = 0;
+  unsigned int llvm_cbe_tmp__259;
   static  unsigned long long aesl_llvm_cbe_708_count = 0;
   static  unsigned long long aesl_llvm_cbe_709_count = 0;
   static  unsigned long long aesl_llvm_cbe_710_count = 0;
@@ -2288,11 +2300,11 @@ void calculateLayer3_int(signed short *llvm_cbe_Layer2_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_714_count = 0;
   static  unsigned long long aesl_llvm_cbe_715_count = 0;
   static  unsigned long long aesl_llvm_cbe_716_count = 0;
-  static  unsigned long long aesl_llvm_cbe_exitcond_count = 0;
   static  unsigned long long aesl_llvm_cbe_717_count = 0;
+  static  unsigned long long aesl_llvm_cbe_exitcond14_count = 0;
   static  unsigned long long aesl_llvm_cbe_718_count = 0;
-  unsigned int llvm_cbe_tmp__249;
   static  unsigned long long aesl_llvm_cbe_719_count = 0;
+  unsigned int llvm_cbe_tmp__260;
   static  unsigned long long aesl_llvm_cbe_720_count = 0;
   static  unsigned long long aesl_llvm_cbe_721_count = 0;
   static  unsigned long long aesl_llvm_cbe_722_count = 0;
@@ -2303,30 +2315,723 @@ void calculateLayer3_int(signed short *llvm_cbe_Layer2_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_727_count = 0;
   static  unsigned long long aesl_llvm_cbe_728_count = 0;
   static  unsigned long long aesl_llvm_cbe_729_count = 0;
+  static  unsigned long long aesl_llvm_cbe_exitcond15_count = 0;
   static  unsigned long long aesl_llvm_cbe_730_count = 0;
   static  unsigned long long aesl_llvm_cbe_731_count = 0;
+  unsigned int llvm_cbe_tmp__261;
   static  unsigned long long aesl_llvm_cbe_732_count = 0;
   static  unsigned long long aesl_llvm_cbe_733_count = 0;
-  static  unsigned long long aesl_llvm_cbe_exitcond13_count = 0;
   static  unsigned long long aesl_llvm_cbe_734_count = 0;
   static  unsigned long long aesl_llvm_cbe_735_count = 0;
-  double llvm_cbe_tmp__250;
   static  unsigned long long aesl_llvm_cbe_736_count = 0;
-  double llvm_cbe_tmp__251;
   static  unsigned long long aesl_llvm_cbe_737_count = 0;
-  double llvm_cbe_tmp__252;
   static  unsigned long long aesl_llvm_cbe_738_count = 0;
-  double llvm_cbe_tmp__253;
   static  unsigned long long aesl_llvm_cbe_739_count = 0;
-  unsigned short llvm_cbe_tmp__254;
   static  unsigned long long aesl_llvm_cbe_740_count = 0;
-  unsigned int llvm_cbe_tmp__255;
   static  unsigned long long aesl_llvm_cbe_741_count = 0;
-  signed short *llvm_cbe_tmp__256;
   static  unsigned long long aesl_llvm_cbe_742_count = 0;
+  static  unsigned long long aesl_llvm_cbe_exitcond16_count = 0;
   static  unsigned long long aesl_llvm_cbe_743_count = 0;
-  unsigned int llvm_cbe_tmp__257;
   static  unsigned long long aesl_llvm_cbe_744_count = 0;
+
+const char* AESL_DEBUG_TRACE = getenv("DEBUG_TRACE");
+if (AESL_DEBUG_TRACE)
+printf("\n\{ BEGIN @calculateLayer3_int_ref\n");
+  llvm_cbe_storemerge12__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
+  goto llvm_cbe__2e_preheader10;
+
+  do {     /* Syntactic loop '.preheader10' to make GCC happy */
+llvm_cbe__2e_preheader10:
+if (AESL_DEBUG_TRACE)
+printf("\n  %%storemerge12 = phi i32 [ 0, %%0 ], [ %%115, %%114  for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_storemerge12_count);
+  llvm_cbe_storemerge12 = (unsigned int )llvm_cbe_storemerge12__PHI_TEMPORARY;
+if (AESL_DEBUG_TRACE) {
+printf("\nstoremerge12 = 0x%X",llvm_cbe_storemerge12);
+printf("\n = 0x%X",0u);
+printf("\n = 0x%X",llvm_cbe_tmp__261);
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%1 = mul nsw i32 %%storemerge12, 156, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_508_count);
+  llvm_cbe_tmp__153 = (unsigned int )((unsigned int )(llvm_cbe_storemerge12&4294967295ull)) * ((unsigned int )(156u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__153&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%2 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%1, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_509_count);
+  llvm_cbe_tmp__154 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__153))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__153));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%3 = or i32 %%1, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_510_count);
+  llvm_cbe_tmp__155 = (unsigned int )llvm_cbe_tmp__153 | 1u;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__155);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%4 = mul nsw i32 %%storemerge12, 25, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_511_count);
+  llvm_cbe_tmp__156 = (unsigned int )((unsigned int )(llvm_cbe_storemerge12&4294967295ull)) * ((unsigned int )(25u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__156&4294967295ull)));
+  llvm_cbe_storemerge111__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
+  goto llvm_cbe__2e_preheader8;
+
+llvm_cbe_tmp__262:
+if (AESL_DEBUG_TRACE)
+printf("\n  %%115 = add nsw i32 %%storemerge12, 1, !dbg !12 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_731_count);
+  llvm_cbe_tmp__261 = (unsigned int )((unsigned int )(llvm_cbe_storemerge12&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__261&4294967295ull)));
+  if (((llvm_cbe_tmp__261&4294967295U) == (50u&4294967295U))) {
+    goto llvm_cbe_tmp__263;
+  } else {
+    llvm_cbe_storemerge12__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__261;   /* for PHI node */
+    goto llvm_cbe__2e_preheader10;
+  }
+
+  do {     /* Syntactic loop '.preheader8' to make GCC happy */
+llvm_cbe__2e_preheader8:
+if (AESL_DEBUG_TRACE)
+printf("\n  %%storemerge111 = phi i32 [ 0, %%.preheader10 ], [ %%113, %%112  for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_storemerge111_count);
+  llvm_cbe_storemerge111 = (unsigned int )llvm_cbe_storemerge111__PHI_TEMPORARY;
+if (AESL_DEBUG_TRACE) {
+printf("\nstoremerge111 = 0x%X",llvm_cbe_storemerge111);
+printf("\n = 0x%X",0u);
+printf("\n = 0x%X",llvm_cbe_tmp__260);
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%5 = shl i32 %%storemerge111, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_522_count);
+  llvm_cbe_tmp__157 = (unsigned int )llvm_cbe_storemerge111 << 1u;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__157);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%6 = mul nsw i32 %%storemerge111, 5, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_523_count);
+  llvm_cbe_tmp__158 = (unsigned int )((unsigned int )(llvm_cbe_storemerge111&4294967295ull)) * ((unsigned int )(5u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__158&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%7 = add i32 %%6, %%4, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_524_count);
+  llvm_cbe_tmp__159 = (unsigned int )((unsigned int )(llvm_cbe_tmp__158&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__156&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__159&4294967295ull)));
+  llvm_cbe_storemerge29__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
+  goto llvm_cbe_tmp__264;
+
+llvm_cbe_tmp__265:
+if (AESL_DEBUG_TRACE)
+printf("\n  %%113 = add nsw i32 %%storemerge111, 1, !dbg !12 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_719_count);
+  llvm_cbe_tmp__260 = (unsigned int )((unsigned int )(llvm_cbe_storemerge111&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__260&4294967295ull)));
+  if (((llvm_cbe_tmp__260&4294967295U) == (5u&4294967295U))) {
+    goto llvm_cbe_tmp__262;
+  } else {
+    llvm_cbe_storemerge111__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__260;   /* for PHI node */
+    goto llvm_cbe__2e_preheader8;
+  }
+
+  do {     /* Syntactic loop '' to make GCC happy */
+llvm_cbe_tmp__264:
+if (AESL_DEBUG_TRACE)
+printf("\n  %%storemerge29 = phi i32 [ 0, %%.preheader8 ], [ %%111, %%100  for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_storemerge29_count);
+  llvm_cbe_storemerge29 = (unsigned int )llvm_cbe_storemerge29__PHI_TEMPORARY;
+if (AESL_DEBUG_TRACE) {
+printf("\nstoremerge29 = 0x%X",llvm_cbe_storemerge29);
+printf("\n = 0x%X",0u);
+printf("\n = 0x%X",llvm_cbe_tmp__259);
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%9 = load i16* %%2, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_526_count);
+  llvm_cbe_tmp__160 = (unsigned short )*llvm_cbe_tmp__154;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__160);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%10 = shl nsw i32 %%storemerge29, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_551_count);
+  llvm_cbe_tmp__161 = (unsigned int )llvm_cbe_storemerge29 << 1u;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__161);
+  llvm_cbe_storemerge37__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
+  llvm_cbe_tmp__162__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__160;   /* for PHI node */
+  goto llvm_cbe__2e_preheader;
+
+llvm_cbe_tmp__266:
+if (AESL_DEBUG_TRACE)
+printf("\n  %%101 = zext i16 %%96 to i32, !dbg !12 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_696_count);
+  llvm_cbe_tmp__249 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__246&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__249);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%102 = sitofp i32 %%101 to double, !dbg !12 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_697_count);
+  llvm_cbe_tmp__250 = (double )((double )(signed int )llvm_cbe_tmp__249);
+if (AESL_DEBUG_TRACE)
+printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__250, *(long long*)(&llvm_cbe_tmp__250));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%103 = fmul double %%102, 0x3FE55555571F7693, !dbg !12 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_698_count);
+  llvm_cbe_tmp__251 = (double )llvm_cbe_tmp__250 * (*(double*)&FPConstant1);
+if (AESL_DEBUG_TRACE)
+printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__251, *(long long*)(&llvm_cbe_tmp__251));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%104 = fptrunc double %%103 to float, !dbg !12 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_699_count);
+  llvm_cbe_tmp__252 = (float )((float )llvm_cbe_tmp__251);
+if (AESL_DEBUG_TRACE)
+printf("\n = %f,  0x%x\n", llvm_cbe_tmp__252, *(int*)(&llvm_cbe_tmp__252));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%105 = tail call float @sinhf(float %%104) nounwind, !dbg !12 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_700_count);
+  llvm_cbe_tmp__253 = (float ) /*tail*/ sinhf(llvm_cbe_tmp__252);
+if (AESL_DEBUG_TRACE) {
+printf("\nArgument  = %f,  0x%x",llvm_cbe_tmp__252, *(int*)(&llvm_cbe_tmp__252));
+printf("\nReturn  = %f",llvm_cbe_tmp__253);
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%106 = tail call float @coshf(float %%104) nounwind, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_701_count);
+  llvm_cbe_tmp__254 = (float ) /*tail*/ coshf(llvm_cbe_tmp__252);
+if (AESL_DEBUG_TRACE) {
+printf("\nArgument  = %f,  0x%x",llvm_cbe_tmp__252, *(int*)(&llvm_cbe_tmp__252));
+printf("\nReturn  = %f",llvm_cbe_tmp__254);
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%107 = fdiv float %%105, %%106, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_702_count);
+  llvm_cbe_tmp__255 = (float )((float )(llvm_cbe_tmp__253 / llvm_cbe_tmp__254));
+if (AESL_DEBUG_TRACE)
+printf("\n = %f,  0x%x\n", llvm_cbe_tmp__255, *(int*)(&llvm_cbe_tmp__255));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%108 = fptoui float %%107 to i16, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_703_count);
+  llvm_cbe_tmp__256 = (unsigned short )((unsigned short )llvm_cbe_tmp__255&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__256);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%109 = add i32 %%7, %%storemerge29, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_704_count);
+  llvm_cbe_tmp__257 = (unsigned int )((unsigned int )(llvm_cbe_tmp__159&4294967295ull)) + ((unsigned int )(llvm_cbe_storemerge29&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__257&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%110 = getelementptr inbounds i16* %%Layer3_Neurons_CPU, i32 %%109, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_705_count);
+  llvm_cbe_tmp__258 = (signed short *)(&llvm_cbe_Layer3_Neurons_CPU[(((signed int )llvm_cbe_tmp__257))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__257));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  store i16 %%108, i16* %%110, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_706_count);
+  *llvm_cbe_tmp__258 = llvm_cbe_tmp__256;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__256);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%111 = add nsw i32 %%storemerge29, 1, !dbg !12 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_707_count);
+  llvm_cbe_tmp__259 = (unsigned int )((unsigned int )(llvm_cbe_storemerge29&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__259&4294967295ull)));
+  if (((llvm_cbe_tmp__259&4294967295U) == (5u&4294967295U))) {
+    goto llvm_cbe_tmp__265;
+  } else {
+    llvm_cbe_storemerge29__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__259;   /* for PHI node */
+    goto llvm_cbe_tmp__264;
+  }
+
+  do {     /* Syntactic loop '.preheader' to make GCC happy */
+llvm_cbe__2e_preheader:
+if (AESL_DEBUG_TRACE)
+printf("\n  %%storemerge37 = phi i32 [ 0, %%8 ], [ %%99, %%98  for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_storemerge37_count);
+  llvm_cbe_storemerge37 = (unsigned int )llvm_cbe_storemerge37__PHI_TEMPORARY;
+if (AESL_DEBUG_TRACE) {
+printf("\nstoremerge37 = 0x%X",llvm_cbe_storemerge37);
+printf("\n = 0x%X",0u);
+printf("\n = 0x%X",llvm_cbe_tmp__248);
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%11 = phi i16 [ %%9, %%8 ], [ %%96, %%98  for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_553_count);
+  llvm_cbe_tmp__162 = (unsigned short )llvm_cbe_tmp__162__PHI_TEMPORARY;
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",llvm_cbe_tmp__162);
+printf("\n = 0x%X",llvm_cbe_tmp__160);
+printf("\n = 0x%X",llvm_cbe_tmp__246);
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%12 = mul nsw i32 %%storemerge37, 5, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_568_count);
+  llvm_cbe_tmp__163 = (unsigned int )((unsigned int )(llvm_cbe_storemerge37&4294967295ull)) * ((unsigned int )(5u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__163&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%13 = add nsw i32 %%storemerge37, %%5, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_569_count);
+  llvm_cbe_tmp__164 = (unsigned int )((unsigned int )(llvm_cbe_storemerge37&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__157&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__164&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%14 = mul nsw i32 %%13, 13, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_570_count);
+  llvm_cbe_tmp__165 = (unsigned int )((unsigned int )(llvm_cbe_tmp__164&4294967295ull)) * ((unsigned int )(13u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__165&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%15 = add i32 %%14, 169, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_571_count);
+  llvm_cbe_tmp__166 = (unsigned int )((unsigned int )(llvm_cbe_tmp__165&4294967295ull)) + ((unsigned int )(169u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__166&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%16 = add i32 %%14, 338, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_572_count);
+  llvm_cbe_tmp__167 = (unsigned int )((unsigned int )(llvm_cbe_tmp__165&4294967295ull)) + ((unsigned int )(338u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__167&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%17 = add i32 %%14, 507, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_573_count);
+  llvm_cbe_tmp__168 = (unsigned int )((unsigned int )(llvm_cbe_tmp__165&4294967295ull)) + ((unsigned int )(507u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__168&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%18 = add i32 %%14, 676, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_574_count);
+  llvm_cbe_tmp__169 = (unsigned int )((unsigned int )(llvm_cbe_tmp__165&4294967295ull)) + ((unsigned int )(676u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__169&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%19 = add i32 %%14, 845, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_575_count);
+  llvm_cbe_tmp__170 = (unsigned int )((unsigned int )(llvm_cbe_tmp__165&4294967295ull)) + ((unsigned int )(845u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__170&4294967295ull)));
+  llvm_cbe_storemerge45__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
+  llvm_cbe_tmp__171__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__162;   /* for PHI node */
+  goto llvm_cbe_tmp__267;
+
+llvm_cbe_tmp__268:
+if (AESL_DEBUG_TRACE)
+printf("\n  %%99 = add nsw i32 %%storemerge37, 1, !dbg !13 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_679_count);
+  llvm_cbe_tmp__248 = (unsigned int )((unsigned int )(llvm_cbe_storemerge37&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__248&4294967295ull)));
+  if (((llvm_cbe_tmp__248&4294967295U) == (5u&4294967295U))) {
+    goto llvm_cbe_tmp__266;
+  } else {
+    llvm_cbe_storemerge37__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__248;   /* for PHI node */
+    llvm_cbe_tmp__162__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__246;   /* for PHI node */
+    goto llvm_cbe__2e_preheader;
+  }
+
+  do {     /* Syntactic loop '' to make GCC happy */
+llvm_cbe_tmp__267:
+if (AESL_DEBUG_TRACE)
+printf("\n  %%storemerge45 = phi i32 [ 0, %%.preheader ], [ %%97, %%20  for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_storemerge45_count);
+  llvm_cbe_storemerge45 = (unsigned int )llvm_cbe_storemerge45__PHI_TEMPORARY;
+if (AESL_DEBUG_TRACE) {
+printf("\nstoremerge45 = 0x%X",llvm_cbe_storemerge45);
+printf("\n = 0x%X",0u);
+printf("\n = 0x%X",llvm_cbe_tmp__247);
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%21 = phi i16 [ %%11, %%.preheader ], [ %%96, %%20  for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_577_count);
+  llvm_cbe_tmp__171 = (unsigned short )llvm_cbe_tmp__171__PHI_TEMPORARY;
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",llvm_cbe_tmp__171);
+printf("\n = 0x%X",llvm_cbe_tmp__162);
+printf("\n = 0x%X",llvm_cbe_tmp__246);
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%22 = add nsw i32 %%storemerge45, %%12, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_578_count);
+  llvm_cbe_tmp__172 = (unsigned int )((unsigned int )(llvm_cbe_storemerge45&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__163&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__172&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%23 = mul nsw i32 %%22, 6, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_579_count);
+  llvm_cbe_tmp__173 = (unsigned int )((unsigned int )(llvm_cbe_tmp__172&4294967295ull)) * ((unsigned int )(6u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__173&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%24 = add nsw i32 %%23, %%3, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_580_count);
+  llvm_cbe_tmp__174 = (unsigned int )((unsigned int )(llvm_cbe_tmp__173&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__155&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__174&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%25 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%24, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_581_count);
+  llvm_cbe_tmp__175 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__174))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__174));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%26 = load i16* %%25, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_582_count);
+  llvm_cbe_tmp__176 = (unsigned short )*llvm_cbe_tmp__175;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__176);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%27 = zext i16 %%26 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_583_count);
+  llvm_cbe_tmp__177 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__176&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__177);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%28 = add nsw i32 %%storemerge45, %%10, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_584_count);
+  llvm_cbe_tmp__178 = (unsigned int )((unsigned int )(llvm_cbe_storemerge45&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__161&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__178&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%29 = add nsw i32 %%28, %%14, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_585_count);
+  llvm_cbe_tmp__179 = (unsigned int )((unsigned int )(llvm_cbe_tmp__178&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__165&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__179&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%30 = getelementptr inbounds i16* %%Layer2_Neurons_CPU, i32 %%29, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_586_count);
+  llvm_cbe_tmp__180 = (signed short *)(&llvm_cbe_Layer2_Neurons_CPU[(((signed int )llvm_cbe_tmp__179))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__179));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%31 = load i16* %%30, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_587_count);
+  llvm_cbe_tmp__181 = (unsigned short )*llvm_cbe_tmp__180;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__181);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%32 = zext i16 %%31 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_588_count);
+  llvm_cbe_tmp__182 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__181&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__182);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%33 = mul nsw i32 %%32, %%27, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_589_count);
+  llvm_cbe_tmp__183 = (unsigned int )((unsigned int )(llvm_cbe_tmp__182&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__177&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__183&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%34 = lshr i32 %%33, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_590_count);
+  llvm_cbe_tmp__184 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__183&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__184&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%35 = trunc i32 %%34 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_591_count);
+  llvm_cbe_tmp__185 = (unsigned short )((unsigned short )llvm_cbe_tmp__184&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__185);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%36 = add nsw i32 %%24, 1, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_592_count);
+  llvm_cbe_tmp__186 = (unsigned int )((unsigned int )(llvm_cbe_tmp__174&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__186&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%37 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%36, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_593_count);
+  llvm_cbe_tmp__187 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__186))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__186));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%38 = load i16* %%37, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_594_count);
+  llvm_cbe_tmp__188 = (unsigned short )*llvm_cbe_tmp__187;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__188);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%39 = zext i16 %%38 to i32, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_595_count);
+  llvm_cbe_tmp__189 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__188&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__189);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%40 = add i32 %%15, %%28, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_596_count);
+  llvm_cbe_tmp__190 = (unsigned int )((unsigned int )(llvm_cbe_tmp__166&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__178&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__190&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%41 = getelementptr inbounds i16* %%Layer2_Neurons_CPU, i32 %%40, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_597_count);
+  llvm_cbe_tmp__191 = (signed short *)(&llvm_cbe_Layer2_Neurons_CPU[(((signed int )llvm_cbe_tmp__190))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__190));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%42 = load i16* %%41, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_598_count);
+  llvm_cbe_tmp__192 = (unsigned short )*llvm_cbe_tmp__191;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__192);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%43 = zext i16 %%42 to i32, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_599_count);
+  llvm_cbe_tmp__193 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__192&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__193);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%44 = mul nsw i32 %%43, %%39, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_600_count);
+  llvm_cbe_tmp__194 = (unsigned int )((unsigned int )(llvm_cbe_tmp__193&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__189&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__194&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%45 = lshr i32 %%44, 8, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_601_count);
+  llvm_cbe_tmp__195 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__194&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__195&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%46 = trunc i32 %%45 to i16, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_602_count);
+  llvm_cbe_tmp__196 = (unsigned short )((unsigned short )llvm_cbe_tmp__195&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__196);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%47 = add nsw i32 %%24, 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_603_count);
+  llvm_cbe_tmp__197 = (unsigned int )((unsigned int )(llvm_cbe_tmp__174&4294967295ull)) + ((unsigned int )(2u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__197&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%48 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%47, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_604_count);
+  llvm_cbe_tmp__198 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__197))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__197));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%49 = load i16* %%48, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_605_count);
+  llvm_cbe_tmp__199 = (unsigned short )*llvm_cbe_tmp__198;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__199);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%50 = zext i16 %%49 to i32, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_606_count);
+  llvm_cbe_tmp__200 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__199&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__200);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%51 = add i32 %%16, %%28, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_607_count);
+  llvm_cbe_tmp__201 = (unsigned int )((unsigned int )(llvm_cbe_tmp__167&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__178&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__201&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%52 = getelementptr inbounds i16* %%Layer2_Neurons_CPU, i32 %%51, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_608_count);
+  llvm_cbe_tmp__202 = (signed short *)(&llvm_cbe_Layer2_Neurons_CPU[(((signed int )llvm_cbe_tmp__201))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__201));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%53 = load i16* %%52, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_609_count);
+  llvm_cbe_tmp__203 = (unsigned short )*llvm_cbe_tmp__202;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__203);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%54 = zext i16 %%53 to i32, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_610_count);
+  llvm_cbe_tmp__204 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__203&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__204);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%55 = mul nsw i32 %%54, %%50, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_611_count);
+  llvm_cbe_tmp__205 = (unsigned int )((unsigned int )(llvm_cbe_tmp__204&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__200&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__205&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%56 = lshr i32 %%55, 8, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_612_count);
+  llvm_cbe_tmp__206 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__205&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__206&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%57 = trunc i32 %%56 to i16, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_613_count);
+  llvm_cbe_tmp__207 = (unsigned short )((unsigned short )llvm_cbe_tmp__206&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__207);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%58 = add nsw i32 %%24, 3, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_614_count);
+  llvm_cbe_tmp__208 = (unsigned int )((unsigned int )(llvm_cbe_tmp__174&4294967295ull)) + ((unsigned int )(3u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__208&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%59 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%58, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_615_count);
+  llvm_cbe_tmp__209 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__208))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__208));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%60 = load i16* %%59, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_616_count);
+  llvm_cbe_tmp__210 = (unsigned short )*llvm_cbe_tmp__209;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__210);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%61 = zext i16 %%60 to i32, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_617_count);
+  llvm_cbe_tmp__211 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__210&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__211);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%62 = add i32 %%17, %%28, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_618_count);
+  llvm_cbe_tmp__212 = (unsigned int )((unsigned int )(llvm_cbe_tmp__168&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__178&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__212&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%63 = getelementptr inbounds i16* %%Layer2_Neurons_CPU, i32 %%62, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_619_count);
+  llvm_cbe_tmp__213 = (signed short *)(&llvm_cbe_Layer2_Neurons_CPU[(((signed int )llvm_cbe_tmp__212))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__212));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%64 = load i16* %%63, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_620_count);
+  llvm_cbe_tmp__214 = (unsigned short )*llvm_cbe_tmp__213;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__214);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%65 = zext i16 %%64 to i32, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_621_count);
+  llvm_cbe_tmp__215 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__214&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__215);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%66 = mul nsw i32 %%65, %%61, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_622_count);
+  llvm_cbe_tmp__216 = (unsigned int )((unsigned int )(llvm_cbe_tmp__215&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__211&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__216&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%67 = lshr i32 %%66, 8, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_623_count);
+  llvm_cbe_tmp__217 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__216&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__217&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%68 = trunc i32 %%67 to i16, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_624_count);
+  llvm_cbe_tmp__218 = (unsigned short )((unsigned short )llvm_cbe_tmp__217&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__218);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%69 = add nsw i32 %%24, 4, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_625_count);
+  llvm_cbe_tmp__219 = (unsigned int )((unsigned int )(llvm_cbe_tmp__174&4294967295ull)) + ((unsigned int )(4u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__219&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%70 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%69, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_626_count);
+  llvm_cbe_tmp__220 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__219))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__219));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%71 = load i16* %%70, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_627_count);
+  llvm_cbe_tmp__221 = (unsigned short )*llvm_cbe_tmp__220;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__221);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%72 = zext i16 %%71 to i32, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_628_count);
+  llvm_cbe_tmp__222 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__221&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__222);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%73 = add i32 %%18, %%28, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_629_count);
+  llvm_cbe_tmp__223 = (unsigned int )((unsigned int )(llvm_cbe_tmp__169&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__178&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__223&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%74 = getelementptr inbounds i16* %%Layer2_Neurons_CPU, i32 %%73, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_630_count);
+  llvm_cbe_tmp__224 = (signed short *)(&llvm_cbe_Layer2_Neurons_CPU[(((signed int )llvm_cbe_tmp__223))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__223));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%75 = load i16* %%74, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_631_count);
+  llvm_cbe_tmp__225 = (unsigned short )*llvm_cbe_tmp__224;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__225);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%76 = zext i16 %%75 to i32, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_632_count);
+  llvm_cbe_tmp__226 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__225&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__226);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%77 = mul nsw i32 %%76, %%72, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_633_count);
+  llvm_cbe_tmp__227 = (unsigned int )((unsigned int )(llvm_cbe_tmp__226&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__222&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__227&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%78 = lshr i32 %%77, 8, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_634_count);
+  llvm_cbe_tmp__228 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__227&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__228&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%79 = trunc i32 %%78 to i16, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_635_count);
+  llvm_cbe_tmp__229 = (unsigned short )((unsigned short )llvm_cbe_tmp__228&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__229);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%80 = add nsw i32 %%24, 5, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_636_count);
+  llvm_cbe_tmp__230 = (unsigned int )((unsigned int )(llvm_cbe_tmp__174&4294967295ull)) + ((unsigned int )(5u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__230&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%81 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%80, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_637_count);
+  llvm_cbe_tmp__231 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__230))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__230));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%82 = load i16* %%81, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_638_count);
+  llvm_cbe_tmp__232 = (unsigned short )*llvm_cbe_tmp__231;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__232);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%83 = zext i16 %%82 to i32, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_639_count);
+  llvm_cbe_tmp__233 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__232&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__233);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%84 = add i32 %%19, %%28, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_640_count);
+  llvm_cbe_tmp__234 = (unsigned int )((unsigned int )(llvm_cbe_tmp__170&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__178&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__234&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%85 = getelementptr inbounds i16* %%Layer2_Neurons_CPU, i32 %%84, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_641_count);
+  llvm_cbe_tmp__235 = (signed short *)(&llvm_cbe_Layer2_Neurons_CPU[(((signed int )llvm_cbe_tmp__234))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__234));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%86 = load i16* %%85, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_642_count);
+  llvm_cbe_tmp__236 = (unsigned short )*llvm_cbe_tmp__235;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__236);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%87 = zext i16 %%86 to i32, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_643_count);
+  llvm_cbe_tmp__237 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__236&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__237);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%88 = mul nsw i32 %%87, %%83, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_644_count);
+  llvm_cbe_tmp__238 = (unsigned int )((unsigned int )(llvm_cbe_tmp__237&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__233&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__238&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%89 = lshr i32 %%88, 8, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_645_count);
+  llvm_cbe_tmp__239 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__238&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__239&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%90 = trunc i32 %%89 to i16, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_646_count);
+  llvm_cbe_tmp__240 = (unsigned short )((unsigned short )llvm_cbe_tmp__239&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__240);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%91 = add i16 %%35, %%21, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_647_count);
+  llvm_cbe_tmp__241 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__185&65535ull)) + ((unsigned short )(llvm_cbe_tmp__171&65535ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__241&65535ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%92 = add i16 %%91, %%46, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_648_count);
+  llvm_cbe_tmp__242 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__241&65535ull)) + ((unsigned short )(llvm_cbe_tmp__196&65535ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__242&65535ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%93 = add i16 %%92, %%57, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_649_count);
+  llvm_cbe_tmp__243 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__242&65535ull)) + ((unsigned short )(llvm_cbe_tmp__207&65535ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__243&65535ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%94 = add i16 %%93, %%68, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_650_count);
+  llvm_cbe_tmp__244 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__243&65535ull)) + ((unsigned short )(llvm_cbe_tmp__218&65535ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__244&65535ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%95 = add i16 %%94, %%79, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_651_count);
+  llvm_cbe_tmp__245 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__244&65535ull)) + ((unsigned short )(llvm_cbe_tmp__229&65535ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__245&65535ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%96 = add i16 %%95, %%90, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_652_count);
+  llvm_cbe_tmp__246 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__245&65535ull)) + ((unsigned short )(llvm_cbe_tmp__240&65535ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__246&65535ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%97 = add nsw i32 %%storemerge45, 1, !dbg !13 for 0x%I64xth hint within @calculateLayer3_int_ref  --> \n", ++aesl_llvm_cbe_662_count);
+  llvm_cbe_tmp__247 = (unsigned int )((unsigned int )(llvm_cbe_storemerge45&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__247&4294967295ull)));
+  if (((llvm_cbe_tmp__247&4294967295U) == (5u&4294967295U))) {
+    goto llvm_cbe_tmp__268;
+  } else {
+    llvm_cbe_storemerge45__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__247;   /* for PHI node */
+    llvm_cbe_tmp__171__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__246;   /* for PHI node */
+    goto llvm_cbe_tmp__267;
+  }
+
+  } while (1); /* end of syntactic loop '' */
+  } while (1); /* end of syntactic loop '.preheader' */
+  } while (1); /* end of syntactic loop '' */
+  } while (1); /* end of syntactic loop '.preheader8' */
+  } while (1); /* end of syntactic loop '.preheader10' */
+llvm_cbe_tmp__263:
+  if (AESL_DEBUG_TRACE)
+      printf("\nEND @calculateLayer3_int_ref}\n");
+  return;
+}
+
+
+void calculateLayer4_int_ref(signed short *llvm_cbe_Layer3_Neurons_CPU, signed short *llvm_cbe_Layer3_Weights_CPU, signed short *llvm_cbe_Layer4_Neurons_CPU) {
   static  unsigned long long aesl_llvm_cbe_745_count = 0;
   static  unsigned long long aesl_llvm_cbe_746_count = 0;
   static  unsigned long long aesl_llvm_cbe_747_count = 0;
@@ -2336,749 +3041,81 @@ void calculateLayer3_int(signed short *llvm_cbe_Layer2_Neurons_CPU, signed short
   static  unsigned long long aesl_llvm_cbe_751_count = 0;
   static  unsigned long long aesl_llvm_cbe_752_count = 0;
   static  unsigned long long aesl_llvm_cbe_753_count = 0;
-  static  unsigned long long aesl_llvm_cbe_exitcond14_count = 0;
   static  unsigned long long aesl_llvm_cbe_754_count = 0;
   static  unsigned long long aesl_llvm_cbe_755_count = 0;
-  unsigned int llvm_cbe_tmp__258;
   static  unsigned long long aesl_llvm_cbe_756_count = 0;
+  static  unsigned long long aesl_llvm_cbe_storemerge10_count = 0;
+  unsigned int llvm_cbe_storemerge10;
+  unsigned int llvm_cbe_storemerge10__PHI_TEMPORARY;
   static  unsigned long long aesl_llvm_cbe_757_count = 0;
+  unsigned int llvm_cbe_tmp__269;
   static  unsigned long long aesl_llvm_cbe_758_count = 0;
+  signed short *llvm_cbe_tmp__270;
   static  unsigned long long aesl_llvm_cbe_759_count = 0;
+  unsigned short llvm_cbe_tmp__271;
   static  unsigned long long aesl_llvm_cbe_760_count = 0;
   static  unsigned long long aesl_llvm_cbe_761_count = 0;
   static  unsigned long long aesl_llvm_cbe_762_count = 0;
   static  unsigned long long aesl_llvm_cbe_763_count = 0;
   static  unsigned long long aesl_llvm_cbe_764_count = 0;
   static  unsigned long long aesl_llvm_cbe_765_count = 0;
-  static  unsigned long long aesl_llvm_cbe_exitcond15_count = 0;
   static  unsigned long long aesl_llvm_cbe_766_count = 0;
   static  unsigned long long aesl_llvm_cbe_767_count = 0;
-  unsigned int llvm_cbe_tmp__259;
   static  unsigned long long aesl_llvm_cbe_768_count = 0;
   static  unsigned long long aesl_llvm_cbe_769_count = 0;
+  unsigned int llvm_cbe_tmp__272;
   static  unsigned long long aesl_llvm_cbe_770_count = 0;
+  static  unsigned long long aesl_llvm_cbe_storemerge19_count = 0;
+  unsigned int llvm_cbe_storemerge19;
+  unsigned int llvm_cbe_storemerge19__PHI_TEMPORARY;
   static  unsigned long long aesl_llvm_cbe_771_count = 0;
+  unsigned short llvm_cbe_tmp__273;
+  unsigned short llvm_cbe_tmp__273__PHI_TEMPORARY;
   static  unsigned long long aesl_llvm_cbe_772_count = 0;
   static  unsigned long long aesl_llvm_cbe_773_count = 0;
   static  unsigned long long aesl_llvm_cbe_774_count = 0;
   static  unsigned long long aesl_llvm_cbe_775_count = 0;
   static  unsigned long long aesl_llvm_cbe_776_count = 0;
+  unsigned int llvm_cbe_tmp__274;
   static  unsigned long long aesl_llvm_cbe_777_count = 0;
+  unsigned int llvm_cbe_tmp__275;
   static  unsigned long long aesl_llvm_cbe_778_count = 0;
-  static  unsigned long long aesl_llvm_cbe_exitcond16_count = 0;
+  static  unsigned long long aesl_llvm_cbe_storemerge27_count = 0;
+  unsigned int llvm_cbe_storemerge27;
+  unsigned int llvm_cbe_storemerge27__PHI_TEMPORARY;
   static  unsigned long long aesl_llvm_cbe_779_count = 0;
+  unsigned short llvm_cbe_tmp__276;
+  unsigned short llvm_cbe_tmp__276__PHI_TEMPORARY;
   static  unsigned long long aesl_llvm_cbe_780_count = 0;
-
-const char* AESL_DEBUG_TRACE = getenv("DEBUG_TRACE");
-if (AESL_DEBUG_TRACE)
-printf("\n\{ BEGIN @calculateLayer3_int\n");
-  llvm_cbe_storemerge12__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
-  goto llvm_cbe__2e_preheader10;
-
-  do {     /* Syntactic loop '.preheader10' to make GCC happy */
-llvm_cbe__2e_preheader10:
-if (AESL_DEBUG_TRACE)
-printf("\n  %%storemerge12 = phi i32 [ 0, %%0 ], [ %%113, %%112  for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_storemerge12_count);
-  llvm_cbe_storemerge12 = (unsigned int )llvm_cbe_storemerge12__PHI_TEMPORARY;
-if (AESL_DEBUG_TRACE) {
-printf("\nstoremerge12 = 0x%X",llvm_cbe_storemerge12);
-printf("\n = 0x%X",0u);
-printf("\n = 0x%X",llvm_cbe_tmp__259);
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%1 = mul nsw i32 %%storemerge12, 156, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_508_count);
-  llvm_cbe_tmp__153 = (unsigned int )((unsigned int )(llvm_cbe_storemerge12&4294967295ull)) * ((unsigned int )(156u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__153&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%2 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%1, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_509_count);
-  llvm_cbe_tmp__154 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__153))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__153));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%3 = or i32 %%1, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_510_count);
-  llvm_cbe_tmp__155 = (unsigned int )llvm_cbe_tmp__153 | 1u;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__155);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%4 = mul nsw i32 %%storemerge12, 25, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_511_count);
-  llvm_cbe_tmp__156 = (unsigned int )((unsigned int )(llvm_cbe_storemerge12&4294967295ull)) * ((unsigned int )(25u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__156&4294967295ull)));
-  llvm_cbe_storemerge111__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
-  goto llvm_cbe__2e_preheader8;
-
-llvm_cbe_tmp__260:
-if (AESL_DEBUG_TRACE)
-printf("\n  %%113 = add nsw i32 %%storemerge12, 1, !dbg !12 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_767_count);
-  llvm_cbe_tmp__259 = (unsigned int )((unsigned int )(llvm_cbe_storemerge12&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__259&4294967295ull)));
-  if (((llvm_cbe_tmp__259&4294967295U) == (50u&4294967295U))) {
-    goto llvm_cbe_tmp__261;
-  } else {
-    llvm_cbe_storemerge12__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__259;   /* for PHI node */
-    goto llvm_cbe__2e_preheader10;
-  }
-
-  do {     /* Syntactic loop '.preheader8' to make GCC happy */
-llvm_cbe__2e_preheader8:
-if (AESL_DEBUG_TRACE)
-printf("\n  %%storemerge111 = phi i32 [ 0, %%.preheader10 ], [ %%111, %%110  for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_storemerge111_count);
-  llvm_cbe_storemerge111 = (unsigned int )llvm_cbe_storemerge111__PHI_TEMPORARY;
-if (AESL_DEBUG_TRACE) {
-printf("\nstoremerge111 = 0x%X",llvm_cbe_storemerge111);
-printf("\n = 0x%X",0u);
-printf("\n = 0x%X",llvm_cbe_tmp__258);
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%5 = shl i32 %%storemerge111, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_522_count);
-  llvm_cbe_tmp__157 = (unsigned int )llvm_cbe_storemerge111 << 1u;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__157);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%6 = mul nsw i32 %%storemerge111, 5, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_523_count);
-  llvm_cbe_tmp__158 = (unsigned int )((unsigned int )(llvm_cbe_storemerge111&4294967295ull)) * ((unsigned int )(5u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__158&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%7 = add i32 %%6, %%4, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_524_count);
-  llvm_cbe_tmp__159 = (unsigned int )((unsigned int )(llvm_cbe_tmp__158&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__156&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__159&4294967295ull)));
-  llvm_cbe_storemerge29__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
-  goto llvm_cbe_tmp__262;
-
-llvm_cbe_tmp__263:
-if (AESL_DEBUG_TRACE)
-printf("\n  %%111 = add nsw i32 %%storemerge111, 1, !dbg !12 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_755_count);
-  llvm_cbe_tmp__258 = (unsigned int )((unsigned int )(llvm_cbe_storemerge111&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__258&4294967295ull)));
-  if (((llvm_cbe_tmp__258&4294967295U) == (5u&4294967295U))) {
-    goto llvm_cbe_tmp__260;
-  } else {
-    llvm_cbe_storemerge111__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__258;   /* for PHI node */
-    goto llvm_cbe__2e_preheader8;
-  }
-
-  do {     /* Syntactic loop '' to make GCC happy */
-llvm_cbe_tmp__262:
-if (AESL_DEBUG_TRACE)
-printf("\n  %%storemerge29 = phi i32 [ 0, %%.preheader8 ], [ %%109, %%101  for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_storemerge29_count);
-  llvm_cbe_storemerge29 = (unsigned int )llvm_cbe_storemerge29__PHI_TEMPORARY;
-if (AESL_DEBUG_TRACE) {
-printf("\nstoremerge29 = 0x%X",llvm_cbe_storemerge29);
-printf("\n = 0x%X",0u);
-printf("\n = 0x%X",llvm_cbe_tmp__257);
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%9 = load i16* %%2, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_526_count);
-  llvm_cbe_tmp__160 = (unsigned short )*llvm_cbe_tmp__154;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__160);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%10 = uitofp i16 %%9 to float, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_527_count);
-  llvm_cbe_tmp__161 = (float )((float )(unsigned short )llvm_cbe_tmp__160);
-if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__161, *(int*)(&llvm_cbe_tmp__161));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%11 = shl nsw i32 %%storemerge29, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_551_count);
-  llvm_cbe_tmp__162 = (unsigned int )llvm_cbe_storemerge29 << 1u;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__162);
-  llvm_cbe_storemerge37__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
-  llvm_cbe_tmp__163__PHI_TEMPORARY = (float )llvm_cbe_tmp__161;   /* for PHI node */
-  goto llvm_cbe__2e_preheader;
-
-llvm_cbe_tmp__264:
-if (AESL_DEBUG_TRACE)
-printf("\n  %%102 = fpext float %%97 to double, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_735_count);
-  llvm_cbe_tmp__250 = (double )((double )llvm_cbe_tmp__247);
-if (AESL_DEBUG_TRACE)
-printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__250, *(long long*)(&llvm_cbe_tmp__250));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%103 = fmul double %%102, 0x3FE55555571F7693, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_736_count);
-  llvm_cbe_tmp__251 = (double )llvm_cbe_tmp__250 * (*(double*)&FPConstant1);
-if (AESL_DEBUG_TRACE)
-printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__251, *(long long*)(&llvm_cbe_tmp__251));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%104 = tail call double @tanh(double %%103) nounwind, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_737_count);
-  llvm_cbe_tmp__252 = (double ) /*tail*/ tanh(llvm_cbe_tmp__251);
-if (AESL_DEBUG_TRACE) {
-printf("\nArgument  = %lf,  0x%llx",llvm_cbe_tmp__251, *(long long*)(&llvm_cbe_tmp__251));
-printf("\nReturn  = %lf",llvm_cbe_tmp__252);
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%105 = fmul double %%104, 1.715900e+00, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_738_count);
-  llvm_cbe_tmp__253 = (double )llvm_cbe_tmp__252 * (*(double*)&FPConstant2);
-if (AESL_DEBUG_TRACE)
-printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__253, *(long long*)(&llvm_cbe_tmp__253));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%106 = fptoui double %%105 to i16, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_739_count);
-  llvm_cbe_tmp__254 = (unsigned short )((unsigned short )llvm_cbe_tmp__253&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__254);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%107 = add i32 %%7, %%storemerge29, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_740_count);
-  llvm_cbe_tmp__255 = (unsigned int )((unsigned int )(llvm_cbe_tmp__159&4294967295ull)) + ((unsigned int )(llvm_cbe_storemerge29&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__255&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%108 = getelementptr inbounds i16* %%Layer3_Neurons_CPU, i32 %%107, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_741_count);
-  llvm_cbe_tmp__256 = (signed short *)(&llvm_cbe_Layer3_Neurons_CPU[(((signed int )llvm_cbe_tmp__255))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__255));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  store i16 %%106, i16* %%108, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_742_count);
-  *llvm_cbe_tmp__256 = llvm_cbe_tmp__254;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__254);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%109 = add nsw i32 %%storemerge29, 1, !dbg !12 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_743_count);
-  llvm_cbe_tmp__257 = (unsigned int )((unsigned int )(llvm_cbe_storemerge29&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__257&4294967295ull)));
-  if (((llvm_cbe_tmp__257&4294967295U) == (5u&4294967295U))) {
-    goto llvm_cbe_tmp__263;
-  } else {
-    llvm_cbe_storemerge29__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__257;   /* for PHI node */
-    goto llvm_cbe_tmp__262;
-  }
-
-  do {     /* Syntactic loop '.preheader' to make GCC happy */
-llvm_cbe__2e_preheader:
-if (AESL_DEBUG_TRACE)
-printf("\n  %%storemerge37 = phi i32 [ 0, %%8 ], [ %%100, %%99  for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_storemerge37_count);
-  llvm_cbe_storemerge37 = (unsigned int )llvm_cbe_storemerge37__PHI_TEMPORARY;
-if (AESL_DEBUG_TRACE) {
-printf("\nstoremerge37 = 0x%X",llvm_cbe_storemerge37);
-printf("\n = 0x%X",0u);
-printf("\n = 0x%X",llvm_cbe_tmp__249);
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%12 = phi float [ %%10, %%8 ], [ %%97, %%99  for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_553_count);
-  llvm_cbe_tmp__163 = (float )llvm_cbe_tmp__163__PHI_TEMPORARY;
-if (AESL_DEBUG_TRACE) {
-printf("\n = %f",llvm_cbe_tmp__163);
-printf("\n = %f",llvm_cbe_tmp__161);
-printf("\n = %f",llvm_cbe_tmp__247);
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%13 = mul nsw i32 %%storemerge37, 5, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_568_count);
-  llvm_cbe_tmp__164 = (unsigned int )((unsigned int )(llvm_cbe_storemerge37&4294967295ull)) * ((unsigned int )(5u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__164&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%14 = add nsw i32 %%storemerge37, %%5, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_569_count);
-  llvm_cbe_tmp__165 = (unsigned int )((unsigned int )(llvm_cbe_storemerge37&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__157&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__165&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%15 = mul nsw i32 %%14, 13, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_570_count);
-  llvm_cbe_tmp__166 = (unsigned int )((unsigned int )(llvm_cbe_tmp__165&4294967295ull)) * ((unsigned int )(13u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__166&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%16 = add i32 %%15, 169, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_571_count);
-  llvm_cbe_tmp__167 = (unsigned int )((unsigned int )(llvm_cbe_tmp__166&4294967295ull)) + ((unsigned int )(169u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__167&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%17 = add i32 %%15, 338, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_572_count);
-  llvm_cbe_tmp__168 = (unsigned int )((unsigned int )(llvm_cbe_tmp__166&4294967295ull)) + ((unsigned int )(338u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__168&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%18 = add i32 %%15, 507, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_573_count);
-  llvm_cbe_tmp__169 = (unsigned int )((unsigned int )(llvm_cbe_tmp__166&4294967295ull)) + ((unsigned int )(507u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__169&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%19 = add i32 %%15, 676, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_574_count);
-  llvm_cbe_tmp__170 = (unsigned int )((unsigned int )(llvm_cbe_tmp__166&4294967295ull)) + ((unsigned int )(676u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__170&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%20 = add i32 %%15, 845, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_575_count);
-  llvm_cbe_tmp__171 = (unsigned int )((unsigned int )(llvm_cbe_tmp__166&4294967295ull)) + ((unsigned int )(845u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__171&4294967295ull)));
-  llvm_cbe_storemerge45__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
-  llvm_cbe_tmp__172__PHI_TEMPORARY = (float )llvm_cbe_tmp__163;   /* for PHI node */
-  goto llvm_cbe_tmp__265;
-
-llvm_cbe_tmp__266:
-if (AESL_DEBUG_TRACE)
-printf("\n  %%100 = add nsw i32 %%storemerge37, 1, !dbg !13 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_718_count);
-  llvm_cbe_tmp__249 = (unsigned int )((unsigned int )(llvm_cbe_storemerge37&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__249&4294967295ull)));
-  if (((llvm_cbe_tmp__249&4294967295U) == (5u&4294967295U))) {
-    goto llvm_cbe_tmp__264;
-  } else {
-    llvm_cbe_storemerge37__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__249;   /* for PHI node */
-    llvm_cbe_tmp__163__PHI_TEMPORARY = (float )llvm_cbe_tmp__247;   /* for PHI node */
-    goto llvm_cbe__2e_preheader;
-  }
-
-  do {     /* Syntactic loop '' to make GCC happy */
-llvm_cbe_tmp__265:
-if (AESL_DEBUG_TRACE)
-printf("\n  %%storemerge45 = phi i32 [ 0, %%.preheader ], [ %%98, %%21  for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_storemerge45_count);
-  llvm_cbe_storemerge45 = (unsigned int )llvm_cbe_storemerge45__PHI_TEMPORARY;
-if (AESL_DEBUG_TRACE) {
-printf("\nstoremerge45 = 0x%X",llvm_cbe_storemerge45);
-printf("\n = 0x%X",0u);
-printf("\n = 0x%X",llvm_cbe_tmp__248);
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%22 = phi float [ %%12, %%.preheader ], [ %%97, %%21  for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_577_count);
-  llvm_cbe_tmp__172 = (float )llvm_cbe_tmp__172__PHI_TEMPORARY;
-if (AESL_DEBUG_TRACE) {
-printf("\n = %f",llvm_cbe_tmp__172);
-printf("\n = %f",llvm_cbe_tmp__163);
-printf("\n = %f",llvm_cbe_tmp__247);
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%23 = add nsw i32 %%storemerge45, %%13, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_578_count);
-  llvm_cbe_tmp__173 = (unsigned int )((unsigned int )(llvm_cbe_storemerge45&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__164&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__173&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%24 = mul nsw i32 %%23, 6, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_579_count);
-  llvm_cbe_tmp__174 = (unsigned int )((unsigned int )(llvm_cbe_tmp__173&4294967295ull)) * ((unsigned int )(6u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__174&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%25 = add nsw i32 %%24, %%3, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_580_count);
-  llvm_cbe_tmp__175 = (unsigned int )((unsigned int )(llvm_cbe_tmp__174&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__155&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__175&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%26 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%25, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_581_count);
-  llvm_cbe_tmp__176 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__175))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__175));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%27 = load i16* %%26, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_582_count);
-  llvm_cbe_tmp__177 = (unsigned short )*llvm_cbe_tmp__176;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__177);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%28 = zext i16 %%27 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_583_count);
-  llvm_cbe_tmp__178 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__177&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__178);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%29 = add nsw i32 %%storemerge45, %%11, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_584_count);
-  llvm_cbe_tmp__179 = (unsigned int )((unsigned int )(llvm_cbe_storemerge45&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__162&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__179&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%30 = add nsw i32 %%29, %%15, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_585_count);
-  llvm_cbe_tmp__180 = (unsigned int )((unsigned int )(llvm_cbe_tmp__179&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__166&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__180&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%31 = getelementptr inbounds i16* %%Layer2_Neurons_CPU, i32 %%30, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_586_count);
-  llvm_cbe_tmp__181 = (signed short *)(&llvm_cbe_Layer2_Neurons_CPU[(((signed int )llvm_cbe_tmp__180))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__180));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%32 = load i16* %%31, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_587_count);
-  llvm_cbe_tmp__182 = (unsigned short )*llvm_cbe_tmp__181;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__182);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%33 = zext i16 %%32 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_588_count);
-  llvm_cbe_tmp__183 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__182&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__183);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%34 = mul nsw i32 %%33, %%28, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_589_count);
-  llvm_cbe_tmp__184 = (unsigned int )((unsigned int )(llvm_cbe_tmp__183&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__178&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__184&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%35 = lshr i32 %%34, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_590_count);
-  llvm_cbe_tmp__185 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__184&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__185&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%36 = sitofp i32 %%35 to float, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_591_count);
-  llvm_cbe_tmp__186 = (float )((float )(signed int )llvm_cbe_tmp__185);
-if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__186, *(int*)(&llvm_cbe_tmp__186));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%37 = fadd float %%22, %%36, !dbg !9 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_592_count);
-  llvm_cbe_tmp__187 = (float )((float )(llvm_cbe_tmp__172 + llvm_cbe_tmp__186));
-if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__187, *(int*)(&llvm_cbe_tmp__187));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%38 = add nsw i32 %%25, 1, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_601_count);
-  llvm_cbe_tmp__188 = (unsigned int )((unsigned int )(llvm_cbe_tmp__175&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__188&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%39 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%38, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_602_count);
-  llvm_cbe_tmp__189 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__188))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__188));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%40 = load i16* %%39, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_603_count);
-  llvm_cbe_tmp__190 = (unsigned short )*llvm_cbe_tmp__189;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__190);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%41 = zext i16 %%40 to i32, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_604_count);
-  llvm_cbe_tmp__191 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__190&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__191);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%42 = add i32 %%16, %%29, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_605_count);
-  llvm_cbe_tmp__192 = (unsigned int )((unsigned int )(llvm_cbe_tmp__167&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__179&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__192&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%43 = getelementptr inbounds i16* %%Layer2_Neurons_CPU, i32 %%42, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_606_count);
-  llvm_cbe_tmp__193 = (signed short *)(&llvm_cbe_Layer2_Neurons_CPU[(((signed int )llvm_cbe_tmp__192))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__192));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%44 = load i16* %%43, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_607_count);
-  llvm_cbe_tmp__194 = (unsigned short )*llvm_cbe_tmp__193;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__194);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%45 = zext i16 %%44 to i32, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_608_count);
-  llvm_cbe_tmp__195 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__194&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__195);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%46 = mul nsw i32 %%45, %%41, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_609_count);
-  llvm_cbe_tmp__196 = (unsigned int )((unsigned int )(llvm_cbe_tmp__195&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__191&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__196&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%47 = lshr i32 %%46, 8, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_610_count);
-  llvm_cbe_tmp__197 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__196&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__197&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%48 = sitofp i32 %%47 to float, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_611_count);
-  llvm_cbe_tmp__198 = (float )((float )(signed int )llvm_cbe_tmp__197);
-if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__198, *(int*)(&llvm_cbe_tmp__198));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%49 = fadd float %%37, %%48, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_612_count);
-  llvm_cbe_tmp__199 = (float )((float )(llvm_cbe_tmp__187 + llvm_cbe_tmp__198));
-if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__199, *(int*)(&llvm_cbe_tmp__199));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%50 = add nsw i32 %%25, 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_621_count);
-  llvm_cbe_tmp__200 = (unsigned int )((unsigned int )(llvm_cbe_tmp__175&4294967295ull)) + ((unsigned int )(2u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__200&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%51 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%50, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_622_count);
-  llvm_cbe_tmp__201 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__200))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__200));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%52 = load i16* %%51, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_623_count);
-  llvm_cbe_tmp__202 = (unsigned short )*llvm_cbe_tmp__201;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__202);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%53 = zext i16 %%52 to i32, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_624_count);
-  llvm_cbe_tmp__203 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__202&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__203);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%54 = add i32 %%17, %%29, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_625_count);
-  llvm_cbe_tmp__204 = (unsigned int )((unsigned int )(llvm_cbe_tmp__168&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__179&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__204&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%55 = getelementptr inbounds i16* %%Layer2_Neurons_CPU, i32 %%54, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_626_count);
-  llvm_cbe_tmp__205 = (signed short *)(&llvm_cbe_Layer2_Neurons_CPU[(((signed int )llvm_cbe_tmp__204))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__204));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%56 = load i16* %%55, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_627_count);
-  llvm_cbe_tmp__206 = (unsigned short )*llvm_cbe_tmp__205;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__206);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%57 = zext i16 %%56 to i32, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_628_count);
-  llvm_cbe_tmp__207 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__206&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__207);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%58 = mul nsw i32 %%57, %%53, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_629_count);
-  llvm_cbe_tmp__208 = (unsigned int )((unsigned int )(llvm_cbe_tmp__207&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__203&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__208&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%59 = lshr i32 %%58, 8, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_630_count);
-  llvm_cbe_tmp__209 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__208&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__209&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%60 = sitofp i32 %%59 to float, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_631_count);
-  llvm_cbe_tmp__210 = (float )((float )(signed int )llvm_cbe_tmp__209);
-if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__210, *(int*)(&llvm_cbe_tmp__210));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%61 = fadd float %%49, %%60, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_632_count);
-  llvm_cbe_tmp__211 = (float )((float )(llvm_cbe_tmp__199 + llvm_cbe_tmp__210));
-if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__211, *(int*)(&llvm_cbe_tmp__211));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%62 = add nsw i32 %%25, 3, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_641_count);
-  llvm_cbe_tmp__212 = (unsigned int )((unsigned int )(llvm_cbe_tmp__175&4294967295ull)) + ((unsigned int )(3u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__212&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%63 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%62, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_642_count);
-  llvm_cbe_tmp__213 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__212))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__212));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%64 = load i16* %%63, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_643_count);
-  llvm_cbe_tmp__214 = (unsigned short )*llvm_cbe_tmp__213;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__214);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%65 = zext i16 %%64 to i32, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_644_count);
-  llvm_cbe_tmp__215 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__214&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__215);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%66 = add i32 %%18, %%29, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_645_count);
-  llvm_cbe_tmp__216 = (unsigned int )((unsigned int )(llvm_cbe_tmp__169&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__179&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__216&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%67 = getelementptr inbounds i16* %%Layer2_Neurons_CPU, i32 %%66, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_646_count);
-  llvm_cbe_tmp__217 = (signed short *)(&llvm_cbe_Layer2_Neurons_CPU[(((signed int )llvm_cbe_tmp__216))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__216));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%68 = load i16* %%67, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_647_count);
-  llvm_cbe_tmp__218 = (unsigned short )*llvm_cbe_tmp__217;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__218);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%69 = zext i16 %%68 to i32, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_648_count);
-  llvm_cbe_tmp__219 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__218&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__219);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%70 = mul nsw i32 %%69, %%65, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_649_count);
-  llvm_cbe_tmp__220 = (unsigned int )((unsigned int )(llvm_cbe_tmp__219&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__215&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__220&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%71 = lshr i32 %%70, 8, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_650_count);
-  llvm_cbe_tmp__221 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__220&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__221&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%72 = sitofp i32 %%71 to float, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_651_count);
-  llvm_cbe_tmp__222 = (float )((float )(signed int )llvm_cbe_tmp__221);
-if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__222, *(int*)(&llvm_cbe_tmp__222));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%73 = fadd float %%61, %%72, !dbg !10 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_652_count);
-  llvm_cbe_tmp__223 = (float )((float )(llvm_cbe_tmp__211 + llvm_cbe_tmp__222));
-if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__223, *(int*)(&llvm_cbe_tmp__223));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%74 = add nsw i32 %%25, 4, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_661_count);
-  llvm_cbe_tmp__224 = (unsigned int )((unsigned int )(llvm_cbe_tmp__175&4294967295ull)) + ((unsigned int )(4u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__224&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%75 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%74, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_662_count);
-  llvm_cbe_tmp__225 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__224))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__224));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%76 = load i16* %%75, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_663_count);
-  llvm_cbe_tmp__226 = (unsigned short )*llvm_cbe_tmp__225;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__226);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%77 = zext i16 %%76 to i32, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_664_count);
-  llvm_cbe_tmp__227 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__226&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__227);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%78 = add i32 %%19, %%29, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_665_count);
-  llvm_cbe_tmp__228 = (unsigned int )((unsigned int )(llvm_cbe_tmp__170&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__179&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__228&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%79 = getelementptr inbounds i16* %%Layer2_Neurons_CPU, i32 %%78, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_666_count);
-  llvm_cbe_tmp__229 = (signed short *)(&llvm_cbe_Layer2_Neurons_CPU[(((signed int )llvm_cbe_tmp__228))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__228));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%80 = load i16* %%79, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_667_count);
-  llvm_cbe_tmp__230 = (unsigned short )*llvm_cbe_tmp__229;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__230);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%81 = zext i16 %%80 to i32, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_668_count);
-  llvm_cbe_tmp__231 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__230&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__231);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%82 = mul nsw i32 %%81, %%77, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_669_count);
-  llvm_cbe_tmp__232 = (unsigned int )((unsigned int )(llvm_cbe_tmp__231&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__227&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__232&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%83 = lshr i32 %%82, 8, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_670_count);
-  llvm_cbe_tmp__233 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__232&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__233&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%84 = sitofp i32 %%83 to float, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_671_count);
-  llvm_cbe_tmp__234 = (float )((float )(signed int )llvm_cbe_tmp__233);
-if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__234, *(int*)(&llvm_cbe_tmp__234));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%85 = fadd float %%73, %%84, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_672_count);
-  llvm_cbe_tmp__235 = (float )((float )(llvm_cbe_tmp__223 + llvm_cbe_tmp__234));
-if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__235, *(int*)(&llvm_cbe_tmp__235));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%86 = add nsw i32 %%25, 5, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_681_count);
-  llvm_cbe_tmp__236 = (unsigned int )((unsigned int )(llvm_cbe_tmp__175&4294967295ull)) + ((unsigned int )(5u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__236&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%87 = getelementptr inbounds i16* %%Layer2_Weights_CPU, i32 %%86, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_682_count);
-  llvm_cbe_tmp__237 = (signed short *)(&llvm_cbe_Layer2_Weights_CPU[(((signed int )llvm_cbe_tmp__236))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__236));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%88 = load i16* %%87, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_683_count);
-  llvm_cbe_tmp__238 = (unsigned short )*llvm_cbe_tmp__237;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__238);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%89 = zext i16 %%88 to i32, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_684_count);
-  llvm_cbe_tmp__239 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__238&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__239);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%90 = add i32 %%20, %%29, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_685_count);
-  llvm_cbe_tmp__240 = (unsigned int )((unsigned int )(llvm_cbe_tmp__171&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__179&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__240&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%91 = getelementptr inbounds i16* %%Layer2_Neurons_CPU, i32 %%90, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_686_count);
-  llvm_cbe_tmp__241 = (signed short *)(&llvm_cbe_Layer2_Neurons_CPU[(((signed int )llvm_cbe_tmp__240))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__240));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%92 = load i16* %%91, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_687_count);
-  llvm_cbe_tmp__242 = (unsigned short )*llvm_cbe_tmp__241;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__242);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%93 = zext i16 %%92 to i32, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_688_count);
-  llvm_cbe_tmp__243 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__242&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__243);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%94 = mul nsw i32 %%93, %%89, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_689_count);
-  llvm_cbe_tmp__244 = (unsigned int )((unsigned int )(llvm_cbe_tmp__243&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__239&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__244&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%95 = lshr i32 %%94, 8, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_690_count);
-  llvm_cbe_tmp__245 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__244&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__245&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%96 = sitofp i32 %%95 to float, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_691_count);
-  llvm_cbe_tmp__246 = (float )((float )(signed int )llvm_cbe_tmp__245);
-if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__246, *(int*)(&llvm_cbe_tmp__246));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%97 = fadd float %%85, %%96, !dbg !11 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_692_count);
-  llvm_cbe_tmp__247 = (float )((float )(llvm_cbe_tmp__235 + llvm_cbe_tmp__246));
-if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__247, *(int*)(&llvm_cbe_tmp__247));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%98 = add nsw i32 %%storemerge45, 1, !dbg !13 for 0x%I64xth hint within @calculateLayer3_int  --> \n", ++aesl_llvm_cbe_701_count);
-  llvm_cbe_tmp__248 = (unsigned int )((unsigned int )(llvm_cbe_storemerge45&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__248&4294967295ull)));
-  if (((llvm_cbe_tmp__248&4294967295U) == (5u&4294967295U))) {
-    goto llvm_cbe_tmp__266;
-  } else {
-    llvm_cbe_storemerge45__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__248;   /* for PHI node */
-    llvm_cbe_tmp__172__PHI_TEMPORARY = (float )llvm_cbe_tmp__247;   /* for PHI node */
-    goto llvm_cbe_tmp__265;
-  }
-
-  } while (1); /* end of syntactic loop '' */
-  } while (1); /* end of syntactic loop '.preheader' */
-  } while (1); /* end of syntactic loop '' */
-  } while (1); /* end of syntactic loop '.preheader8' */
-  } while (1); /* end of syntactic loop '.preheader10' */
-llvm_cbe_tmp__261:
-  if (AESL_DEBUG_TRACE)
-      printf("\nEND @calculateLayer3_int}\n");
-  return;
-}
-
-
-void calculateLayer4_int_ref(signed short *llvm_cbe_Layer3_Neurons_CPU, signed short *llvm_cbe_Layer3_Weights_CPU, signed short *llvm_cbe_Layer4_Neurons_CPU) {
   static  unsigned long long aesl_llvm_cbe_781_count = 0;
   static  unsigned long long aesl_llvm_cbe_782_count = 0;
   static  unsigned long long aesl_llvm_cbe_783_count = 0;
   static  unsigned long long aesl_llvm_cbe_784_count = 0;
+  unsigned int llvm_cbe_tmp__277;
   static  unsigned long long aesl_llvm_cbe_785_count = 0;
-  static  unsigned long long aesl_llvm_cbe_puts_count = 0;
-  unsigned int llvm_cbe_puts;
+  unsigned int llvm_cbe_tmp__278;
   static  unsigned long long aesl_llvm_cbe_786_count = 0;
+  unsigned int llvm_cbe_tmp__279;
   static  unsigned long long aesl_llvm_cbe_787_count = 0;
+  signed short *llvm_cbe_tmp__280;
   static  unsigned long long aesl_llvm_cbe_788_count = 0;
+  unsigned short llvm_cbe_tmp__281;
   static  unsigned long long aesl_llvm_cbe_789_count = 0;
+  unsigned int llvm_cbe_tmp__282;
   static  unsigned long long aesl_llvm_cbe_790_count = 0;
+  signed short *llvm_cbe_tmp__283;
   static  unsigned long long aesl_llvm_cbe_791_count = 0;
+  unsigned short llvm_cbe_tmp__284;
   static  unsigned long long aesl_llvm_cbe_792_count = 0;
-  static  unsigned long long aesl_llvm_cbe_storemerge10_count = 0;
-  unsigned int llvm_cbe_storemerge10;
-  unsigned int llvm_cbe_storemerge10__PHI_TEMPORARY;
+  unsigned int llvm_cbe_tmp__285;
   static  unsigned long long aesl_llvm_cbe_793_count = 0;
-  unsigned int llvm_cbe_tmp__267;
+  unsigned int llvm_cbe_tmp__286;
   static  unsigned long long aesl_llvm_cbe_794_count = 0;
-  signed short *llvm_cbe_tmp__268;
+  unsigned int llvm_cbe_tmp__287;
   static  unsigned long long aesl_llvm_cbe_795_count = 0;
-  unsigned short llvm_cbe_tmp__269;
+  unsigned short llvm_cbe_tmp__288;
   static  unsigned long long aesl_llvm_cbe_796_count = 0;
+  unsigned short llvm_cbe_tmp__289;
   static  unsigned long long aesl_llvm_cbe_797_count = 0;
   static  unsigned long long aesl_llvm_cbe_798_count = 0;
   static  unsigned long long aesl_llvm_cbe_799_count = 0;
@@ -3088,375 +3125,303 @@ void calculateLayer4_int_ref(signed short *llvm_cbe_Layer3_Neurons_CPU, signed s
   static  unsigned long long aesl_llvm_cbe_803_count = 0;
   static  unsigned long long aesl_llvm_cbe_804_count = 0;
   static  unsigned long long aesl_llvm_cbe_805_count = 0;
-  unsigned int llvm_cbe_tmp__270;
   static  unsigned long long aesl_llvm_cbe_806_count = 0;
-  static  unsigned long long aesl_llvm_cbe_storemerge19_count = 0;
-  unsigned int llvm_cbe_storemerge19;
-  unsigned int llvm_cbe_storemerge19__PHI_TEMPORARY;
+  unsigned int llvm_cbe_tmp__290;
   static  unsigned long long aesl_llvm_cbe_807_count = 0;
-  unsigned short llvm_cbe_tmp__271;
-  unsigned short llvm_cbe_tmp__271__PHI_TEMPORARY;
+  signed short *llvm_cbe_tmp__291;
   static  unsigned long long aesl_llvm_cbe_808_count = 0;
+  unsigned short llvm_cbe_tmp__292;
   static  unsigned long long aesl_llvm_cbe_809_count = 0;
+  unsigned int llvm_cbe_tmp__293;
   static  unsigned long long aesl_llvm_cbe_810_count = 0;
+  unsigned int llvm_cbe_tmp__294;
   static  unsigned long long aesl_llvm_cbe_811_count = 0;
+  signed short *llvm_cbe_tmp__295;
   static  unsigned long long aesl_llvm_cbe_812_count = 0;
-  unsigned int llvm_cbe_tmp__272;
+  unsigned short llvm_cbe_tmp__296;
   static  unsigned long long aesl_llvm_cbe_813_count = 0;
-  unsigned int llvm_cbe_tmp__273;
+  unsigned int llvm_cbe_tmp__297;
   static  unsigned long long aesl_llvm_cbe_814_count = 0;
-  static  unsigned long long aesl_llvm_cbe_storemerge27_count = 0;
-  unsigned int llvm_cbe_storemerge27;
-  unsigned int llvm_cbe_storemerge27__PHI_TEMPORARY;
+  unsigned int llvm_cbe_tmp__298;
   static  unsigned long long aesl_llvm_cbe_815_count = 0;
-  unsigned short llvm_cbe_tmp__274;
-  unsigned short llvm_cbe_tmp__274__PHI_TEMPORARY;
+  unsigned int llvm_cbe_tmp__299;
   static  unsigned long long aesl_llvm_cbe_816_count = 0;
+  unsigned short llvm_cbe_tmp__300;
   static  unsigned long long aesl_llvm_cbe_817_count = 0;
+  unsigned short llvm_cbe_tmp__301;
   static  unsigned long long aesl_llvm_cbe_818_count = 0;
   static  unsigned long long aesl_llvm_cbe_819_count = 0;
   static  unsigned long long aesl_llvm_cbe_820_count = 0;
-  unsigned int llvm_cbe_tmp__275;
   static  unsigned long long aesl_llvm_cbe_821_count = 0;
-  unsigned int llvm_cbe_tmp__276;
   static  unsigned long long aesl_llvm_cbe_822_count = 0;
-  unsigned int llvm_cbe_tmp__277;
   static  unsigned long long aesl_llvm_cbe_823_count = 0;
-  signed short *llvm_cbe_tmp__278;
   static  unsigned long long aesl_llvm_cbe_824_count = 0;
-  unsigned short llvm_cbe_tmp__279;
   static  unsigned long long aesl_llvm_cbe_825_count = 0;
-  unsigned int llvm_cbe_tmp__280;
   static  unsigned long long aesl_llvm_cbe_826_count = 0;
-  signed short *llvm_cbe_tmp__281;
   static  unsigned long long aesl_llvm_cbe_827_count = 0;
-  unsigned short llvm_cbe_tmp__282;
+  unsigned int llvm_cbe_tmp__302;
   static  unsigned long long aesl_llvm_cbe_828_count = 0;
-  unsigned int llvm_cbe_tmp__283;
+  signed short *llvm_cbe_tmp__303;
   static  unsigned long long aesl_llvm_cbe_829_count = 0;
-  unsigned int llvm_cbe_tmp__284;
+  unsigned short llvm_cbe_tmp__304;
   static  unsigned long long aesl_llvm_cbe_830_count = 0;
-  unsigned int llvm_cbe_tmp__285;
+  unsigned int llvm_cbe_tmp__305;
   static  unsigned long long aesl_llvm_cbe_831_count = 0;
-  unsigned short llvm_cbe_tmp__286;
+  unsigned int llvm_cbe_tmp__306;
   static  unsigned long long aesl_llvm_cbe_832_count = 0;
-  unsigned short llvm_cbe_tmp__287;
+  signed short *llvm_cbe_tmp__307;
   static  unsigned long long aesl_llvm_cbe_833_count = 0;
+  unsigned short llvm_cbe_tmp__308;
   static  unsigned long long aesl_llvm_cbe_834_count = 0;
+  unsigned int llvm_cbe_tmp__309;
   static  unsigned long long aesl_llvm_cbe_835_count = 0;
+  unsigned int llvm_cbe_tmp__310;
   static  unsigned long long aesl_llvm_cbe_836_count = 0;
+  unsigned int llvm_cbe_tmp__311;
   static  unsigned long long aesl_llvm_cbe_837_count = 0;
+  unsigned short llvm_cbe_tmp__312;
   static  unsigned long long aesl_llvm_cbe_838_count = 0;
+  unsigned short llvm_cbe_tmp__313;
   static  unsigned long long aesl_llvm_cbe_839_count = 0;
   static  unsigned long long aesl_llvm_cbe_840_count = 0;
   static  unsigned long long aesl_llvm_cbe_841_count = 0;
   static  unsigned long long aesl_llvm_cbe_842_count = 0;
-  unsigned int llvm_cbe_tmp__288;
   static  unsigned long long aesl_llvm_cbe_843_count = 0;
-  signed short *llvm_cbe_tmp__289;
   static  unsigned long long aesl_llvm_cbe_844_count = 0;
-  unsigned short llvm_cbe_tmp__290;
   static  unsigned long long aesl_llvm_cbe_845_count = 0;
-  unsigned int llvm_cbe_tmp__291;
   static  unsigned long long aesl_llvm_cbe_846_count = 0;
-  unsigned int llvm_cbe_tmp__292;
   static  unsigned long long aesl_llvm_cbe_847_count = 0;
-  signed short *llvm_cbe_tmp__293;
   static  unsigned long long aesl_llvm_cbe_848_count = 0;
-  unsigned short llvm_cbe_tmp__294;
+  unsigned int llvm_cbe_tmp__314;
   static  unsigned long long aesl_llvm_cbe_849_count = 0;
-  unsigned int llvm_cbe_tmp__295;
+  signed short *llvm_cbe_tmp__315;
   static  unsigned long long aesl_llvm_cbe_850_count = 0;
-  unsigned int llvm_cbe_tmp__296;
+  unsigned short llvm_cbe_tmp__316;
   static  unsigned long long aesl_llvm_cbe_851_count = 0;
-  unsigned int llvm_cbe_tmp__297;
+  unsigned int llvm_cbe_tmp__317;
   static  unsigned long long aesl_llvm_cbe_852_count = 0;
-  unsigned short llvm_cbe_tmp__298;
+  unsigned int llvm_cbe_tmp__318;
   static  unsigned long long aesl_llvm_cbe_853_count = 0;
-  unsigned short llvm_cbe_tmp__299;
+  signed short *llvm_cbe_tmp__319;
   static  unsigned long long aesl_llvm_cbe_854_count = 0;
+  unsigned short llvm_cbe_tmp__320;
   static  unsigned long long aesl_llvm_cbe_855_count = 0;
+  unsigned int llvm_cbe_tmp__321;
   static  unsigned long long aesl_llvm_cbe_856_count = 0;
+  unsigned int llvm_cbe_tmp__322;
   static  unsigned long long aesl_llvm_cbe_857_count = 0;
+  unsigned int llvm_cbe_tmp__323;
   static  unsigned long long aesl_llvm_cbe_858_count = 0;
+  unsigned short llvm_cbe_tmp__324;
   static  unsigned long long aesl_llvm_cbe_859_count = 0;
+  unsigned short llvm_cbe_tmp__325;
   static  unsigned long long aesl_llvm_cbe_860_count = 0;
   static  unsigned long long aesl_llvm_cbe_861_count = 0;
   static  unsigned long long aesl_llvm_cbe_862_count = 0;
   static  unsigned long long aesl_llvm_cbe_863_count = 0;
-  unsigned int llvm_cbe_tmp__300;
   static  unsigned long long aesl_llvm_cbe_864_count = 0;
-  signed short *llvm_cbe_tmp__301;
   static  unsigned long long aesl_llvm_cbe_865_count = 0;
-  unsigned short llvm_cbe_tmp__302;
   static  unsigned long long aesl_llvm_cbe_866_count = 0;
-  unsigned int llvm_cbe_tmp__303;
   static  unsigned long long aesl_llvm_cbe_867_count = 0;
-  unsigned int llvm_cbe_tmp__304;
   static  unsigned long long aesl_llvm_cbe_868_count = 0;
-  signed short *llvm_cbe_tmp__305;
   static  unsigned long long aesl_llvm_cbe_869_count = 0;
-  unsigned short llvm_cbe_tmp__306;
+  unsigned int llvm_cbe_tmp__326;
   static  unsigned long long aesl_llvm_cbe_870_count = 0;
-  unsigned int llvm_cbe_tmp__307;
+  signed short *llvm_cbe_tmp__327;
   static  unsigned long long aesl_llvm_cbe_871_count = 0;
-  unsigned int llvm_cbe_tmp__308;
+  unsigned short llvm_cbe_tmp__328;
   static  unsigned long long aesl_llvm_cbe_872_count = 0;
-  unsigned int llvm_cbe_tmp__309;
+  unsigned int llvm_cbe_tmp__329;
   static  unsigned long long aesl_llvm_cbe_873_count = 0;
-  unsigned short llvm_cbe_tmp__310;
+  unsigned int llvm_cbe_tmp__330;
   static  unsigned long long aesl_llvm_cbe_874_count = 0;
-  unsigned short llvm_cbe_tmp__311;
+  signed short *llvm_cbe_tmp__331;
   static  unsigned long long aesl_llvm_cbe_875_count = 0;
+  unsigned short llvm_cbe_tmp__332;
   static  unsigned long long aesl_llvm_cbe_876_count = 0;
+  unsigned int llvm_cbe_tmp__333;
   static  unsigned long long aesl_llvm_cbe_877_count = 0;
+  unsigned int llvm_cbe_tmp__334;
   static  unsigned long long aesl_llvm_cbe_878_count = 0;
+  unsigned int llvm_cbe_tmp__335;
   static  unsigned long long aesl_llvm_cbe_879_count = 0;
+  unsigned short llvm_cbe_tmp__336;
   static  unsigned long long aesl_llvm_cbe_880_count = 0;
+  unsigned short llvm_cbe_tmp__337;
   static  unsigned long long aesl_llvm_cbe_881_count = 0;
   static  unsigned long long aesl_llvm_cbe_882_count = 0;
   static  unsigned long long aesl_llvm_cbe_883_count = 0;
   static  unsigned long long aesl_llvm_cbe_884_count = 0;
-  unsigned int llvm_cbe_tmp__312;
   static  unsigned long long aesl_llvm_cbe_885_count = 0;
-  signed short *llvm_cbe_tmp__313;
   static  unsigned long long aesl_llvm_cbe_886_count = 0;
-  unsigned short llvm_cbe_tmp__314;
   static  unsigned long long aesl_llvm_cbe_887_count = 0;
-  unsigned int llvm_cbe_tmp__315;
   static  unsigned long long aesl_llvm_cbe_888_count = 0;
-  unsigned int llvm_cbe_tmp__316;
   static  unsigned long long aesl_llvm_cbe_889_count = 0;
-  signed short *llvm_cbe_tmp__317;
   static  unsigned long long aesl_llvm_cbe_890_count = 0;
-  unsigned short llvm_cbe_tmp__318;
+  unsigned int llvm_cbe_tmp__338;
   static  unsigned long long aesl_llvm_cbe_891_count = 0;
-  unsigned int llvm_cbe_tmp__319;
   static  unsigned long long aesl_llvm_cbe_892_count = 0;
-  unsigned int llvm_cbe_tmp__320;
   static  unsigned long long aesl_llvm_cbe_893_count = 0;
-  unsigned int llvm_cbe_tmp__321;
   static  unsigned long long aesl_llvm_cbe_894_count = 0;
-  unsigned short llvm_cbe_tmp__322;
   static  unsigned long long aesl_llvm_cbe_895_count = 0;
-  unsigned short llvm_cbe_tmp__323;
+  static  unsigned long long aesl_llvm_cbe_exitcond_count = 0;
   static  unsigned long long aesl_llvm_cbe_896_count = 0;
   static  unsigned long long aesl_llvm_cbe_897_count = 0;
+  unsigned int llvm_cbe_tmp__339;
   static  unsigned long long aesl_llvm_cbe_898_count = 0;
   static  unsigned long long aesl_llvm_cbe_899_count = 0;
   static  unsigned long long aesl_llvm_cbe_900_count = 0;
   static  unsigned long long aesl_llvm_cbe_901_count = 0;
   static  unsigned long long aesl_llvm_cbe_902_count = 0;
+  static  unsigned long long aesl_llvm_cbe_exitcond11_count = 0;
   static  unsigned long long aesl_llvm_cbe_903_count = 0;
   static  unsigned long long aesl_llvm_cbe_904_count = 0;
+  unsigned int llvm_cbe_tmp__340;
   static  unsigned long long aesl_llvm_cbe_905_count = 0;
-  unsigned int llvm_cbe_tmp__324;
+  double llvm_cbe_tmp__341;
   static  unsigned long long aesl_llvm_cbe_906_count = 0;
-  signed short *llvm_cbe_tmp__325;
+  double llvm_cbe_tmp__342;
   static  unsigned long long aesl_llvm_cbe_907_count = 0;
-  unsigned short llvm_cbe_tmp__326;
+  float llvm_cbe_tmp__343;
   static  unsigned long long aesl_llvm_cbe_908_count = 0;
-  unsigned int llvm_cbe_tmp__327;
+  float llvm_cbe_tmp__344;
   static  unsigned long long aesl_llvm_cbe_909_count = 0;
-  unsigned int llvm_cbe_tmp__328;
+  float llvm_cbe_tmp__345;
   static  unsigned long long aesl_llvm_cbe_910_count = 0;
-  signed short *llvm_cbe_tmp__329;
+  float llvm_cbe_tmp__346;
   static  unsigned long long aesl_llvm_cbe_911_count = 0;
-  unsigned short llvm_cbe_tmp__330;
+  unsigned short llvm_cbe_tmp__347;
   static  unsigned long long aesl_llvm_cbe_912_count = 0;
-  unsigned int llvm_cbe_tmp__331;
+  signed short *llvm_cbe_tmp__348;
   static  unsigned long long aesl_llvm_cbe_913_count = 0;
-  unsigned int llvm_cbe_tmp__332;
   static  unsigned long long aesl_llvm_cbe_914_count = 0;
-  unsigned int llvm_cbe_tmp__333;
+  unsigned int llvm_cbe_tmp__349;
   static  unsigned long long aesl_llvm_cbe_915_count = 0;
-  unsigned short llvm_cbe_tmp__334;
   static  unsigned long long aesl_llvm_cbe_916_count = 0;
-  unsigned short llvm_cbe_tmp__335;
   static  unsigned long long aesl_llvm_cbe_917_count = 0;
   static  unsigned long long aesl_llvm_cbe_918_count = 0;
   static  unsigned long long aesl_llvm_cbe_919_count = 0;
   static  unsigned long long aesl_llvm_cbe_920_count = 0;
+  static  unsigned long long aesl_llvm_cbe_exitcond12_count = 0;
   static  unsigned long long aesl_llvm_cbe_921_count = 0;
   static  unsigned long long aesl_llvm_cbe_922_count = 0;
-  static  unsigned long long aesl_llvm_cbe_923_count = 0;
-  static  unsigned long long aesl_llvm_cbe_924_count = 0;
-  static  unsigned long long aesl_llvm_cbe_925_count = 0;
-  static  unsigned long long aesl_llvm_cbe_926_count = 0;
-  unsigned int llvm_cbe_tmp__336;
-  static  unsigned long long aesl_llvm_cbe_927_count = 0;
-  static  unsigned long long aesl_llvm_cbe_928_count = 0;
-  static  unsigned long long aesl_llvm_cbe_929_count = 0;
-  static  unsigned long long aesl_llvm_cbe_930_count = 0;
-  static  unsigned long long aesl_llvm_cbe_931_count = 0;
-  static  unsigned long long aesl_llvm_cbe_exitcond_count = 0;
-  static  unsigned long long aesl_llvm_cbe_932_count = 0;
-  static  unsigned long long aesl_llvm_cbe_933_count = 0;
-  unsigned int llvm_cbe_tmp__337;
-  static  unsigned long long aesl_llvm_cbe_934_count = 0;
-  static  unsigned long long aesl_llvm_cbe_935_count = 0;
-  static  unsigned long long aesl_llvm_cbe_936_count = 0;
-  static  unsigned long long aesl_llvm_cbe_937_count = 0;
-  static  unsigned long long aesl_llvm_cbe_938_count = 0;
-  static  unsigned long long aesl_llvm_cbe_exitcond11_count = 0;
-  static  unsigned long long aesl_llvm_cbe_939_count = 0;
-  static  unsigned long long aesl_llvm_cbe_940_count = 0;
-  unsigned int llvm_cbe_tmp__338;
-  static  unsigned long long aesl_llvm_cbe_941_count = 0;
-  double llvm_cbe_tmp__339;
-  static  unsigned long long aesl_llvm_cbe_942_count = 0;
-  double llvm_cbe_tmp__340;
-  static  unsigned long long aesl_llvm_cbe_943_count = 0;
-  float llvm_cbe_tmp__341;
-  static  unsigned long long aesl_llvm_cbe_944_count = 0;
-  float llvm_cbe_tmp__342;
-  static  unsigned long long aesl_llvm_cbe_945_count = 0;
-  float llvm_cbe_tmp__343;
-  static  unsigned long long aesl_llvm_cbe_946_count = 0;
-  float llvm_cbe_tmp__344;
-  static  unsigned long long aesl_llvm_cbe_947_count = 0;
-  unsigned short llvm_cbe_tmp__345;
-  static  unsigned long long aesl_llvm_cbe_948_count = 0;
-  signed short *llvm_cbe_tmp__346;
-  static  unsigned long long aesl_llvm_cbe_949_count = 0;
-  static  unsigned long long aesl_llvm_cbe_950_count = 0;
-  unsigned int llvm_cbe_tmp__347;
-  static  unsigned long long aesl_llvm_cbe_951_count = 0;
-  static  unsigned long long aesl_llvm_cbe_952_count = 0;
-  static  unsigned long long aesl_llvm_cbe_953_count = 0;
-  static  unsigned long long aesl_llvm_cbe_954_count = 0;
-  static  unsigned long long aesl_llvm_cbe_955_count = 0;
-  static  unsigned long long aesl_llvm_cbe_956_count = 0;
-  static  unsigned long long aesl_llvm_cbe_exitcond12_count = 0;
-  static  unsigned long long aesl_llvm_cbe_957_count = 0;
-  static  unsigned long long aesl_llvm_cbe_958_count = 0;
 
 const char* AESL_DEBUG_TRACE = getenv("DEBUG_TRACE");
 if (AESL_DEBUG_TRACE)
 printf("\n\{ BEGIN @calculateLayer4_int_ref\n");
-if (AESL_DEBUG_TRACE)
-printf("\n  %%puts = tail call i32 @puts(i8* getelementptr inbounds ([13 x i8]* @aesl_internal_str, i32 0, i32 0)), !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_puts_count);
-   /*tail*/ puts(( char *)((&aesl_internal_str[(((signed int )0u))
-#ifdef AESL_BC_SIM
- % 13
-#endif
-])));
-if (AESL_DEBUG_TRACE) {
-printf("\nReturn puts = 0x%X",llvm_cbe_puts);
-}
   llvm_cbe_storemerge10__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
-  goto llvm_cbe_tmp__348;
+  goto llvm_cbe_tmp__350;
 
   do {     /* Syntactic loop '' to make GCC happy */
-llvm_cbe_tmp__348:
+llvm_cbe_tmp__350:
 if (AESL_DEBUG_TRACE)
 printf("\n  %%storemerge10 = phi i32 [ 0, %%0 ], [ %%84, %%74  for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_storemerge10_count);
   llvm_cbe_storemerge10 = (unsigned int )llvm_cbe_storemerge10__PHI_TEMPORARY;
 if (AESL_DEBUG_TRACE) {
 printf("\nstoremerge10 = 0x%X",llvm_cbe_storemerge10);
 printf("\n = 0x%X",0u);
-printf("\n = 0x%X",llvm_cbe_tmp__347);
+printf("\n = 0x%X",llvm_cbe_tmp__349);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%2 = mul nsw i32 %%storemerge10, 1251, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_793_count);
-  llvm_cbe_tmp__267 = (unsigned int )((unsigned int )(llvm_cbe_storemerge10&4294967295ull)) * ((unsigned int )(1251u&4294967295ull));
+printf("\n  %%2 = mul nsw i32 %%storemerge10, 1251, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_757_count);
+  llvm_cbe_tmp__269 = (unsigned int )((unsigned int )(llvm_cbe_storemerge10&4294967295ull)) * ((unsigned int )(1251u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__267&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__269&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%3 = getelementptr inbounds [125100 x i16]* @Layer3_Weights_CPU_int, i32 0, i32 %%2, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_794_count);
-  llvm_cbe_tmp__268 = (signed short *)(&Layer3_Weights_CPU_int[(((signed int )llvm_cbe_tmp__267))
+printf("\n  %%3 = getelementptr inbounds [125100 x i16]* @Layer3_Weights_CPU_int, i32 0, i32 %%2, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_758_count);
+  llvm_cbe_tmp__270 = (signed short *)(&Layer3_Weights_CPU_int[(((signed int )llvm_cbe_tmp__269))
 #ifdef AESL_BC_SIM
  % 125100
 #endif
 ]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__267));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__269));
 }
 
 #ifdef AESL_BC_SIM
-  if (!(((signed int )llvm_cbe_tmp__267) < 125100)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer3_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
+  if (!(((signed int )llvm_cbe_tmp__269) < 125100)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer3_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
 
 #endif
 if (AESL_DEBUG_TRACE)
-printf("\n  %%4 = load i16* %%3, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_795_count);
-  llvm_cbe_tmp__269 = (unsigned short )*llvm_cbe_tmp__268;
+printf("\n  %%4 = load i16* %%3, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_759_count);
+  llvm_cbe_tmp__271 = (unsigned short )*llvm_cbe_tmp__270;
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__269);
+printf("\n = 0x%X\n", llvm_cbe_tmp__271);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%5 = add i32 %%2, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_805_count);
-  llvm_cbe_tmp__270 = (unsigned int )((unsigned int )(llvm_cbe_tmp__267&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+printf("\n  %%5 = add i32 %%2, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_769_count);
+  llvm_cbe_tmp__272 = (unsigned int )((unsigned int )(llvm_cbe_tmp__269&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__270&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__272&4294967295ull)));
   llvm_cbe_storemerge19__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
-  llvm_cbe_tmp__271__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__269;   /* for PHI node */
+  llvm_cbe_tmp__273__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__271;   /* for PHI node */
   goto llvm_cbe__2e_preheader5;
 
-llvm_cbe_tmp__349:
+llvm_cbe_tmp__351:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%75 = zext i16 %%70 to i32, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_940_count);
-  llvm_cbe_tmp__338 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__335&65535U);
+printf("\n  %%75 = zext i16 %%70 to i32, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_904_count);
+  llvm_cbe_tmp__340 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__337&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__338);
+printf("\n = 0x%X\n", llvm_cbe_tmp__340);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%76 = sitofp i32 %%75 to double, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_941_count);
-  llvm_cbe_tmp__339 = (double )((double )(signed int )llvm_cbe_tmp__338);
+printf("\n  %%76 = sitofp i32 %%75 to double, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_905_count);
+  llvm_cbe_tmp__341 = (double )((double )(signed int )llvm_cbe_tmp__340);
 if (AESL_DEBUG_TRACE)
-printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__339, *(long long*)(&llvm_cbe_tmp__339));
+printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__341, *(long long*)(&llvm_cbe_tmp__341));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%77 = fmul double %%76, 0x3FE55555571F7693, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_942_count);
-  llvm_cbe_tmp__340 = (double )llvm_cbe_tmp__339 * (*(double*)&FPConstant1);
+printf("\n  %%77 = fmul double %%76, 0x3FE55555571F7693, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_906_count);
+  llvm_cbe_tmp__342 = (double )llvm_cbe_tmp__341 * (*(double*)&FPConstant1);
 if (AESL_DEBUG_TRACE)
-printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__340, *(long long*)(&llvm_cbe_tmp__340));
+printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__342, *(long long*)(&llvm_cbe_tmp__342));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%78 = fptrunc double %%77 to float, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_943_count);
-  llvm_cbe_tmp__341 = (float )((float )llvm_cbe_tmp__340);
+printf("\n  %%78 = fptrunc double %%77 to float, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_907_count);
+  llvm_cbe_tmp__343 = (float )((float )llvm_cbe_tmp__342);
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__341, *(int*)(&llvm_cbe_tmp__341));
+printf("\n = %f,  0x%x\n", llvm_cbe_tmp__343, *(int*)(&llvm_cbe_tmp__343));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%79 = tail call float @sinhf(float %%78) nounwind, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_944_count);
-  llvm_cbe_tmp__342 = (float ) /*tail*/ sinhf(llvm_cbe_tmp__341);
+printf("\n  %%79 = tail call float @sinhf(float %%78) nounwind, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_908_count);
+  llvm_cbe_tmp__344 = (float ) /*tail*/ sinhf(llvm_cbe_tmp__343);
 if (AESL_DEBUG_TRACE) {
-printf("\nArgument  = %f,  0x%x",llvm_cbe_tmp__341, *(int*)(&llvm_cbe_tmp__341));
-printf("\nReturn  = %f",llvm_cbe_tmp__342);
+printf("\nArgument  = %f,  0x%x",llvm_cbe_tmp__343, *(int*)(&llvm_cbe_tmp__343));
+printf("\nReturn  = %f",llvm_cbe_tmp__344);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%80 = tail call float @coshf(float %%78) nounwind, !dbg !10 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_945_count);
-  llvm_cbe_tmp__343 = (float ) /*tail*/ coshf(llvm_cbe_tmp__341);
+printf("\n  %%80 = tail call float @coshf(float %%78) nounwind, !dbg !10 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_909_count);
+  llvm_cbe_tmp__345 = (float ) /*tail*/ coshf(llvm_cbe_tmp__343);
 if (AESL_DEBUG_TRACE) {
-printf("\nArgument  = %f,  0x%x",llvm_cbe_tmp__341, *(int*)(&llvm_cbe_tmp__341));
-printf("\nReturn  = %f",llvm_cbe_tmp__343);
+printf("\nArgument  = %f,  0x%x",llvm_cbe_tmp__343, *(int*)(&llvm_cbe_tmp__343));
+printf("\nReturn  = %f",llvm_cbe_tmp__345);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%81 = fdiv float %%79, %%80, !dbg !10 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_946_count);
-  llvm_cbe_tmp__344 = (float )((float )(llvm_cbe_tmp__342 / llvm_cbe_tmp__343));
+printf("\n  %%81 = fdiv float %%79, %%80, !dbg !10 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_910_count);
+  llvm_cbe_tmp__346 = (float )((float )(llvm_cbe_tmp__344 / llvm_cbe_tmp__345));
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__344, *(int*)(&llvm_cbe_tmp__344));
+printf("\n = %f,  0x%x\n", llvm_cbe_tmp__346, *(int*)(&llvm_cbe_tmp__346));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%82 = fptoui float %%81 to i16, !dbg !10 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_947_count);
-  llvm_cbe_tmp__345 = (unsigned short )((unsigned short )llvm_cbe_tmp__344&65535U);
+printf("\n  %%82 = fptoui float %%81 to i16, !dbg !10 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_911_count);
+  llvm_cbe_tmp__347 = (unsigned short )((unsigned short )llvm_cbe_tmp__346&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__345);
+printf("\n = 0x%X\n", llvm_cbe_tmp__347);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%83 = getelementptr inbounds i16* %%Layer4_Neurons_CPU, i32 %%storemerge10, !dbg !10 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_948_count);
-  llvm_cbe_tmp__346 = (signed short *)(&llvm_cbe_Layer4_Neurons_CPU[(((signed int )llvm_cbe_storemerge10))]);
+printf("\n  %%83 = getelementptr inbounds i16* %%Layer4_Neurons_CPU, i32 %%storemerge10, !dbg !10 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_912_count);
+  llvm_cbe_tmp__348 = (signed short *)(&llvm_cbe_Layer4_Neurons_CPU[(((signed int )llvm_cbe_storemerge10))]);
 if (AESL_DEBUG_TRACE) {
 printf("\nstoremerge10 = 0x%X",((signed int )llvm_cbe_storemerge10));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  store i16 %%82, i16* %%83, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_949_count);
-  *llvm_cbe_tmp__346 = llvm_cbe_tmp__345;
+printf("\n  store i16 %%82, i16* %%83, align 2, !dbg !10 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_913_count);
+  *llvm_cbe_tmp__348 = llvm_cbe_tmp__347;
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__345);
+printf("\n = 0x%X\n", llvm_cbe_tmp__347);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%84 = add nsw i32 %%storemerge10, 1, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_950_count);
-  llvm_cbe_tmp__347 = (unsigned int )((unsigned int )(llvm_cbe_storemerge10&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+printf("\n  %%84 = add nsw i32 %%storemerge10, 1, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_914_count);
+  llvm_cbe_tmp__349 = (unsigned int )((unsigned int )(llvm_cbe_storemerge10&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__347&4294967295ull)));
-  if (((llvm_cbe_tmp__347&4294967295U) == (100u&4294967295U))) {
-    goto llvm_cbe_tmp__350;
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__349&4294967295ull)));
+  if (((llvm_cbe_tmp__349&4294967295U) == (100u&4294967295U))) {
+    goto llvm_cbe_tmp__352;
   } else {
-    llvm_cbe_storemerge10__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__347;   /* for PHI node */
-    goto llvm_cbe_tmp__348;
+    llvm_cbe_storemerge10__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__349;   /* for PHI node */
+    goto llvm_cbe_tmp__350;
   }
 
   do {     /* Syntactic loop '.preheader5' to make GCC happy */
@@ -3467,41 +3432,41 @@ printf("\n  %%storemerge19 = phi i32 [ 0, %%1 ], [ %%73, %%72  for 0x%I64xth hin
 if (AESL_DEBUG_TRACE) {
 printf("\nstoremerge19 = 0x%X",llvm_cbe_storemerge19);
 printf("\n = 0x%X",0u);
+printf("\n = 0x%X",llvm_cbe_tmp__339);
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%6 = phi i16 [ %%4, %%1 ], [ %%70, %%72  for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_771_count);
+  llvm_cbe_tmp__273 = (unsigned short )llvm_cbe_tmp__273__PHI_TEMPORARY;
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",llvm_cbe_tmp__273);
+printf("\n = 0x%X",llvm_cbe_tmp__271);
 printf("\n = 0x%X",llvm_cbe_tmp__337);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%6 = phi i16 [ %%4, %%1 ], [ %%70, %%72  for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_807_count);
-  llvm_cbe_tmp__271 = (unsigned short )llvm_cbe_tmp__271__PHI_TEMPORARY;
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",llvm_cbe_tmp__271);
-printf("\n = 0x%X",llvm_cbe_tmp__269);
-printf("\n = 0x%X",llvm_cbe_tmp__335);
-}
+printf("\n  %%7 = mul nsw i32 %%storemerge19, 25, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_776_count);
+  llvm_cbe_tmp__274 = (unsigned int )((unsigned int )(llvm_cbe_storemerge19&4294967295ull)) * ((unsigned int )(25u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%7 = mul nsw i32 %%storemerge19, 25, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_812_count);
-  llvm_cbe_tmp__272 = (unsigned int )((unsigned int )(llvm_cbe_storemerge19&4294967295ull)) * ((unsigned int )(25u&4294967295ull));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__274&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__272&4294967295ull)));
+printf("\n  %%8 = add i32 %%5, %%7, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_777_count);
+  llvm_cbe_tmp__275 = (unsigned int )((unsigned int )(llvm_cbe_tmp__272&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__274&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%8 = add i32 %%5, %%7, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_813_count);
-  llvm_cbe_tmp__273 = (unsigned int )((unsigned int )(llvm_cbe_tmp__270&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__272&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__273&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__275&4294967295ull)));
   llvm_cbe_storemerge27__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
-  llvm_cbe_tmp__274__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__271;   /* for PHI node */
+  llvm_cbe_tmp__276__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__273;   /* for PHI node */
   goto llvm_cbe__2e_preheader;
 
-llvm_cbe_tmp__351:
+llvm_cbe_tmp__353:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%73 = add nsw i32 %%storemerge19, 1, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_933_count);
-  llvm_cbe_tmp__337 = (unsigned int )((unsigned int )(llvm_cbe_storemerge19&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+printf("\n  %%73 = add nsw i32 %%storemerge19, 1, !dbg !11 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_897_count);
+  llvm_cbe_tmp__339 = (unsigned int )((unsigned int )(llvm_cbe_storemerge19&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__337&4294967295ull)));
-  if (((llvm_cbe_tmp__337&4294967295U) == (50u&4294967295U))) {
-    goto llvm_cbe_tmp__349;
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__339&4294967295ull)));
+  if (((llvm_cbe_tmp__339&4294967295U) == (50u&4294967295U))) {
+    goto llvm_cbe_tmp__351;
   } else {
-    llvm_cbe_storemerge19__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__337;   /* for PHI node */
-    llvm_cbe_tmp__271__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__335;   /* for PHI node */
+    llvm_cbe_storemerge19__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__339;   /* for PHI node */
+    llvm_cbe_tmp__273__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__337;   /* for PHI node */
     goto llvm_cbe__2e_preheader5;
   }
 
@@ -3513,393 +3478,393 @@ printf("\n  %%storemerge27 = phi i32 [ 0, %%.preheader5 ], [ %%71, %%.preheader 
 if (AESL_DEBUG_TRACE) {
 printf("\nstoremerge27 = 0x%X",llvm_cbe_storemerge27);
 printf("\n = 0x%X",0u);
-printf("\n = 0x%X",llvm_cbe_tmp__336);
+printf("\n = 0x%X",llvm_cbe_tmp__338);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%9 = phi i16 [ %%6, %%.preheader5 ], [ %%70, %%.preheader  for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_815_count);
-  llvm_cbe_tmp__274 = (unsigned short )llvm_cbe_tmp__274__PHI_TEMPORARY;
+printf("\n  %%9 = phi i16 [ %%6, %%.preheader5 ], [ %%70, %%.preheader  for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_779_count);
+  llvm_cbe_tmp__276 = (unsigned short )llvm_cbe_tmp__276__PHI_TEMPORARY;
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",llvm_cbe_tmp__274);
-printf("\n = 0x%X",llvm_cbe_tmp__271);
-printf("\n = 0x%X",llvm_cbe_tmp__335);
+printf("\n = 0x%X",llvm_cbe_tmp__276);
+printf("\n = 0x%X",llvm_cbe_tmp__273);
+printf("\n = 0x%X",llvm_cbe_tmp__337);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%10 = mul nsw i32 %%storemerge27, 5, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_820_count);
-  llvm_cbe_tmp__275 = (unsigned int )((unsigned int )(llvm_cbe_storemerge27&4294967295ull)) * ((unsigned int )(5u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__275&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%11 = add i32 %%8, %%10, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_821_count);
-  llvm_cbe_tmp__276 = (unsigned int )((unsigned int )(llvm_cbe_tmp__273&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__275&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__276&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%12 = add i32 %%10, %%7, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_822_count);
-  llvm_cbe_tmp__277 = (unsigned int )((unsigned int )(llvm_cbe_tmp__275&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__272&4294967295ull));
+printf("\n  %%10 = mul nsw i32 %%storemerge27, 5, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_784_count);
+  llvm_cbe_tmp__277 = (unsigned int )((unsigned int )(llvm_cbe_storemerge27&4294967295ull)) * ((unsigned int )(5u&4294967295ull));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__277&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%13 = getelementptr inbounds [125100 x i16]* @Layer3_Weights_CPU_int, i32 0, i32 %%11, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_823_count);
-  llvm_cbe_tmp__278 = (signed short *)(&Layer3_Weights_CPU_int[(((signed int )llvm_cbe_tmp__276))
+printf("\n  %%11 = add i32 %%8, %%10, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_785_count);
+  llvm_cbe_tmp__278 = (unsigned int )((unsigned int )(llvm_cbe_tmp__275&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__277&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__278&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%12 = add i32 %%10, %%7, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_786_count);
+  llvm_cbe_tmp__279 = (unsigned int )((unsigned int )(llvm_cbe_tmp__277&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__274&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__279&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%13 = getelementptr inbounds [125100 x i16]* @Layer3_Weights_CPU_int, i32 0, i32 %%11, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_787_count);
+  llvm_cbe_tmp__280 = (signed short *)(&Layer3_Weights_CPU_int[(((signed int )llvm_cbe_tmp__278))
 #ifdef AESL_BC_SIM
  % 125100
 #endif
 ]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__276));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__278));
 }
 
 #ifdef AESL_BC_SIM
-  if (!(((signed int )llvm_cbe_tmp__276) < 125100)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer3_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
+  if (!(((signed int )llvm_cbe_tmp__278) < 125100)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer3_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
 
 #endif
 if (AESL_DEBUG_TRACE)
-printf("\n  %%14 = load i16* %%13, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_824_count);
-  llvm_cbe_tmp__279 = (unsigned short )*llvm_cbe_tmp__278;
+printf("\n  %%14 = load i16* %%13, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_788_count);
+  llvm_cbe_tmp__281 = (unsigned short )*llvm_cbe_tmp__280;
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__279);
+printf("\n = 0x%X\n", llvm_cbe_tmp__281);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%15 = zext i16 %%14 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_825_count);
-  llvm_cbe_tmp__280 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__279&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__280);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%16 = getelementptr inbounds i16* %%Layer3_Neurons_CPU, i32 %%12, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_826_count);
-  llvm_cbe_tmp__281 = (signed short *)(&llvm_cbe_Layer3_Neurons_CPU[(((signed int )llvm_cbe_tmp__277))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__277));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%17 = load i16* %%16, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_827_count);
-  llvm_cbe_tmp__282 = (unsigned short )*llvm_cbe_tmp__281;
+printf("\n  %%15 = zext i16 %%14 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_789_count);
+  llvm_cbe_tmp__282 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__281&65535U);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__282);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%18 = zext i16 %%17 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_828_count);
-  llvm_cbe_tmp__283 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__282&65535U);
+printf("\n  %%16 = getelementptr inbounds i16* %%Layer3_Neurons_CPU, i32 %%12, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_790_count);
+  llvm_cbe_tmp__283 = (signed short *)(&llvm_cbe_Layer3_Neurons_CPU[(((signed int )llvm_cbe_tmp__279))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__279));
+}
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__283);
+printf("\n  %%17 = load i16* %%16, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_791_count);
+  llvm_cbe_tmp__284 = (unsigned short )*llvm_cbe_tmp__283;
 if (AESL_DEBUG_TRACE)
-printf("\n  %%19 = mul nsw i32 %%18, %%15, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_829_count);
-  llvm_cbe_tmp__284 = (unsigned int )((unsigned int )(llvm_cbe_tmp__283&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__280&4294967295ull));
+printf("\n = 0x%X\n", llvm_cbe_tmp__284);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__284&4294967295ull)));
+printf("\n  %%18 = zext i16 %%17 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_792_count);
+  llvm_cbe_tmp__285 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__284&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%20 = lshr i32 %%19, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_830_count);
-  llvm_cbe_tmp__285 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__284&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+printf("\n = 0x%X\n", llvm_cbe_tmp__285);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__285&4294967295ull)));
+printf("\n  %%19 = mul nsw i32 %%18, %%15, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_793_count);
+  llvm_cbe_tmp__286 = (unsigned int )((unsigned int )(llvm_cbe_tmp__285&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__282&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%21 = trunc i32 %%20 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_831_count);
-  llvm_cbe_tmp__286 = (unsigned short )((unsigned short )llvm_cbe_tmp__285&65535U);
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__286&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__286);
+printf("\n  %%20 = lshr i32 %%19, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_794_count);
+  llvm_cbe_tmp__287 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__286&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%22 = add i16 %%21, %%9, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_832_count);
-  llvm_cbe_tmp__287 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__286&65535ull)) + ((unsigned short )(llvm_cbe_tmp__274&65535ull))));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__287&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__287&65535ull)));
+printf("\n  %%21 = trunc i32 %%20 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_795_count);
+  llvm_cbe_tmp__288 = (unsigned short )((unsigned short )llvm_cbe_tmp__287&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%23 = add i32 %%11, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_842_count);
-  llvm_cbe_tmp__288 = (unsigned int )((unsigned int )(llvm_cbe_tmp__276&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+printf("\n = 0x%X\n", llvm_cbe_tmp__288);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__288&4294967295ull)));
+printf("\n  %%22 = add i16 %%21, %%9, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_796_count);
+  llvm_cbe_tmp__289 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__288&65535ull)) + ((unsigned short )(llvm_cbe_tmp__276&65535ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%24 = getelementptr inbounds [125100 x i16]* @Layer3_Weights_CPU_int, i32 0, i32 %%23, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_843_count);
-  llvm_cbe_tmp__289 = (signed short *)(&Layer3_Weights_CPU_int[(((signed int )llvm_cbe_tmp__288))
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__289&65535ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%23 = add i32 %%11, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_806_count);
+  llvm_cbe_tmp__290 = (unsigned int )((unsigned int )(llvm_cbe_tmp__278&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__290&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%24 = getelementptr inbounds [125100 x i16]* @Layer3_Weights_CPU_int, i32 0, i32 %%23, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_807_count);
+  llvm_cbe_tmp__291 = (signed short *)(&Layer3_Weights_CPU_int[(((signed int )llvm_cbe_tmp__290))
 #ifdef AESL_BC_SIM
  % 125100
 #endif
 ]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__288));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__290));
 }
 
 #ifdef AESL_BC_SIM
-  if (!(((signed int )llvm_cbe_tmp__288) < 125100)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer3_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
+  if (!(((signed int )llvm_cbe_tmp__290) < 125100)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer3_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
 
 #endif
 if (AESL_DEBUG_TRACE)
-printf("\n  %%25 = load i16* %%24, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_844_count);
-  llvm_cbe_tmp__290 = (unsigned short )*llvm_cbe_tmp__289;
+printf("\n  %%25 = load i16* %%24, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_808_count);
+  llvm_cbe_tmp__292 = (unsigned short )*llvm_cbe_tmp__291;
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__290);
+printf("\n = 0x%X\n", llvm_cbe_tmp__292);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%26 = zext i16 %%25 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_845_count);
-  llvm_cbe_tmp__291 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__290&65535U);
+printf("\n  %%26 = zext i16 %%25 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_809_count);
+  llvm_cbe_tmp__293 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__292&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__291);
+printf("\n = 0x%X\n", llvm_cbe_tmp__293);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%27 = add i32 %%12, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_846_count);
-  llvm_cbe_tmp__292 = (unsigned int )((unsigned int )(llvm_cbe_tmp__277&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+printf("\n  %%27 = add i32 %%12, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_810_count);
+  llvm_cbe_tmp__294 = (unsigned int )((unsigned int )(llvm_cbe_tmp__279&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__292&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__294&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%28 = getelementptr inbounds i16* %%Layer3_Neurons_CPU, i32 %%27, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_847_count);
-  llvm_cbe_tmp__293 = (signed short *)(&llvm_cbe_Layer3_Neurons_CPU[(((signed int )llvm_cbe_tmp__292))]);
+printf("\n  %%28 = getelementptr inbounds i16* %%Layer3_Neurons_CPU, i32 %%27, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_811_count);
+  llvm_cbe_tmp__295 = (signed short *)(&llvm_cbe_Layer3_Neurons_CPU[(((signed int )llvm_cbe_tmp__294))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__292));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__294));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%29 = load i16* %%28, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_848_count);
-  llvm_cbe_tmp__294 = (unsigned short )*llvm_cbe_tmp__293;
+printf("\n  %%29 = load i16* %%28, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_812_count);
+  llvm_cbe_tmp__296 = (unsigned short )*llvm_cbe_tmp__295;
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__294);
+printf("\n = 0x%X\n", llvm_cbe_tmp__296);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%30 = zext i16 %%29 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_849_count);
-  llvm_cbe_tmp__295 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__294&65535U);
+printf("\n  %%30 = zext i16 %%29 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_813_count);
+  llvm_cbe_tmp__297 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__296&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__295);
+printf("\n = 0x%X\n", llvm_cbe_tmp__297);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%31 = mul nsw i32 %%30, %%26, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_850_count);
-  llvm_cbe_tmp__296 = (unsigned int )((unsigned int )(llvm_cbe_tmp__295&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__291&4294967295ull));
+printf("\n  %%31 = mul nsw i32 %%30, %%26, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_814_count);
+  llvm_cbe_tmp__298 = (unsigned int )((unsigned int )(llvm_cbe_tmp__297&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__293&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__296&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__298&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%32 = lshr i32 %%31, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_851_count);
-  llvm_cbe_tmp__297 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__296&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+printf("\n  %%32 = lshr i32 %%31, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_815_count);
+  llvm_cbe_tmp__299 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__298&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__297&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__299&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%33 = trunc i32 %%32 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_852_count);
-  llvm_cbe_tmp__298 = (unsigned short )((unsigned short )llvm_cbe_tmp__297&65535U);
+printf("\n  %%33 = trunc i32 %%32 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_816_count);
+  llvm_cbe_tmp__300 = (unsigned short )((unsigned short )llvm_cbe_tmp__299&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__298);
+printf("\n = 0x%X\n", llvm_cbe_tmp__300);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%34 = add i16 %%33, %%22, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_853_count);
-  llvm_cbe_tmp__299 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__298&65535ull)) + ((unsigned short )(llvm_cbe_tmp__287&65535ull))));
+printf("\n  %%34 = add i16 %%33, %%22, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_817_count);
+  llvm_cbe_tmp__301 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__300&65535ull)) + ((unsigned short )(llvm_cbe_tmp__289&65535ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__299&65535ull)));
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__301&65535ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%35 = add i32 %%11, 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_863_count);
-  llvm_cbe_tmp__300 = (unsigned int )((unsigned int )(llvm_cbe_tmp__276&4294967295ull)) + ((unsigned int )(2u&4294967295ull));
+printf("\n  %%35 = add i32 %%11, 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_827_count);
+  llvm_cbe_tmp__302 = (unsigned int )((unsigned int )(llvm_cbe_tmp__278&4294967295ull)) + ((unsigned int )(2u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__300&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__302&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%36 = getelementptr inbounds [125100 x i16]* @Layer3_Weights_CPU_int, i32 0, i32 %%35, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_864_count);
-  llvm_cbe_tmp__301 = (signed short *)(&Layer3_Weights_CPU_int[(((signed int )llvm_cbe_tmp__300))
-#ifdef AESL_BC_SIM
- % 125100
-#endif
-]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__300));
-}
-
-#ifdef AESL_BC_SIM
-  if (!(((signed int )llvm_cbe_tmp__300) < 125100)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer3_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
-
-#endif
-if (AESL_DEBUG_TRACE)
-printf("\n  %%37 = load i16* %%36, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_865_count);
-  llvm_cbe_tmp__302 = (unsigned short )*llvm_cbe_tmp__301;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__302);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%38 = zext i16 %%37 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_866_count);
-  llvm_cbe_tmp__303 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__302&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__303);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%39 = add i32 %%12, 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_867_count);
-  llvm_cbe_tmp__304 = (unsigned int )((unsigned int )(llvm_cbe_tmp__277&4294967295ull)) + ((unsigned int )(2u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__304&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%40 = getelementptr inbounds i16* %%Layer3_Neurons_CPU, i32 %%39, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_868_count);
-  llvm_cbe_tmp__305 = (signed short *)(&llvm_cbe_Layer3_Neurons_CPU[(((signed int )llvm_cbe_tmp__304))]);
-if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__304));
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%41 = load i16* %%40, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_869_count);
-  llvm_cbe_tmp__306 = (unsigned short )*llvm_cbe_tmp__305;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__306);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%42 = zext i16 %%41 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_870_count);
-  llvm_cbe_tmp__307 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__306&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__307);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%43 = mul nsw i32 %%42, %%38, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_871_count);
-  llvm_cbe_tmp__308 = (unsigned int )((unsigned int )(llvm_cbe_tmp__307&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__303&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__308&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%44 = lshr i32 %%43, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_872_count);
-  llvm_cbe_tmp__309 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__308&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__309&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%45 = trunc i32 %%44 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_873_count);
-  llvm_cbe_tmp__310 = (unsigned short )((unsigned short )llvm_cbe_tmp__309&65535U);
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__310);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%46 = add i16 %%45, %%34, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_874_count);
-  llvm_cbe_tmp__311 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__310&65535ull)) + ((unsigned short )(llvm_cbe_tmp__299&65535ull))));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__311&65535ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%47 = add i32 %%11, 3, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_884_count);
-  llvm_cbe_tmp__312 = (unsigned int )((unsigned int )(llvm_cbe_tmp__276&4294967295ull)) + ((unsigned int )(3u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__312&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%48 = getelementptr inbounds [125100 x i16]* @Layer3_Weights_CPU_int, i32 0, i32 %%47, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_885_count);
-  llvm_cbe_tmp__313 = (signed short *)(&Layer3_Weights_CPU_int[(((signed int )llvm_cbe_tmp__312))
+printf("\n  %%36 = getelementptr inbounds [125100 x i16]* @Layer3_Weights_CPU_int, i32 0, i32 %%35, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_828_count);
+  llvm_cbe_tmp__303 = (signed short *)(&Layer3_Weights_CPU_int[(((signed int )llvm_cbe_tmp__302))
 #ifdef AESL_BC_SIM
  % 125100
 #endif
 ]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__312));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__302));
 }
 
 #ifdef AESL_BC_SIM
-  if (!(((signed int )llvm_cbe_tmp__312) < 125100)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer3_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
+  if (!(((signed int )llvm_cbe_tmp__302) < 125100)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer3_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
 
 #endif
 if (AESL_DEBUG_TRACE)
-printf("\n  %%49 = load i16* %%48, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_886_count);
-  llvm_cbe_tmp__314 = (unsigned short )*llvm_cbe_tmp__313;
+printf("\n  %%37 = load i16* %%36, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_829_count);
+  llvm_cbe_tmp__304 = (unsigned short )*llvm_cbe_tmp__303;
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__314);
+printf("\n = 0x%X\n", llvm_cbe_tmp__304);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%50 = zext i16 %%49 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_887_count);
-  llvm_cbe_tmp__315 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__314&65535U);
+printf("\n  %%38 = zext i16 %%37 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_830_count);
+  llvm_cbe_tmp__305 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__304&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__315);
+printf("\n = 0x%X\n", llvm_cbe_tmp__305);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%51 = add i32 %%12, 3, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_888_count);
-  llvm_cbe_tmp__316 = (unsigned int )((unsigned int )(llvm_cbe_tmp__277&4294967295ull)) + ((unsigned int )(3u&4294967295ull));
+printf("\n  %%39 = add i32 %%12, 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_831_count);
+  llvm_cbe_tmp__306 = (unsigned int )((unsigned int )(llvm_cbe_tmp__279&4294967295ull)) + ((unsigned int )(2u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__316&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__306&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%52 = getelementptr inbounds i16* %%Layer3_Neurons_CPU, i32 %%51, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_889_count);
-  llvm_cbe_tmp__317 = (signed short *)(&llvm_cbe_Layer3_Neurons_CPU[(((signed int )llvm_cbe_tmp__316))]);
+printf("\n  %%40 = getelementptr inbounds i16* %%Layer3_Neurons_CPU, i32 %%39, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_832_count);
+  llvm_cbe_tmp__307 = (signed short *)(&llvm_cbe_Layer3_Neurons_CPU[(((signed int )llvm_cbe_tmp__306))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__316));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__306));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%53 = load i16* %%52, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_890_count);
-  llvm_cbe_tmp__318 = (unsigned short )*llvm_cbe_tmp__317;
+printf("\n  %%41 = load i16* %%40, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_833_count);
+  llvm_cbe_tmp__308 = (unsigned short )*llvm_cbe_tmp__307;
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__318);
+printf("\n = 0x%X\n", llvm_cbe_tmp__308);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%54 = zext i16 %%53 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_891_count);
-  llvm_cbe_tmp__319 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__318&65535U);
+printf("\n  %%42 = zext i16 %%41 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_834_count);
+  llvm_cbe_tmp__309 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__308&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__319);
+printf("\n = 0x%X\n", llvm_cbe_tmp__309);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%55 = mul nsw i32 %%54, %%50, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_892_count);
-  llvm_cbe_tmp__320 = (unsigned int )((unsigned int )(llvm_cbe_tmp__319&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__315&4294967295ull));
+printf("\n  %%43 = mul nsw i32 %%42, %%38, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_835_count);
+  llvm_cbe_tmp__310 = (unsigned int )((unsigned int )(llvm_cbe_tmp__309&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__305&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__320&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__310&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%56 = lshr i32 %%55, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_893_count);
-  llvm_cbe_tmp__321 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__320&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+printf("\n  %%44 = lshr i32 %%43, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_836_count);
+  llvm_cbe_tmp__311 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__310&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__321&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__311&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%57 = trunc i32 %%56 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_894_count);
-  llvm_cbe_tmp__322 = (unsigned short )((unsigned short )llvm_cbe_tmp__321&65535U);
+printf("\n  %%45 = trunc i32 %%44 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_837_count);
+  llvm_cbe_tmp__312 = (unsigned short )((unsigned short )llvm_cbe_tmp__311&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__322);
+printf("\n = 0x%X\n", llvm_cbe_tmp__312);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%58 = add i16 %%57, %%46, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_895_count);
-  llvm_cbe_tmp__323 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__322&65535ull)) + ((unsigned short )(llvm_cbe_tmp__311&65535ull))));
+printf("\n  %%46 = add i16 %%45, %%34, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_838_count);
+  llvm_cbe_tmp__313 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__312&65535ull)) + ((unsigned short )(llvm_cbe_tmp__301&65535ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__323&65535ull)));
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__313&65535ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%59 = add i32 %%11, 4, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_905_count);
-  llvm_cbe_tmp__324 = (unsigned int )((unsigned int )(llvm_cbe_tmp__276&4294967295ull)) + ((unsigned int )(4u&4294967295ull));
+printf("\n  %%47 = add i32 %%11, 3, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_848_count);
+  llvm_cbe_tmp__314 = (unsigned int )((unsigned int )(llvm_cbe_tmp__278&4294967295ull)) + ((unsigned int )(3u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__324&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__314&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%60 = getelementptr inbounds [125100 x i16]* @Layer3_Weights_CPU_int, i32 0, i32 %%59, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_906_count);
-  llvm_cbe_tmp__325 = (signed short *)(&Layer3_Weights_CPU_int[(((signed int )llvm_cbe_tmp__324))
+printf("\n  %%48 = getelementptr inbounds [125100 x i16]* @Layer3_Weights_CPU_int, i32 0, i32 %%47, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_849_count);
+  llvm_cbe_tmp__315 = (signed short *)(&Layer3_Weights_CPU_int[(((signed int )llvm_cbe_tmp__314))
 #ifdef AESL_BC_SIM
  % 125100
 #endif
 ]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__324));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__314));
 }
 
 #ifdef AESL_BC_SIM
-  if (!(((signed int )llvm_cbe_tmp__324) < 125100)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer3_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
+  if (!(((signed int )llvm_cbe_tmp__314) < 125100)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer3_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
 
 #endif
 if (AESL_DEBUG_TRACE)
-printf("\n  %%61 = load i16* %%60, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_907_count);
-  llvm_cbe_tmp__326 = (unsigned short )*llvm_cbe_tmp__325;
+printf("\n  %%49 = load i16* %%48, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_850_count);
+  llvm_cbe_tmp__316 = (unsigned short )*llvm_cbe_tmp__315;
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__326);
+printf("\n = 0x%X\n", llvm_cbe_tmp__316);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%62 = zext i16 %%61 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_908_count);
-  llvm_cbe_tmp__327 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__326&65535U);
+printf("\n  %%50 = zext i16 %%49 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_851_count);
+  llvm_cbe_tmp__317 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__316&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__327);
+printf("\n = 0x%X\n", llvm_cbe_tmp__317);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%63 = add i32 %%12, 4, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_909_count);
-  llvm_cbe_tmp__328 = (unsigned int )((unsigned int )(llvm_cbe_tmp__277&4294967295ull)) + ((unsigned int )(4u&4294967295ull));
+printf("\n  %%51 = add i32 %%12, 3, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_852_count);
+  llvm_cbe_tmp__318 = (unsigned int )((unsigned int )(llvm_cbe_tmp__279&4294967295ull)) + ((unsigned int )(3u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__328&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__318&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%64 = getelementptr inbounds i16* %%Layer3_Neurons_CPU, i32 %%63, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_910_count);
-  llvm_cbe_tmp__329 = (signed short *)(&llvm_cbe_Layer3_Neurons_CPU[(((signed int )llvm_cbe_tmp__328))]);
+printf("\n  %%52 = getelementptr inbounds i16* %%Layer3_Neurons_CPU, i32 %%51, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_853_count);
+  llvm_cbe_tmp__319 = (signed short *)(&llvm_cbe_Layer3_Neurons_CPU[(((signed int )llvm_cbe_tmp__318))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__328));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__318));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%65 = load i16* %%64, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_911_count);
-  llvm_cbe_tmp__330 = (unsigned short )*llvm_cbe_tmp__329;
+printf("\n  %%53 = load i16* %%52, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_854_count);
+  llvm_cbe_tmp__320 = (unsigned short )*llvm_cbe_tmp__319;
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__330);
+printf("\n = 0x%X\n", llvm_cbe_tmp__320);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%66 = zext i16 %%65 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_912_count);
-  llvm_cbe_tmp__331 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__330&65535U);
+printf("\n  %%54 = zext i16 %%53 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_855_count);
+  llvm_cbe_tmp__321 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__320&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__331);
+printf("\n = 0x%X\n", llvm_cbe_tmp__321);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%67 = mul nsw i32 %%66, %%62, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_913_count);
-  llvm_cbe_tmp__332 = (unsigned int )((unsigned int )(llvm_cbe_tmp__331&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__327&4294967295ull));
+printf("\n  %%55 = mul nsw i32 %%54, %%50, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_856_count);
+  llvm_cbe_tmp__322 = (unsigned int )((unsigned int )(llvm_cbe_tmp__321&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__317&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__332&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__322&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%68 = lshr i32 %%67, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_914_count);
-  llvm_cbe_tmp__333 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__332&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+printf("\n  %%56 = lshr i32 %%55, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_857_count);
+  llvm_cbe_tmp__323 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__322&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__333&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__323&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%69 = trunc i32 %%68 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_915_count);
-  llvm_cbe_tmp__334 = (unsigned short )((unsigned short )llvm_cbe_tmp__333&65535U);
+printf("\n  %%57 = trunc i32 %%56 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_858_count);
+  llvm_cbe_tmp__324 = (unsigned short )((unsigned short )llvm_cbe_tmp__323&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__334);
+printf("\n = 0x%X\n", llvm_cbe_tmp__324);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%70 = add i16 %%69, %%58, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_916_count);
-  llvm_cbe_tmp__335 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__334&65535ull)) + ((unsigned short )(llvm_cbe_tmp__323&65535ull))));
+printf("\n  %%58 = add i16 %%57, %%46, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_859_count);
+  llvm_cbe_tmp__325 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__324&65535ull)) + ((unsigned short )(llvm_cbe_tmp__313&65535ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__335&65535ull)));
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__325&65535ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%71 = add nsw i32 %%storemerge27, 1, !dbg !12 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_926_count);
-  llvm_cbe_tmp__336 = (unsigned int )((unsigned int )(llvm_cbe_storemerge27&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+printf("\n  %%59 = add i32 %%11, 4, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_869_count);
+  llvm_cbe_tmp__326 = (unsigned int )((unsigned int )(llvm_cbe_tmp__278&4294967295ull)) + ((unsigned int )(4u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__336&4294967295ull)));
-  if (((llvm_cbe_tmp__336&4294967295U) == (5u&4294967295U))) {
-    goto llvm_cbe_tmp__351;
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__326&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%60 = getelementptr inbounds [125100 x i16]* @Layer3_Weights_CPU_int, i32 0, i32 %%59, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_870_count);
+  llvm_cbe_tmp__327 = (signed short *)(&Layer3_Weights_CPU_int[(((signed int )llvm_cbe_tmp__326))
+#ifdef AESL_BC_SIM
+ % 125100
+#endif
+]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__326));
+}
+
+#ifdef AESL_BC_SIM
+  if (!(((signed int )llvm_cbe_tmp__326) < 125100)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer3_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
+
+#endif
+if (AESL_DEBUG_TRACE)
+printf("\n  %%61 = load i16* %%60, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_871_count);
+  llvm_cbe_tmp__328 = (unsigned short )*llvm_cbe_tmp__327;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__328);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%62 = zext i16 %%61 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_872_count);
+  llvm_cbe_tmp__329 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__328&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__329);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%63 = add i32 %%12, 4, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_873_count);
+  llvm_cbe_tmp__330 = (unsigned int )((unsigned int )(llvm_cbe_tmp__279&4294967295ull)) + ((unsigned int )(4u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__330&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%64 = getelementptr inbounds i16* %%Layer3_Neurons_CPU, i32 %%63, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_874_count);
+  llvm_cbe_tmp__331 = (signed short *)(&llvm_cbe_Layer3_Neurons_CPU[(((signed int )llvm_cbe_tmp__330))]);
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__330));
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%65 = load i16* %%64, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_875_count);
+  llvm_cbe_tmp__332 = (unsigned short )*llvm_cbe_tmp__331;
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__332);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%66 = zext i16 %%65 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_876_count);
+  llvm_cbe_tmp__333 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__332&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__333);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%67 = mul nsw i32 %%66, %%62, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_877_count);
+  llvm_cbe_tmp__334 = (unsigned int )((unsigned int )(llvm_cbe_tmp__333&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__329&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__334&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%68 = lshr i32 %%67, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_878_count);
+  llvm_cbe_tmp__335 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__334&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__335&4294967295ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%69 = trunc i32 %%68 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_879_count);
+  llvm_cbe_tmp__336 = (unsigned short )((unsigned short )llvm_cbe_tmp__335&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__336);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%70 = add i16 %%69, %%58, !dbg !9 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_880_count);
+  llvm_cbe_tmp__337 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__336&65535ull)) + ((unsigned short )(llvm_cbe_tmp__325&65535ull))));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__337&65535ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%71 = add nsw i32 %%storemerge27, 1, !dbg !12 for 0x%I64xth hint within @calculateLayer4_int_ref  --> \n", ++aesl_llvm_cbe_890_count);
+  llvm_cbe_tmp__338 = (unsigned int )((unsigned int )(llvm_cbe_storemerge27&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__338&4294967295ull)));
+  if (((llvm_cbe_tmp__338&4294967295U) == (5u&4294967295U))) {
+    goto llvm_cbe_tmp__353;
   } else {
-    llvm_cbe_storemerge27__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__336;   /* for PHI node */
-    llvm_cbe_tmp__274__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__335;   /* for PHI node */
+    llvm_cbe_storemerge27__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__338;   /* for PHI node */
+    llvm_cbe_tmp__276__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__337;   /* for PHI node */
     goto llvm_cbe__2e_preheader;
   }
 
   } while (1); /* end of syntactic loop '.preheader' */
   } while (1); /* end of syntactic loop '.preheader5' */
   } while (1); /* end of syntactic loop '' */
-llvm_cbe_tmp__350:
+llvm_cbe_tmp__352:
   if (AESL_DEBUG_TRACE)
       printf("\nEND @calculateLayer4_int_ref}\n");
   return;
@@ -3907,318 +3872,318 @@ llvm_cbe_tmp__350:
 
 
 void calculateLayer5_int(signed short *llvm_cbe_Layer4_Neurons_CPU, signed short *llvm_cbe_Layer4_Weights_CPU, double *llvm_cbe_Layer5_Neurons_CPU) {
+  static  unsigned long long aesl_llvm_cbe_923_count = 0;
+  static  unsigned long long aesl_llvm_cbe_924_count = 0;
+  static  unsigned long long aesl_llvm_cbe_925_count = 0;
+  static  unsigned long long aesl_llvm_cbe_926_count = 0;
+  static  unsigned long long aesl_llvm_cbe_927_count = 0;
+  static  unsigned long long aesl_llvm_cbe_928_count = 0;
+  static  unsigned long long aesl_llvm_cbe_929_count = 0;
+  static  unsigned long long aesl_llvm_cbe_930_count = 0;
+  static  unsigned long long aesl_llvm_cbe_931_count = 0;
+  static  unsigned long long aesl_llvm_cbe_932_count = 0;
+  static  unsigned long long aesl_llvm_cbe_933_count = 0;
+  static  unsigned long long aesl_llvm_cbe_934_count = 0;
+  static  unsigned long long aesl_llvm_cbe_storemerge3_count = 0;
+  unsigned int llvm_cbe_storemerge3;
+  unsigned int llvm_cbe_storemerge3__PHI_TEMPORARY;
+  static  unsigned long long aesl_llvm_cbe_935_count = 0;
+  unsigned int llvm_cbe_tmp__354;
+  static  unsigned long long aesl_llvm_cbe_936_count = 0;
+  signed short *llvm_cbe_tmp__355;
+  static  unsigned long long aesl_llvm_cbe_937_count = 0;
+  unsigned short llvm_cbe_tmp__356;
+  static  unsigned long long aesl_llvm_cbe_938_count = 0;
+  static  unsigned long long aesl_llvm_cbe_939_count = 0;
+  static  unsigned long long aesl_llvm_cbe_940_count = 0;
+  static  unsigned long long aesl_llvm_cbe_941_count = 0;
+  static  unsigned long long aesl_llvm_cbe_942_count = 0;
+  static  unsigned long long aesl_llvm_cbe_943_count = 0;
+  static  unsigned long long aesl_llvm_cbe_944_count = 0;
+  static  unsigned long long aesl_llvm_cbe_945_count = 0;
+  static  unsigned long long aesl_llvm_cbe_946_count = 0;
+  unsigned int llvm_cbe_tmp__357;
+  static  unsigned long long aesl_llvm_cbe_947_count = 0;
+  static  unsigned long long aesl_llvm_cbe_storemerge12_count = 0;
+  unsigned int llvm_cbe_storemerge12;
+  unsigned int llvm_cbe_storemerge12__PHI_TEMPORARY;
+  static  unsigned long long aesl_llvm_cbe_948_count = 0;
+  unsigned short llvm_cbe_tmp__358;
+  unsigned short llvm_cbe_tmp__358__PHI_TEMPORARY;
+  static  unsigned long long aesl_llvm_cbe_949_count = 0;
+  unsigned int llvm_cbe_tmp__359;
+  static  unsigned long long aesl_llvm_cbe_950_count = 0;
+  signed short *llvm_cbe_tmp__360;
+  static  unsigned long long aesl_llvm_cbe_951_count = 0;
+  unsigned short llvm_cbe_tmp__361;
+  static  unsigned long long aesl_llvm_cbe_952_count = 0;
+  unsigned int llvm_cbe_tmp__362;
+  static  unsigned long long aesl_llvm_cbe_953_count = 0;
+  signed short *llvm_cbe_tmp__363;
+  static  unsigned long long aesl_llvm_cbe_954_count = 0;
+  unsigned short llvm_cbe_tmp__364;
+  static  unsigned long long aesl_llvm_cbe_955_count = 0;
+  unsigned int llvm_cbe_tmp__365;
+  static  unsigned long long aesl_llvm_cbe_956_count = 0;
+  unsigned int llvm_cbe_tmp__366;
+  static  unsigned long long aesl_llvm_cbe_957_count = 0;
+  unsigned int llvm_cbe_tmp__367;
+  static  unsigned long long aesl_llvm_cbe_958_count = 0;
+  unsigned short llvm_cbe_tmp__368;
   static  unsigned long long aesl_llvm_cbe_959_count = 0;
+  unsigned short llvm_cbe_tmp__369;
   static  unsigned long long aesl_llvm_cbe_960_count = 0;
   static  unsigned long long aesl_llvm_cbe_961_count = 0;
   static  unsigned long long aesl_llvm_cbe_962_count = 0;
   static  unsigned long long aesl_llvm_cbe_963_count = 0;
+  unsigned int llvm_cbe_tmp__370;
   static  unsigned long long aesl_llvm_cbe_964_count = 0;
   static  unsigned long long aesl_llvm_cbe_965_count = 0;
   static  unsigned long long aesl_llvm_cbe_966_count = 0;
   static  unsigned long long aesl_llvm_cbe_967_count = 0;
   static  unsigned long long aesl_llvm_cbe_968_count = 0;
+  static  unsigned long long aesl_llvm_cbe_exitcond_count = 0;
   static  unsigned long long aesl_llvm_cbe_969_count = 0;
   static  unsigned long long aesl_llvm_cbe_970_count = 0;
-  static  unsigned long long aesl_llvm_cbe_storemerge3_count = 0;
-  unsigned int llvm_cbe_storemerge3;
-  unsigned int llvm_cbe_storemerge3__PHI_TEMPORARY;
+  unsigned int llvm_cbe_tmp__371;
   static  unsigned long long aesl_llvm_cbe_971_count = 0;
-  unsigned int llvm_cbe_tmp__352;
+  double llvm_cbe_tmp__372;
   static  unsigned long long aesl_llvm_cbe_972_count = 0;
-  signed short *llvm_cbe_tmp__353;
+  double llvm_cbe_tmp__373;
   static  unsigned long long aesl_llvm_cbe_973_count = 0;
-  unsigned short llvm_cbe_tmp__354;
+  double llvm_cbe_tmp__374;
   static  unsigned long long aesl_llvm_cbe_974_count = 0;
-  float llvm_cbe_tmp__355;
+  double llvm_cbe_tmp__375;
   static  unsigned long long aesl_llvm_cbe_975_count = 0;
+  unsigned short llvm_cbe_tmp__376;
   static  unsigned long long aesl_llvm_cbe_976_count = 0;
+  double llvm_cbe_tmp__377;
   static  unsigned long long aesl_llvm_cbe_977_count = 0;
+  double *llvm_cbe_tmp__378;
   static  unsigned long long aesl_llvm_cbe_978_count = 0;
   static  unsigned long long aesl_llvm_cbe_979_count = 0;
+  unsigned int llvm_cbe_tmp__379;
   static  unsigned long long aesl_llvm_cbe_980_count = 0;
   static  unsigned long long aesl_llvm_cbe_981_count = 0;
   static  unsigned long long aesl_llvm_cbe_982_count = 0;
   static  unsigned long long aesl_llvm_cbe_983_count = 0;
-  unsigned int llvm_cbe_tmp__356;
   static  unsigned long long aesl_llvm_cbe_984_count = 0;
-  static  unsigned long long aesl_llvm_cbe_storemerge12_count = 0;
-  unsigned int llvm_cbe_storemerge12;
-  unsigned int llvm_cbe_storemerge12__PHI_TEMPORARY;
   static  unsigned long long aesl_llvm_cbe_985_count = 0;
-  float llvm_cbe_tmp__357;
-  float llvm_cbe_tmp__357__PHI_TEMPORARY;
-  static  unsigned long long aesl_llvm_cbe_986_count = 0;
-  unsigned int llvm_cbe_tmp__358;
-  static  unsigned long long aesl_llvm_cbe_987_count = 0;
-  signed short *llvm_cbe_tmp__359;
-  static  unsigned long long aesl_llvm_cbe_988_count = 0;
-  unsigned short llvm_cbe_tmp__360;
-  static  unsigned long long aesl_llvm_cbe_989_count = 0;
-  unsigned int llvm_cbe_tmp__361;
-  static  unsigned long long aesl_llvm_cbe_990_count = 0;
-  signed short *llvm_cbe_tmp__362;
-  static  unsigned long long aesl_llvm_cbe_991_count = 0;
-  unsigned short llvm_cbe_tmp__363;
-  static  unsigned long long aesl_llvm_cbe_992_count = 0;
-  unsigned int llvm_cbe_tmp__364;
-  static  unsigned long long aesl_llvm_cbe_993_count = 0;
-  unsigned int llvm_cbe_tmp__365;
-  static  unsigned long long aesl_llvm_cbe_994_count = 0;
-  unsigned int llvm_cbe_tmp__366;
-  static  unsigned long long aesl_llvm_cbe_995_count = 0;
-  float llvm_cbe_tmp__367;
-  static  unsigned long long aesl_llvm_cbe_996_count = 0;
-  float llvm_cbe_tmp__368;
-  static  unsigned long long aesl_llvm_cbe_997_count = 0;
-  static  unsigned long long aesl_llvm_cbe_998_count = 0;
-  static  unsigned long long aesl_llvm_cbe_999_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1000_count = 0;
-  unsigned int llvm_cbe_tmp__369;
-  static  unsigned long long aesl_llvm_cbe_1001_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1002_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1003_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1004_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1005_count = 0;
-  static  unsigned long long aesl_llvm_cbe_exitcond_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1006_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1007_count = 0;
-  double llvm_cbe_tmp__370;
-  static  unsigned long long aesl_llvm_cbe_1008_count = 0;
-  double llvm_cbe_tmp__371;
-  static  unsigned long long aesl_llvm_cbe_1009_count = 0;
-  double llvm_cbe_tmp__372;
-  static  unsigned long long aesl_llvm_cbe_1010_count = 0;
-  double llvm_cbe_tmp__373;
-  static  unsigned long long aesl_llvm_cbe_1011_count = 0;
-  unsigned short llvm_cbe_tmp__374;
-  static  unsigned long long aesl_llvm_cbe_1012_count = 0;
-  double llvm_cbe_tmp__375;
-  static  unsigned long long aesl_llvm_cbe_1013_count = 0;
-  double *llvm_cbe_tmp__376;
-  static  unsigned long long aesl_llvm_cbe_1014_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1015_count = 0;
-  unsigned int llvm_cbe_tmp__377;
-  static  unsigned long long aesl_llvm_cbe_1016_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1017_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1018_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1019_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1020_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1021_count = 0;
   static  unsigned long long aesl_llvm_cbe_exitcond4_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1022_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1023_count = 0;
+  static  unsigned long long aesl_llvm_cbe_986_count = 0;
+  static  unsigned long long aesl_llvm_cbe_987_count = 0;
 
 const char* AESL_DEBUG_TRACE = getenv("DEBUG_TRACE");
 if (AESL_DEBUG_TRACE)
 printf("\n\{ BEGIN @calculateLayer5_int\n");
   llvm_cbe_storemerge3__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
-  goto llvm_cbe_tmp__378;
+  goto llvm_cbe_tmp__380;
 
   do {     /* Syntactic loop '' to make GCC happy */
-llvm_cbe_tmp__378:
+llvm_cbe_tmp__380:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%storemerge3 = phi i32 [ 0, %%0 ], [ %%29, %%21  for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_storemerge3_count);
+printf("\n  %%storemerge3 = phi i32 [ 0, %%0 ], [ %%29, %%20  for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_storemerge3_count);
   llvm_cbe_storemerge3 = (unsigned int )llvm_cbe_storemerge3__PHI_TEMPORARY;
 if (AESL_DEBUG_TRACE) {
 printf("\nstoremerge3 = 0x%X",llvm_cbe_storemerge3);
 printf("\n = 0x%X",0u);
-printf("\n = 0x%X",llvm_cbe_tmp__377);
+printf("\n = 0x%X",llvm_cbe_tmp__379);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%2 = mul nsw i32 %%storemerge3, 101, !dbg !11 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_971_count);
-  llvm_cbe_tmp__352 = (unsigned int )((unsigned int )(llvm_cbe_storemerge3&4294967295ull)) * ((unsigned int )(101u&4294967295ull));
+printf("\n  %%2 = mul nsw i32 %%storemerge3, 101, !dbg !11 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_935_count);
+  llvm_cbe_tmp__354 = (unsigned int )((unsigned int )(llvm_cbe_storemerge3&4294967295ull)) * ((unsigned int )(101u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__352&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__354&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%3 = getelementptr inbounds [1010 x i16]* @Layer4_Weights_CPU_int, i32 0, i32 %%2, !dbg !11 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_972_count);
-  llvm_cbe_tmp__353 = (signed short *)(&Layer4_Weights_CPU_int[(((signed int )llvm_cbe_tmp__352))
+printf("\n  %%3 = getelementptr inbounds [1010 x i16]* @Layer4_Weights_CPU_int, i32 0, i32 %%2, !dbg !11 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_936_count);
+  llvm_cbe_tmp__355 = (signed short *)(&Layer4_Weights_CPU_int[(((signed int )llvm_cbe_tmp__354))
 #ifdef AESL_BC_SIM
  % 1010
 #endif
 ]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__352));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__354));
 }
 
 #ifdef AESL_BC_SIM
-  if (!(((signed int )llvm_cbe_tmp__352) < 1010)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer4_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
+  if (!(((signed int )llvm_cbe_tmp__354) < 1010)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer4_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
 
 #endif
 if (AESL_DEBUG_TRACE)
-printf("\n  %%4 = load i16* %%3, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_973_count);
-  llvm_cbe_tmp__354 = (unsigned short )*llvm_cbe_tmp__353;
+printf("\n  %%4 = load i16* %%3, align 2, !dbg !11 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_937_count);
+  llvm_cbe_tmp__356 = (unsigned short )*llvm_cbe_tmp__355;
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__354);
+printf("\n = 0x%X\n", llvm_cbe_tmp__356);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%5 = uitofp i16 %%4 to float, !dbg !11 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_974_count);
-  llvm_cbe_tmp__355 = (float )((float )(unsigned short )llvm_cbe_tmp__354);
+printf("\n  %%5 = add i32 %%2, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_946_count);
+  llvm_cbe_tmp__357 = (unsigned int )((unsigned int )(llvm_cbe_tmp__354&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__355, *(int*)(&llvm_cbe_tmp__355));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%6 = add i32 %%2, 1, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_983_count);
-  llvm_cbe_tmp__356 = (unsigned int )((unsigned int )(llvm_cbe_tmp__352&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__356&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__357&4294967295ull)));
   llvm_cbe_storemerge12__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
-  llvm_cbe_tmp__357__PHI_TEMPORARY = (float )llvm_cbe_tmp__355;   /* for PHI node */
-  goto llvm_cbe_tmp__379;
+  llvm_cbe_tmp__358__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__356;   /* for PHI node */
+  goto llvm_cbe_tmp__381;
 
-llvm_cbe_tmp__380:
+llvm_cbe_tmp__382:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%22 = fpext float %%19 to double, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_1007_count);
-  llvm_cbe_tmp__370 = (double )((double )llvm_cbe_tmp__368);
+printf("\n  %%21 = zext i16 %%18 to i32, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_970_count);
+  llvm_cbe_tmp__371 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__369&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__370, *(long long*)(&llvm_cbe_tmp__370));
+printf("\n = 0x%X\n", llvm_cbe_tmp__371);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%23 = fmul double %%22, 0x3FE55555571F7693, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_1008_count);
-  llvm_cbe_tmp__371 = (double )llvm_cbe_tmp__370 * (*(double*)&FPConstant1);
+printf("\n  %%22 = sitofp i32 %%21 to double, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_971_count);
+  llvm_cbe_tmp__372 = (double )((double )(signed int )llvm_cbe_tmp__371);
 if (AESL_DEBUG_TRACE)
-printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__371, *(long long*)(&llvm_cbe_tmp__371));
+printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__372, *(long long*)(&llvm_cbe_tmp__372));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%24 = tail call double @tanh(double %%23) nounwind, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_1009_count);
-  llvm_cbe_tmp__372 = (double ) /*tail*/ tanh(llvm_cbe_tmp__371);
-if (AESL_DEBUG_TRACE) {
-printf("\nArgument  = %lf,  0x%llx",llvm_cbe_tmp__371, *(long long*)(&llvm_cbe_tmp__371));
-printf("\nReturn  = %lf",llvm_cbe_tmp__372);
-}
-if (AESL_DEBUG_TRACE)
-printf("\n  %%25 = fmul double %%24, 1.715900e+00, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_1010_count);
-  llvm_cbe_tmp__373 = (double )llvm_cbe_tmp__372 * (*(double*)&FPConstant2);
+printf("\n  %%23 = fmul double %%22, 0x3FE55555571F7693, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_972_count);
+  llvm_cbe_tmp__373 = (double )llvm_cbe_tmp__372 * (*(double*)&FPConstant1);
 if (AESL_DEBUG_TRACE)
 printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__373, *(long long*)(&llvm_cbe_tmp__373));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%26 = fptoui double %%25 to i16, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_1011_count);
-  llvm_cbe_tmp__374 = (unsigned short )((unsigned short )llvm_cbe_tmp__373&65535U);
+printf("\n  %%24 = tail call double @tanh(double %%23) nounwind, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_973_count);
+  llvm_cbe_tmp__374 = (double ) /*tail*/ tanh(llvm_cbe_tmp__373);
+if (AESL_DEBUG_TRACE) {
+printf("\nArgument  = %lf,  0x%llx",llvm_cbe_tmp__373, *(long long*)(&llvm_cbe_tmp__373));
+printf("\nReturn  = %lf",llvm_cbe_tmp__374);
+}
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__374);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%27 = uitofp i16 %%26 to double, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_1012_count);
-  llvm_cbe_tmp__375 = (double )((double )(unsigned short )llvm_cbe_tmp__374);
+printf("\n  %%25 = fmul double %%24, 1.715900e+00, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_974_count);
+  llvm_cbe_tmp__375 = (double )llvm_cbe_tmp__374 * (*(double*)&FPConstant2);
 if (AESL_DEBUG_TRACE)
 printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__375, *(long long*)(&llvm_cbe_tmp__375));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%28 = getelementptr inbounds double* %%Layer5_Neurons_CPU, i32 %%storemerge3, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_1013_count);
-  llvm_cbe_tmp__376 = (double *)(&llvm_cbe_Layer5_Neurons_CPU[(((signed int )llvm_cbe_storemerge3))]);
+printf("\n  %%26 = fptoui double %%25 to i16, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_975_count);
+  llvm_cbe_tmp__376 = (unsigned short )((unsigned short )llvm_cbe_tmp__375&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__376);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%27 = uitofp i16 %%26 to double, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_976_count);
+  llvm_cbe_tmp__377 = (double )((double )(unsigned short )llvm_cbe_tmp__376);
+if (AESL_DEBUG_TRACE)
+printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__377, *(long long*)(&llvm_cbe_tmp__377));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%28 = getelementptr inbounds double* %%Layer5_Neurons_CPU, i32 %%storemerge3, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_977_count);
+  llvm_cbe_tmp__378 = (double *)(&llvm_cbe_Layer5_Neurons_CPU[(((signed int )llvm_cbe_storemerge3))]);
 if (AESL_DEBUG_TRACE) {
 printf("\nstoremerge3 = 0x%X",((signed int )llvm_cbe_storemerge3));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  store double %%27, double* %%28, align 8, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_1014_count);
-  *llvm_cbe_tmp__376 = llvm_cbe_tmp__375;
+printf("\n  store double %%27, double* %%28, align 8, !dbg !10 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_978_count);
+  *llvm_cbe_tmp__378 = llvm_cbe_tmp__377;
 if (AESL_DEBUG_TRACE)
-printf("\n = %lf\n", llvm_cbe_tmp__375);
+printf("\n = %lf\n", llvm_cbe_tmp__377);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%29 = add nsw i32 %%storemerge3, 1, !dbg !11 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_1015_count);
-  llvm_cbe_tmp__377 = (unsigned int )((unsigned int )(llvm_cbe_storemerge3&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+printf("\n  %%29 = add nsw i32 %%storemerge3, 1, !dbg !11 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_979_count);
+  llvm_cbe_tmp__379 = (unsigned int )((unsigned int )(llvm_cbe_storemerge3&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__377&4294967295ull)));
-  if (((llvm_cbe_tmp__377&4294967295U) == (10u&4294967295U))) {
-    goto llvm_cbe_tmp__381;
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__379&4294967295ull)));
+  if (((llvm_cbe_tmp__379&4294967295U) == (10u&4294967295U))) {
+    goto llvm_cbe_tmp__383;
   } else {
-    llvm_cbe_storemerge3__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__377;   /* for PHI node */
-    goto llvm_cbe_tmp__378;
+    llvm_cbe_storemerge3__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__379;   /* for PHI node */
+    goto llvm_cbe_tmp__380;
   }
 
   do {     /* Syntactic loop '' to make GCC happy */
-llvm_cbe_tmp__379:
+llvm_cbe_tmp__381:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%storemerge12 = phi i32 [ 0, %%1 ], [ %%20, %%7  for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_storemerge12_count);
+printf("\n  %%storemerge12 = phi i32 [ 0, %%1 ], [ %%19, %%6  for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_storemerge12_count);
   llvm_cbe_storemerge12 = (unsigned int )llvm_cbe_storemerge12__PHI_TEMPORARY;
 if (AESL_DEBUG_TRACE) {
 printf("\nstoremerge12 = 0x%X",llvm_cbe_storemerge12);
 printf("\n = 0x%X",0u);
+printf("\n = 0x%X",llvm_cbe_tmp__370);
+}
+if (AESL_DEBUG_TRACE)
+printf("\n  %%7 = phi i16 [ %%4, %%1 ], [ %%18, %%6  for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_948_count);
+  llvm_cbe_tmp__358 = (unsigned short )llvm_cbe_tmp__358__PHI_TEMPORARY;
+if (AESL_DEBUG_TRACE) {
+printf("\n = 0x%X",llvm_cbe_tmp__358);
+printf("\n = 0x%X",llvm_cbe_tmp__356);
 printf("\n = 0x%X",llvm_cbe_tmp__369);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%8 = phi float [ %%5, %%1 ], [ %%19, %%7  for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_985_count);
-  llvm_cbe_tmp__357 = (float )llvm_cbe_tmp__357__PHI_TEMPORARY;
-if (AESL_DEBUG_TRACE) {
-printf("\n = %f",llvm_cbe_tmp__357);
-printf("\n = %f",llvm_cbe_tmp__355);
-printf("\n = %f",llvm_cbe_tmp__368);
-}
+printf("\n  %%8 = add i32 %%5, %%storemerge12, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_949_count);
+  llvm_cbe_tmp__359 = (unsigned int )((unsigned int )(llvm_cbe_tmp__357&4294967295ull)) + ((unsigned int )(llvm_cbe_storemerge12&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%9 = add i32 %%6, %%storemerge12, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_986_count);
-  llvm_cbe_tmp__358 = (unsigned int )((unsigned int )(llvm_cbe_tmp__356&4294967295ull)) + ((unsigned int )(llvm_cbe_storemerge12&4294967295ull));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__359&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__358&4294967295ull)));
-if (AESL_DEBUG_TRACE)
-printf("\n  %%10 = getelementptr inbounds [1010 x i16]* @Layer4_Weights_CPU_int, i32 0, i32 %%9, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_987_count);
-  llvm_cbe_tmp__359 = (signed short *)(&Layer4_Weights_CPU_int[(((signed int )llvm_cbe_tmp__358))
+printf("\n  %%9 = getelementptr inbounds [1010 x i16]* @Layer4_Weights_CPU_int, i32 0, i32 %%8, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_950_count);
+  llvm_cbe_tmp__360 = (signed short *)(&Layer4_Weights_CPU_int[(((signed int )llvm_cbe_tmp__359))
 #ifdef AESL_BC_SIM
  % 1010
 #endif
 ]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__358));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__359));
 }
 
 #ifdef AESL_BC_SIM
-  if (!(((signed int )llvm_cbe_tmp__358) < 1010)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer4_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
+  if (!(((signed int )llvm_cbe_tmp__359) < 1010)) fprintf(stderr, "%s:%d: warning: Read access out of array 'Layer4_Weights_CPU_int' bound?\n", __FILE__, __LINE__);
 
 #endif
 if (AESL_DEBUG_TRACE)
-printf("\n  %%11 = load i16* %%10, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_988_count);
-  llvm_cbe_tmp__360 = (unsigned short )*llvm_cbe_tmp__359;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__360);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%12 = zext i16 %%11 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_989_count);
-  llvm_cbe_tmp__361 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__360&65535U);
+printf("\n  %%10 = load i16* %%9, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_951_count);
+  llvm_cbe_tmp__361 = (unsigned short )*llvm_cbe_tmp__360;
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__361);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%13 = getelementptr inbounds i16* %%Layer4_Neurons_CPU, i32 %%storemerge12, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_990_count);
-  llvm_cbe_tmp__362 = (signed short *)(&llvm_cbe_Layer4_Neurons_CPU[(((signed int )llvm_cbe_storemerge12))]);
+printf("\n  %%11 = zext i16 %%10 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_952_count);
+  llvm_cbe_tmp__362 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__361&65535U);
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", llvm_cbe_tmp__362);
+if (AESL_DEBUG_TRACE)
+printf("\n  %%12 = getelementptr inbounds i16* %%Layer4_Neurons_CPU, i32 %%storemerge12, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_953_count);
+  llvm_cbe_tmp__363 = (signed short *)(&llvm_cbe_Layer4_Neurons_CPU[(((signed int )llvm_cbe_storemerge12))]);
 if (AESL_DEBUG_TRACE) {
 printf("\nstoremerge12 = 0x%X",((signed int )llvm_cbe_storemerge12));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%14 = load i16* %%13, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_991_count);
-  llvm_cbe_tmp__363 = (unsigned short )*llvm_cbe_tmp__362;
-if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", llvm_cbe_tmp__363);
-if (AESL_DEBUG_TRACE)
-printf("\n  %%15 = zext i16 %%14 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_992_count);
-  llvm_cbe_tmp__364 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__363&65535U);
+printf("\n  %%13 = load i16* %%12, align 2, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_954_count);
+  llvm_cbe_tmp__364 = (unsigned short )*llvm_cbe_tmp__363;
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", llvm_cbe_tmp__364);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%16 = mul nsw i32 %%15, %%12, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_993_count);
-  llvm_cbe_tmp__365 = (unsigned int )((unsigned int )(llvm_cbe_tmp__364&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__361&4294967295ull));
+printf("\n  %%14 = zext i16 %%13 to i32, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_955_count);
+  llvm_cbe_tmp__365 = (unsigned int )((unsigned int )(unsigned short )llvm_cbe_tmp__364&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__365&4294967295ull)));
+printf("\n = 0x%X\n", llvm_cbe_tmp__365);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%17 = lshr i32 %%16, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_994_count);
-  llvm_cbe_tmp__366 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__365&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
+printf("\n  %%15 = mul nsw i32 %%14, %%11, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_956_count);
+  llvm_cbe_tmp__366 = (unsigned int )((unsigned int )(llvm_cbe_tmp__365&4294967295ull)) * ((unsigned int )(llvm_cbe_tmp__362&4294967295ull));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__366&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%18 = sitofp i32 %%17 to float, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_995_count);
-  llvm_cbe_tmp__367 = (float )((float )(signed int )llvm_cbe_tmp__366);
+printf("\n  %%16 = lshr i32 %%15, 8, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_957_count);
+  llvm_cbe_tmp__367 = (unsigned int )((unsigned int )(((unsigned int )(llvm_cbe_tmp__366&4294967295ull)) >> ((unsigned int )(8u&4294967295ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__367, *(int*)(&llvm_cbe_tmp__367));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__367&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%19 = fadd float %%8, %%18, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_996_count);
-  llvm_cbe_tmp__368 = (float )((float )(llvm_cbe_tmp__357 + llvm_cbe_tmp__367));
+printf("\n  %%17 = trunc i32 %%16 to i16, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_958_count);
+  llvm_cbe_tmp__368 = (unsigned short )((unsigned short )llvm_cbe_tmp__367&65535U);
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__368, *(int*)(&llvm_cbe_tmp__368));
+printf("\n = 0x%X\n", llvm_cbe_tmp__368);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%20 = add nsw i32 %%storemerge12, 1, !dbg !11 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_1000_count);
-  llvm_cbe_tmp__369 = (unsigned int )((unsigned int )(llvm_cbe_storemerge12&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+printf("\n  %%18 = add i16 %%17, %%7, !dbg !9 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_959_count);
+  llvm_cbe_tmp__369 = (unsigned short )((unsigned short )(((unsigned short )(llvm_cbe_tmp__368&65535ull)) + ((unsigned short )(llvm_cbe_tmp__358&65535ull))));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__369&4294967295ull)));
-  if (((llvm_cbe_tmp__369&4294967295U) == (100u&4294967295U))) {
-    goto llvm_cbe_tmp__380;
+printf("\n = 0x%X\n", ((unsigned short )(llvm_cbe_tmp__369&65535ull)));
+if (AESL_DEBUG_TRACE)
+printf("\n  %%19 = add nsw i32 %%storemerge12, 1, !dbg !11 for 0x%I64xth hint within @calculateLayer5_int  --> \n", ++aesl_llvm_cbe_963_count);
+  llvm_cbe_tmp__370 = (unsigned int )((unsigned int )(llvm_cbe_storemerge12&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+if (AESL_DEBUG_TRACE)
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__370&4294967295ull)));
+  if (((llvm_cbe_tmp__370&4294967295U) == (100u&4294967295U))) {
+    goto llvm_cbe_tmp__382;
   } else {
-    llvm_cbe_storemerge12__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__369;   /* for PHI node */
-    llvm_cbe_tmp__357__PHI_TEMPORARY = (float )llvm_cbe_tmp__368;   /* for PHI node */
-    goto llvm_cbe_tmp__379;
+    llvm_cbe_storemerge12__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__370;   /* for PHI node */
+    llvm_cbe_tmp__358__PHI_TEMPORARY = (unsigned short )llvm_cbe_tmp__369;   /* for PHI node */
+    goto llvm_cbe_tmp__381;
   }
 
   } while (1); /* end of syntactic loop '' */
   } while (1); /* end of syntactic loop '' */
-llvm_cbe_tmp__381:
+llvm_cbe_tmp__383:
   if (AESL_DEBUG_TRACE)
       printf("\nEND @calculateLayer5_int}\n");
   return;
@@ -4226,54 +4191,54 @@ llvm_cbe_tmp__381:
 
 
 void printInput(float *llvm_cbe_Input) {
-  static  unsigned long long aesl_llvm_cbe_1024_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1025_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1026_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1027_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1028_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1029_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1030_count = 0;
+  static  unsigned long long aesl_llvm_cbe_988_count = 0;
+  static  unsigned long long aesl_llvm_cbe_989_count = 0;
+  static  unsigned long long aesl_llvm_cbe_990_count = 0;
+  static  unsigned long long aesl_llvm_cbe_991_count = 0;
+  static  unsigned long long aesl_llvm_cbe_992_count = 0;
+  static  unsigned long long aesl_llvm_cbe_993_count = 0;
+  static  unsigned long long aesl_llvm_cbe_994_count = 0;
   static  unsigned long long aesl_llvm_cbe_storemerge3_count = 0;
   unsigned int llvm_cbe_storemerge3;
   unsigned int llvm_cbe_storemerge3__PHI_TEMPORARY;
-  static  unsigned long long aesl_llvm_cbe_1031_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1032_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1033_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1034_count = 0;
-  unsigned int llvm_cbe_tmp__382;
-  static  unsigned long long aesl_llvm_cbe_1035_count = 0;
+  static  unsigned long long aesl_llvm_cbe_995_count = 0;
+  static  unsigned long long aesl_llvm_cbe_996_count = 0;
+  static  unsigned long long aesl_llvm_cbe_997_count = 0;
+  static  unsigned long long aesl_llvm_cbe_998_count = 0;
+  unsigned int llvm_cbe_tmp__384;
+  static  unsigned long long aesl_llvm_cbe_999_count = 0;
   static  unsigned long long aesl_llvm_cbe_storemerge12_count = 0;
   unsigned int llvm_cbe_storemerge12;
   unsigned int llvm_cbe_storemerge12__PHI_TEMPORARY;
-  static  unsigned long long aesl_llvm_cbe_1036_count = 0;
-  unsigned int llvm_cbe_tmp__383;
-  static  unsigned long long aesl_llvm_cbe_1037_count = 0;
-  float *llvm_cbe_tmp__384;
-  static  unsigned long long aesl_llvm_cbe_1038_count = 0;
-  float llvm_cbe_tmp__385;
-  static  unsigned long long aesl_llvm_cbe_1039_count = 0;
-  double llvm_cbe_tmp__386;
-  static  unsigned long long aesl_llvm_cbe_1040_count = 0;
-  unsigned int llvm_cbe_tmp__387;
-  static  unsigned long long aesl_llvm_cbe_1041_count = 0;
-  unsigned int llvm_cbe_tmp__388;
-  static  unsigned long long aesl_llvm_cbe_1042_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1043_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1044_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1045_count = 0;
+  static  unsigned long long aesl_llvm_cbe_1000_count = 0;
+  unsigned int llvm_cbe_tmp__385;
+  static  unsigned long long aesl_llvm_cbe_1001_count = 0;
+  float *llvm_cbe_tmp__386;
+  static  unsigned long long aesl_llvm_cbe_1002_count = 0;
+  float llvm_cbe_tmp__387;
+  static  unsigned long long aesl_llvm_cbe_1003_count = 0;
+  double llvm_cbe_tmp__388;
+  static  unsigned long long aesl_llvm_cbe_1004_count = 0;
+  unsigned int llvm_cbe_tmp__389;
+  static  unsigned long long aesl_llvm_cbe_1005_count = 0;
+  unsigned int llvm_cbe_tmp__390;
+  static  unsigned long long aesl_llvm_cbe_1006_count = 0;
+  static  unsigned long long aesl_llvm_cbe_1007_count = 0;
+  static  unsigned long long aesl_llvm_cbe_1008_count = 0;
+  static  unsigned long long aesl_llvm_cbe_1009_count = 0;
   static  unsigned long long aesl_llvm_cbe_exitcond_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1046_count = 0;
+  static  unsigned long long aesl_llvm_cbe_1010_count = 0;
   static  unsigned long long aesl_llvm_cbe_putchar_count = 0;
   unsigned int llvm_cbe_putchar;
-  static  unsigned long long aesl_llvm_cbe_1047_count = 0;
-  unsigned int llvm_cbe_tmp__389;
-  static  unsigned long long aesl_llvm_cbe_1048_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1049_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1050_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1051_count = 0;
+  static  unsigned long long aesl_llvm_cbe_1011_count = 0;
+  unsigned int llvm_cbe_tmp__391;
+  static  unsigned long long aesl_llvm_cbe_1012_count = 0;
+  static  unsigned long long aesl_llvm_cbe_1013_count = 0;
+  static  unsigned long long aesl_llvm_cbe_1014_count = 0;
+  static  unsigned long long aesl_llvm_cbe_1015_count = 0;
   static  unsigned long long aesl_llvm_cbe_exitcond4_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1052_count = 0;
-  static  unsigned long long aesl_llvm_cbe_1053_count = 0;
+  static  unsigned long long aesl_llvm_cbe_1016_count = 0;
+  static  unsigned long long aesl_llvm_cbe_1017_count = 0;
 
 const char* AESL_DEBUG_TRACE = getenv("DEBUG_TRACE");
 if (AESL_DEBUG_TRACE)
@@ -4289,17 +4254,17 @@ printf("\n  %%storemerge3 = phi i32 [ 0, %%0 ], [ %%10, %%9  for 0x%I64xth hint 
 if (AESL_DEBUG_TRACE) {
 printf("\nstoremerge3 = 0x%X",llvm_cbe_storemerge3);
 printf("\n = 0x%X",0u);
-printf("\n = 0x%X",llvm_cbe_tmp__389);
+printf("\n = 0x%X",llvm_cbe_tmp__391);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%1 = mul nsw i32 %%storemerge3, 29, !dbg !9 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1034_count);
-  llvm_cbe_tmp__382 = (unsigned int )((unsigned int )(llvm_cbe_storemerge3&4294967295ull)) * ((unsigned int )(29u&4294967295ull));
+printf("\n  %%1 = mul nsw i32 %%storemerge3, 29, !dbg !9 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_998_count);
+  llvm_cbe_tmp__384 = (unsigned int )((unsigned int )(llvm_cbe_storemerge3&4294967295ull)) * ((unsigned int )(29u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__382&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__384&4294967295ull)));
   llvm_cbe_storemerge12__PHI_TEMPORARY = (unsigned int )0u;   /* for PHI node */
-  goto llvm_cbe_tmp__390;
+  goto llvm_cbe_tmp__392;
 
-llvm_cbe_tmp__391:
+llvm_cbe_tmp__393:
 if (AESL_DEBUG_TRACE)
 printf("\n  %%putchar = tail call i32 @putchar(i32 10) nounwind, !dbg !11 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_putchar_count);
    /*tail*/ putchar(10u);
@@ -4308,74 +4273,74 @@ printf("\nArgument  = 0x%X",10u);
 printf("\nReturn putchar = 0x%X",llvm_cbe_putchar);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%10 = add nsw i32 %%storemerge3, 1, !dbg !10 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1047_count);
-  llvm_cbe_tmp__389 = (unsigned int )((unsigned int )(llvm_cbe_storemerge3&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+printf("\n  %%10 = add nsw i32 %%storemerge3, 1, !dbg !10 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1011_count);
+  llvm_cbe_tmp__391 = (unsigned int )((unsigned int )(llvm_cbe_storemerge3&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__389&4294967295ull)));
-  if (((llvm_cbe_tmp__389&4294967295U) == (29u&4294967295U))) {
-    goto llvm_cbe_tmp__392;
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__391&4294967295ull)));
+  if (((llvm_cbe_tmp__391&4294967295U) == (29u&4294967295U))) {
+    goto llvm_cbe_tmp__394;
   } else {
-    llvm_cbe_storemerge3__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__389;   /* for PHI node */
+    llvm_cbe_storemerge3__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__391;   /* for PHI node */
     goto llvm_cbe__2e_preheader;
   }
 
   do {     /* Syntactic loop '' to make GCC happy */
-llvm_cbe_tmp__390:
+llvm_cbe_tmp__392:
 if (AESL_DEBUG_TRACE)
 printf("\n  %%storemerge12 = phi i32 [ 0, %%.preheader ], [ %%8, %%2  for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_storemerge12_count);
   llvm_cbe_storemerge12 = (unsigned int )llvm_cbe_storemerge12__PHI_TEMPORARY;
 if (AESL_DEBUG_TRACE) {
 printf("\nstoremerge12 = 0x%X",llvm_cbe_storemerge12);
 printf("\n = 0x%X",0u);
-printf("\n = 0x%X",llvm_cbe_tmp__388);
+printf("\n = 0x%X",llvm_cbe_tmp__390);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%3 = add nsw i32 %%storemerge12, %%1, !dbg !9 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1036_count);
-  llvm_cbe_tmp__383 = (unsigned int )((unsigned int )(llvm_cbe_storemerge12&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__382&4294967295ull));
+printf("\n  %%3 = add nsw i32 %%storemerge12, %%1, !dbg !9 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1000_count);
+  llvm_cbe_tmp__385 = (unsigned int )((unsigned int )(llvm_cbe_storemerge12&4294967295ull)) + ((unsigned int )(llvm_cbe_tmp__384&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__383&4294967295ull)));
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__385&4294967295ull)));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%4 = getelementptr inbounds float* %%Input, i32 %%3, !dbg !9 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1037_count);
-  llvm_cbe_tmp__384 = (float *)(&llvm_cbe_Input[(((signed int )llvm_cbe_tmp__383))]);
+printf("\n  %%4 = getelementptr inbounds float* %%Input, i32 %%3, !dbg !9 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1001_count);
+  llvm_cbe_tmp__386 = (float *)(&llvm_cbe_Input[(((signed int )llvm_cbe_tmp__385))]);
 if (AESL_DEBUG_TRACE) {
-printf("\n = 0x%X",((signed int )llvm_cbe_tmp__383));
+printf("\n = 0x%X",((signed int )llvm_cbe_tmp__385));
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%5 = load float* %%4, align 4, !dbg !9 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1038_count);
-  llvm_cbe_tmp__385 = (float )*llvm_cbe_tmp__384;
+printf("\n  %%5 = load float* %%4, align 4, !dbg !9 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1002_count);
+  llvm_cbe_tmp__387 = (float )*llvm_cbe_tmp__386;
 if (AESL_DEBUG_TRACE)
-printf("\n = %f,  0x%x\n", llvm_cbe_tmp__385, *(int*)(&llvm_cbe_tmp__385));
+printf("\n = %f,  0x%x\n", llvm_cbe_tmp__387, *(int*)(&llvm_cbe_tmp__387));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%6 = fpext float %%5 to double, !dbg !9 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1039_count);
-  llvm_cbe_tmp__386 = (double )((double )llvm_cbe_tmp__385);
+printf("\n  %%6 = fpext float %%5 to double, !dbg !9 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1003_count);
+  llvm_cbe_tmp__388 = (double )((double )llvm_cbe_tmp__387);
 if (AESL_DEBUG_TRACE)
-printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__386, *(long long*)(&llvm_cbe_tmp__386));
+printf("\n = %lf,  0x%llx\n", llvm_cbe_tmp__388, *(long long*)(&llvm_cbe_tmp__388));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%7 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([6 x i8]* @aesl_internal_.str4, i32 0, i32 0), double %%6) nounwind, !dbg !9 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1040_count);
-   /*tail*/ printf(( char *)((&aesl_internal__OC_str4[(((signed int )0u))
+printf("\n  %%7 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([6 x i8]* @aesl_internal_.str3, i32 0, i32 0), double %%6) nounwind, !dbg !9 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1004_count);
+   /*tail*/ printf(( char *)((&aesl_internal__OC_str3[(((signed int )0u))
 #ifdef AESL_BC_SIM
  % 6
 #endif
-])), llvm_cbe_tmp__386);
+])), llvm_cbe_tmp__388);
 if (AESL_DEBUG_TRACE) {
-printf("\nArgument  = %lf,  0x%llx",llvm_cbe_tmp__386, *(long long*)(&llvm_cbe_tmp__386));
-printf("\nReturn  = 0x%X",llvm_cbe_tmp__387);
+printf("\nArgument  = %lf,  0x%llx",llvm_cbe_tmp__388, *(long long*)(&llvm_cbe_tmp__388));
+printf("\nReturn  = 0x%X",llvm_cbe_tmp__389);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%8 = add nsw i32 %%storemerge12, 1, !dbg !10 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1041_count);
-  llvm_cbe_tmp__388 = (unsigned int )((unsigned int )(llvm_cbe_storemerge12&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
+printf("\n  %%8 = add nsw i32 %%storemerge12, 1, !dbg !10 for 0x%I64xth hint within @printInput  --> \n", ++aesl_llvm_cbe_1005_count);
+  llvm_cbe_tmp__390 = (unsigned int )((unsigned int )(llvm_cbe_storemerge12&4294967295ull)) + ((unsigned int )(1u&4294967295ull));
 if (AESL_DEBUG_TRACE)
-printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__388&4294967295ull)));
-  if (((llvm_cbe_tmp__388&4294967295U) == (29u&4294967295U))) {
-    goto llvm_cbe_tmp__391;
+printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__390&4294967295ull)));
+  if (((llvm_cbe_tmp__390&4294967295U) == (29u&4294967295U))) {
+    goto llvm_cbe_tmp__393;
   } else {
-    llvm_cbe_storemerge12__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__388;   /* for PHI node */
-    goto llvm_cbe_tmp__390;
+    llvm_cbe_storemerge12__PHI_TEMPORARY = (unsigned int )llvm_cbe_tmp__390;   /* for PHI node */
+    goto llvm_cbe_tmp__392;
   }
 
   } while (1); /* end of syntactic loop '' */
   } while (1); /* end of syntactic loop '.preheader' */
-llvm_cbe_tmp__392:
+llvm_cbe_tmp__394:
   if (AESL_DEBUG_TRACE)
       printf("\nEND @printInput}\n");
   return;
@@ -4383,19 +4348,19 @@ llvm_cbe_tmp__392:
 
 
 signed int main(void) {
-  static  unsigned long long aesl_llvm_cbe_1054_count = 0;
-  unsigned int llvm_cbe_tmp__393;
-  static  unsigned long long aesl_llvm_cbe_1055_count = 0;
+  static  unsigned long long aesl_llvm_cbe_1018_count = 0;
+  unsigned int llvm_cbe_tmp__395;
+  static  unsigned long long aesl_llvm_cbe_1019_count = 0;
 
   CODE_FOR_MAIN();
 const char* AESL_DEBUG_TRACE = getenv("DEBUG_TRACE");
 if (AESL_DEBUG_TRACE)
 printf("\n\{ BEGIN @main\n");
 if (AESL_DEBUG_TRACE)
-printf("\n  %%1 = tail call i32 @_main(), !dbg !9 for 0x%I64xth hint within @main  --> \n", ++aesl_llvm_cbe_1054_count);
+printf("\n  %%1 = tail call i32 @_main(), !dbg !9 for 0x%I64xth hint within @main  --> \n", ++aesl_llvm_cbe_1018_count);
    /*tail*/ _main();
 if (AESL_DEBUG_TRACE) {
-printf("\nReturn  = 0x%X",llvm_cbe_tmp__393);
+printf("\nReturn  = 0x%X",llvm_cbe_tmp__395);
 }
   if (AESL_DEBUG_TRACE)
       printf("\nEND @main}\n");
